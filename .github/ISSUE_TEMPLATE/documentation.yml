@@ -1,0 +1,30 @@
+name: Documentation task
+description: A procedure, reference or report to write or update
+title: "docs: <what>"
+labels: ["documentation"]
+body:
+  - type: input
+    id: folder
+    attributes:
+      label: Target folder
+      placeholder: "e.g. 03-windows-server/group-policy"
+    validations:
+      required: true
+  - type: dropdown
+    id: type
+    attributes:
+      label: Document type
+      options: [Procedure, Reference, Scenario, Report, Lessons learned, Standard]
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: What should it cover?
+    validations:
+      required: true
+  - type: input
+    id: requirements
+    attributes:
+      label: Related business requirements
+      placeholder: "BR-xx"

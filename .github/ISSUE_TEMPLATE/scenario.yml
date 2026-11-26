@@ -1,0 +1,36 @@
+name: New support scenario
+description: Propose a troubleshooting scenario for 14-scenarios
+title: "SC-<AREA>-NNN: <problem as the user reports it>"
+labels: ["scenario"]
+body:
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options: [Hardware, Networking, Windows, Accounts, Microsoft 365, Security, Infrastructure]
+    validations:
+      required: true
+  - type: dropdown
+    id: difficulty
+    attributes:
+      label: Difficulty
+      options: ["⭐ First line", "⭐⭐ Second line", "⭐⭐⭐ Infrastructure"]
+    validations:
+      required: true
+  - type: textarea
+    id: report
+    attributes:
+      label: User report
+      description: The ticket exactly as the user would write it.
+    validations:
+      required: true
+  - type: textarea
+    id: fault
+    attributes:
+      label: Fault to inject in the lab (optional)
+      description: How to recreate the problem. Keep it vague if you want to solve it blind.
+  - type: input
+    id: phase
+    attributes:
+      label: Related training phase
+      placeholder: "e.g. Phase 3 – Group Policy"

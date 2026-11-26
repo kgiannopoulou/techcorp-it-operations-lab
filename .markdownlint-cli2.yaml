@@ -1,0 +1,14 @@
+config:
+  default: true
+  MD013: false          # line length – tables and URLs are long
+  MD033:                # allow the small amount of inline HTML we use
+    allowed_elements: [br, details, summary]
+  MD024:
+    siblings_only: true
+  MD036: false          # bold lines used as labels in checklists
+  MD041: false          # PR template does not start with H1
+  MD060: false          # table column alignment style
+globs:
+  - "**/*.md"
+ignores:
+  - "node_modules/**"

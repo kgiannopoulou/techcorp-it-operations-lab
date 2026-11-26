@@ -1,0 +1,42 @@
+# --- Secrets & credentials: never commit these ---
+*.pfx
+*.p12
+*.pem
+*.key
+*.kdbx
+*.rdp
+secrets/
+credentials*
+*.env
+.env*
+
+# --- Lab artefacts (large or machine-specific) ---
+*.iso
+*.vhd
+*.vhdx
+*.vmdk
+*.ova
+*.ovf
+*.avhdx
+*.pcap
+*.pcapng
+*.evtx
+lab-vms/
+
+# --- Script output (keep reports in 16-reports/ only after sanitising) ---
+output/
+*.log
+*.tmp
+Transcript*.txt
+
+# --- OS / editor noise ---
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+.idea/
+*.swp
+~$*
+
+# --- Tooling ---
+node_modules/
