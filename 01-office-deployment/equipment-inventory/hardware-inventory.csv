@@ -1,0 +1,114 @@
+AssetTag,Hostname,Category,Model,Specification,AssignedTo,Location,VLAN,IPAddress,WarrantyYears,Status,LabEquivalent
+TC-FW01,TC-FW01,Firewall,Netgate 4200 (pfSense Plus),"4x 2.5GbE, IPS-capable, VPN",IT,Comms room rack U10,10,10.10.10.1,3,Planned,pfSense CE VM
+TC-SW01,TC-SW01,Switch,48-port L2+ managed PoE+ switch,"48x 1GbE PoE+ (740 W), 4x 10G SFP+",IT,Comms room rack U8,10,10.10.10.2,5,Planned,Cisco Packet Tracer 2960 / Open vSwitch
+TC-AP01,TC-AP01,Wireless AP,Wi-Fi 6 ceiling AP (PoE),"2x2 MU-MIMO, WPA3, multi-SSID/VLAN",IT,Open-plan north ceiling,10,10.10.10.11,3,Planned,Virtual – documented only
+TC-AP02,TC-AP02,Wireless AP,Wi-Fi 6 ceiling AP (PoE),"2x2 MU-MIMO, WPA3, multi-SSID/VLAN",IT,Open-plan south ceiling,10,10.10.10.12,3,Planned,Virtual – documented only
+TC-AP03,TC-AP03,Wireless AP,Wi-Fi 6 ceiling AP (PoE),"2x2 MU-MIMO, WPA3, multi-SSID/VLAN",IT,Reception / meeting rooms corridor,10,10.10.10.13,3,Planned,Virtual – documented only
+TC-HV01,TC-HV01,Server,1U rack server,"1x 16-core CPU, 128 GB RAM, 4x 1.92 TB SSD RAID10, 2x PSU, iDRAC/iLO",IT,Comms room rack U5,30,10.10.30.10,3,Planned,Hyper-V on lab PC
+TC-DC01,TC-DC01,Virtual server,Windows Server 2025 Standard VM,"2 vCPU, 4 GB RAM, 80 GB – AD DS, DNS, DHCP",IT,TC-HV01,30,10.10.30.11,,Planned,Hyper-V VM
+TC-DC02,TC-DC02,Virtual server,Windows Server 2025 Standard VM,"2 vCPU, 4 GB RAM, 80 GB – AD DS, DNS, DHCP failover",IT,TC-HV01,30,10.10.30.12,,Planned,Hyper-V VM
+TC-FS01,TC-FS01,Virtual server,Windows Server 2025 Standard VM,"4 vCPU, 8 GB RAM, 80 GB OS + 1 TB data – File server, DFS-N",IT,TC-HV01,30,10.10.30.20,,Planned,Hyper-V VM
+TC-NAS01,TC-NAS01,NAS,4-bay rackmount NAS,"4x 8 TB RAID5 (~24 TB), 2x 1GbE – backup target, cloud sync",IT,Comms room rack U3,30,10.10.30.30,3,Planned,VM with extra VHDX / second disk
+TC-UPS01,TC-UPS01,UPS,2U line-interactive UPS 1500 VA,"Network card, ~20 min at rack load",IT,Comms room rack U1-U2,10,10.10.10.5,2,Planned,n/a – shutdown tested via script
+TC-PRN01,TC-PRN01,Printer,A4 colour laser MFP,"Print/copy/scan-to-e-mail, duplex, card release",Shared,Open-plan print area,40,10.10.40.10,3,Planned,Virtual printer / PDF printer queue
+TC-PRN02,TC-PRN02,Printer,A4 mono laser printer,"Duplex, network",Finance,Finance office,40,10.10.40.11,3,Planned,Virtual printer queue
+TC-LT-001,TC-LT-001,Laptop,Business laptop 14in,"14in, Intel Core Ultra 5, 16 GB RAM, 512 GB NVMe, TPM 2.0, Win 11 Pro",andreas.konstantinou,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
+TC-LT-002,TC-LT-002,Laptop,Business laptop 14in,"14in, Intel Core Ultra 5, 16 GB RAM, 512 GB NVMe, TPM 2.0, Win 11 Pro",sofia.dimitriou,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
+TC-LT-003,TC-LT-003,Laptop,Business laptop 14in,"14in, Intel Core Ultra 5, 16 GB RAM, 512 GB NVMe, TPM 2.0, Win 11 Pro",giorgos.alexiou,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
+TC-LT-004,TC-LT-004,Laptop,Business laptop 14in,"14in, Intel Core Ultra 5, 16 GB RAM, 512 GB NVMe, TPM 2.0, Win 11 Pro",katerina.vlachou,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
+TC-LT-005,TC-LT-005,Laptop,Business laptop 14in,"14in, Intel Core Ultra 5, 16 GB RAM, 512 GB NVMe, TPM 2.0, Win 11 Pro",petros.nikolaidis,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
+TC-LT-006,TC-LT-006,Laptop,Business laptop 14in,"14in, Intel Core Ultra 5, 16 GB RAM, 512 GB NVMe, TPM 2.0, Win 11 Pro",maria.papadaki,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
+TC-LT-007,TC-LT-007,Laptop,Business laptop 14in,"14in, Intel Core Ultra 5, 16 GB RAM, 512 GB NVMe, TPM 2.0, Win 11 Pro",ioanna.stavrou,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
+TC-LT-008,TC-LT-008,Laptop,Business laptop 14in,"14in, Intel Core Ultra 5, 16 GB RAM, 512 GB NVMe, TPM 2.0, Win 11 Pro",dimitris.antoniou,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
+TC-LT-009,TC-LT-009,Laptop,Business laptop 14in,"14in, Intel Core Ultra 5, 16 GB RAM, 512 GB NVMe, TPM 2.0, Win 11 Pro",christina.makri,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
+TC-LT-010,TC-LT-010,Laptop,Business laptop 14in,"14in, Intel Core Ultra 5, 16 GB RAM, 512 GB NVMe, TPM 2.0, Win 11 Pro",nikos.georgiou,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
+TC-LT-011,TC-LT-011,Laptop,Creator laptop 16in,"16in, Intel Core Ultra 7, 32 GB RAM, 1 TB NVMe, dGPU 8 GB, 100% sRGB, Win 11 Pro",eleftheria.zografou,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
+TC-LT-012,TC-LT-012,Laptop,Business laptop 14in,"14in, Intel Core Ultra 5, 16 GB RAM, 512 GB NVMe, TPM 2.0, Win 11 Pro",stavros.karras,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
+TC-LT-013,TC-LT-013,Laptop,Business laptop 14in (performance),"14in, Intel Core Ultra 7, 32 GB RAM, 1 TB NVMe, TPM 2.0, Win 11 Pro",alexandros.pappas,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
+TC-LT-014,TC-LT-014,Laptop,Business laptop 14in (performance),"14in, Intel Core Ultra 7, 32 GB RAM, 1 TB NVMe, TPM 2.0, Win 11 Pro",vasiliki.tsoukala,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
+TC-LT-015,TC-LT-015,Laptop,Business laptop 14in (performance),"14in, Intel Core Ultra 7, 32 GB RAM, 1 TB NVMe, TPM 2.0, Win 11 Pro",konstantinos.raptis,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
+TC-LT-016,TC-LT-016,Laptop,Business laptop 14in (performance),"14in, Intel Core Ultra 7, 32 GB RAM, 1 TB NVMe, TPM 2.0, Win 11 Pro",despina.lamprou,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
+TC-LT-017,TC-LT-017,Laptop,Business laptop 14in (performance),"14in, Intel Core Ultra 7, 32 GB RAM, 1 TB NVMe, TPM 2.0, Win 11 Pro",thanos.kyriakou,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
+TC-LT-018,TC-LT-018,Laptop,Business laptop 14in,"14in, Intel Core Ultra 5, 16 GB RAM, 512 GB NVMe, TPM 2.0, Win 11 Pro",anna.christodoulou,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
+TC-LT-019,TC-LT-019,Laptop,Business laptop 14in,"14in, Intel Core Ultra 5, 16 GB RAM, 512 GB NVMe, TPM 2.0, Win 11 Pro",yannis.markou,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
+TC-LT-020,TC-LT-020,Laptop,Business laptop 14in (performance),"14in, Intel Core Ultra 7, 32 GB RAM, 1 TB NVMe, TPM 2.0, Win 11 Pro",eleni.kosta,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
+TC-LT-021,TC-LT-021,Laptop,Business laptop 14in,"14in, Intel Core Ultra 5, 16 GB RAM, 512 GB NVMe, TPM 2.0, Win 11 Pro",Spare,IT store cupboard,20,DHCP,3,Planned,Windows 11 VM
+TC-LT-022,TC-LT-022,Laptop,Business laptop 14in,"14in, Intel Core Ultra 5, 16 GB RAM, 512 GB NVMe, TPM 2.0, Win 11 Pro",Spare,IT store cupboard,20,DHCP,3,Planned,Windows 11 VM
+TC-DCK-001,,Docking station,USB-C / Thunderbolt dock,"100 W PD, 2x DisplayPort, 1GbE, 4x USB",Desk,Desk 01,,,3,Planned,n/a
+TC-DCK-002,,Docking station,USB-C / Thunderbolt dock,"100 W PD, 2x DisplayPort, 1GbE, 4x USB",Desk,Desk 02,,,3,Planned,n/a
+TC-DCK-003,,Docking station,USB-C / Thunderbolt dock,"100 W PD, 2x DisplayPort, 1GbE, 4x USB",Desk,Desk 03,,,3,Planned,n/a
+TC-DCK-004,,Docking station,USB-C / Thunderbolt dock,"100 W PD, 2x DisplayPort, 1GbE, 4x USB",Desk,Desk 04,,,3,Planned,n/a
+TC-DCK-005,,Docking station,USB-C / Thunderbolt dock,"100 W PD, 2x DisplayPort, 1GbE, 4x USB",Desk,Desk 05,,,3,Planned,n/a
+TC-DCK-006,,Docking station,USB-C / Thunderbolt dock,"100 W PD, 2x DisplayPort, 1GbE, 4x USB",Desk,Desk 06,,,3,Planned,n/a
+TC-DCK-007,,Docking station,USB-C / Thunderbolt dock,"100 W PD, 2x DisplayPort, 1GbE, 4x USB",Desk,Desk 07,,,3,Planned,n/a
+TC-DCK-008,,Docking station,USB-C / Thunderbolt dock,"100 W PD, 2x DisplayPort, 1GbE, 4x USB",Desk,Desk 08,,,3,Planned,n/a
+TC-DCK-009,,Docking station,USB-C / Thunderbolt dock,"100 W PD, 2x DisplayPort, 1GbE, 4x USB",Desk,Desk 09,,,3,Planned,n/a
+TC-DCK-010,,Docking station,USB-C / Thunderbolt dock,"100 W PD, 2x DisplayPort, 1GbE, 4x USB",Desk,Desk 10,,,3,Planned,n/a
+TC-DCK-011,,Docking station,USB-C / Thunderbolt dock,"100 W PD, 2x DisplayPort, 1GbE, 4x USB",Desk,Desk 11,,,3,Planned,n/a
+TC-DCK-012,,Docking station,USB-C / Thunderbolt dock,"100 W PD, 2x DisplayPort, 1GbE, 4x USB",Desk,Desk 12,,,3,Planned,n/a
+TC-DCK-013,,Docking station,USB-C / Thunderbolt dock,"100 W PD, 2x DisplayPort, 1GbE, 4x USB",Desk,Desk 13,,,3,Planned,n/a
+TC-DCK-014,,Docking station,USB-C / Thunderbolt dock,"100 W PD, 2x DisplayPort, 1GbE, 4x USB",Desk,Desk 14,,,3,Planned,n/a
+TC-DCK-015,,Docking station,USB-C / Thunderbolt dock,"100 W PD, 2x DisplayPort, 1GbE, 4x USB",Desk,Desk 15,,,3,Planned,n/a
+TC-DCK-016,,Docking station,USB-C / Thunderbolt dock,"100 W PD, 2x DisplayPort, 1GbE, 4x USB",Desk,Desk 16,,,3,Planned,n/a
+TC-DCK-017,,Docking station,USB-C / Thunderbolt dock,"100 W PD, 2x DisplayPort, 1GbE, 4x USB",Desk,Desk 17,,,3,Planned,n/a
+TC-DCK-018,,Docking station,USB-C / Thunderbolt dock,"100 W PD, 2x DisplayPort, 1GbE, 4x USB",Desk,Desk 18,,,3,Planned,n/a
+TC-DCK-019,,Docking station,USB-C / Thunderbolt dock,"100 W PD, 2x DisplayPort, 1GbE, 4x USB",Desk,Desk 19,,,3,Planned,n/a
+TC-DCK-020,,Docking station,USB-C / Thunderbolt dock,"100 W PD, 2x DisplayPort, 1GbE, 4x USB",Desk,Desk 20,,,3,Planned,n/a
+TC-DCK-021,,Docking station,USB-C / Thunderbolt dock,"100 W PD, 2x DisplayPort, 1GbE, 4x USB",Desk,Desk 21,,,3,Planned,n/a
+TC-DCK-022,,Docking station,USB-C / Thunderbolt dock,"100 W PD, 2x DisplayPort, 1GbE, 4x USB",Desk,Desk 22,,,3,Planned,n/a
+TC-DCK-023,,Docking station,USB-C / Thunderbolt dock,"100 W PD, 2x DisplayPort, 1GbE, 4x USB",Desk,Desk 23,,,3,Planned,n/a
+TC-DCK-024,,Docking station,USB-C / Thunderbolt dock,"100 W PD, 2x DisplayPort, 1GbE, 4x USB",Desk,Desk 24,,,3,Planned,n/a
+TC-MON-001,,Monitor,24in IPS monitor,"1920x1080, USB-C, height adjustable",Desk,Desk 01,,,3,Planned,n/a
+TC-MON-002,,Monitor,24in IPS monitor,"1920x1080, USB-C, height adjustable",Desk,Desk 01,,,3,Planned,n/a
+TC-MON-003,,Monitor,24in IPS monitor,"1920x1080, USB-C, height adjustable",Desk,Desk 02,,,3,Planned,n/a
+TC-MON-004,,Monitor,24in IPS monitor,"1920x1080, USB-C, height adjustable",Desk,Desk 02,,,3,Planned,n/a
+TC-MON-005,,Monitor,24in IPS monitor,"1920x1080, USB-C, height adjustable",Desk,Desk 03,,,3,Planned,n/a
+TC-MON-006,,Monitor,24in IPS monitor,"1920x1080, USB-C, height adjustable",Desk,Desk 03,,,3,Planned,n/a
+TC-MON-007,,Monitor,24in IPS monitor,"1920x1080, USB-C, height adjustable",Desk,Desk 04,,,3,Planned,n/a
+TC-MON-008,,Monitor,24in IPS monitor,"1920x1080, USB-C, height adjustable",Desk,Desk 04,,,3,Planned,n/a
+TC-MON-009,,Monitor,24in IPS monitor,"1920x1080, USB-C, height adjustable",Desk,Desk 05,,,3,Planned,n/a
+TC-MON-010,,Monitor,24in IPS monitor,"1920x1080, USB-C, height adjustable",Desk,Desk 05,,,3,Planned,n/a
+TC-MON-011,,Monitor,24in IPS monitor,"1920x1080, USB-C, height adjustable",Desk,Desk 06,,,3,Planned,n/a
+TC-MON-012,,Monitor,24in IPS monitor,"1920x1080, USB-C, height adjustable",Desk,Desk 06,,,3,Planned,n/a
+TC-MON-013,,Monitor,24in IPS monitor,"1920x1080, USB-C, height adjustable",Desk,Desk 07,,,3,Planned,n/a
+TC-MON-014,,Monitor,24in IPS monitor,"1920x1080, USB-C, height adjustable",Desk,Desk 07,,,3,Planned,n/a
+TC-MON-015,,Monitor,24in IPS monitor,"1920x1080, USB-C, height adjustable",Desk,Desk 08,,,3,Planned,n/a
+TC-MON-016,,Monitor,24in IPS monitor,"1920x1080, USB-C, height adjustable",Desk,Desk 08,,,3,Planned,n/a
+TC-MON-017,,Monitor,24in IPS monitor,"1920x1080, USB-C, height adjustable",Desk,Desk 09,,,3,Planned,n/a
+TC-MON-018,,Monitor,24in IPS monitor,"1920x1080, USB-C, height adjustable",Desk,Desk 09,,,3,Planned,n/a
+TC-MON-019,,Monitor,24in IPS monitor,"1920x1080, USB-C, height adjustable",Desk,Desk 10,,,3,Planned,n/a
+TC-MON-020,,Monitor,24in IPS monitor,"1920x1080, USB-C, height adjustable",Desk,Desk 10,,,3,Planned,n/a
+TC-MON-021,,Monitor,24in IPS monitor,"1920x1080, USB-C, height adjustable",Desk,Desk 11,,,3,Planned,n/a
+TC-MON-022,,Monitor,24in IPS monitor,"1920x1080, USB-C, height adjustable",Desk,Desk 11,,,3,Planned,n/a
+TC-MON-023,,Monitor,24in IPS monitor,"1920x1080, USB-C, height adjustable",Desk,Desk 12,,,3,Planned,n/a
+TC-MON-024,,Monitor,24in IPS monitor,"1920x1080, USB-C, height adjustable",Desk,Desk 12,,,3,Planned,n/a
+TC-MON-025,,Monitor,24in IPS monitor,"1920x1080, USB-C, height adjustable",Desk,Desk 13,,,3,Planned,n/a
+TC-MON-026,,Monitor,24in IPS monitor,"1920x1080, USB-C, height adjustable",Desk,Desk 13,,,3,Planned,n/a
+TC-MON-027,,Monitor,24in IPS monitor,"1920x1080, USB-C, height adjustable",Desk,Desk 14,,,3,Planned,n/a
+TC-MON-028,,Monitor,24in IPS monitor,"1920x1080, USB-C, height adjustable",Desk,Desk 14,,,3,Planned,n/a
+TC-MON-029,,Monitor,24in IPS monitor,"1920x1080, USB-C, height adjustable",Desk,Desk 15,,,3,Planned,n/a
+TC-MON-030,,Monitor,24in IPS monitor,"1920x1080, USB-C, height adjustable",Desk,Desk 15,,,3,Planned,n/a
+TC-MON-031,,Monitor,24in IPS monitor,"1920x1080, USB-C, height adjustable",Desk,Desk 16,,,3,Planned,n/a
+TC-MON-032,,Monitor,24in IPS monitor,"1920x1080, USB-C, height adjustable",Desk,Desk 16,,,3,Planned,n/a
+TC-MON-033,,Monitor,24in IPS monitor,"1920x1080, USB-C, height adjustable",Desk,Desk 17,,,3,Planned,n/a
+TC-MON-034,,Monitor,24in IPS monitor,"1920x1080, USB-C, height adjustable",Desk,Desk 17,,,3,Planned,n/a
+TC-MON-035,,Monitor,24in IPS monitor,"1920x1080, USB-C, height adjustable",Desk,Desk 18,,,3,Planned,n/a
+TC-MON-036,,Monitor,24in IPS monitor,"1920x1080, USB-C, height adjustable",Desk,Desk 18,,,3,Planned,n/a
+TC-MON-037,,Monitor,24in IPS monitor,"1920x1080, USB-C, height adjustable",Desk,Desk 19,,,3,Planned,n/a
+TC-MON-038,,Monitor,24in IPS monitor,"1920x1080, USB-C, height adjustable",Desk,Desk 19,,,3,Planned,n/a
+TC-MON-039,,Monitor,24in IPS monitor,"1920x1080, USB-C, height adjustable",Desk,Desk 20,,,3,Planned,n/a
+TC-MON-040,,Monitor,24in IPS monitor,"1920x1080, USB-C, height adjustable",Desk,Desk 20,,,3,Planned,n/a
+TC-MON-041,,Monitor,24in IPS monitor,"1920x1080, USB-C, height adjustable",Desk,Desk 21,,,3,Planned,n/a
+TC-MON-042,,Monitor,24in IPS monitor,"1920x1080, USB-C, height adjustable",Desk,Desk 21,,,3,Planned,n/a
+TC-MON-043,,Monitor,24in IPS monitor,"1920x1080, USB-C, height adjustable",Desk,Desk 22,,,3,Planned,n/a
+TC-MON-044,,Monitor,24in IPS monitor,"1920x1080, USB-C, height adjustable",Desk,Desk 22,,,3,Planned,n/a
+TC-MON-045,,Monitor,24in IPS monitor,"1920x1080, USB-C, height adjustable",Desk,Desk 23,,,3,Planned,n/a
+TC-MON-046,,Monitor,24in IPS monitor,"1920x1080, USB-C, height adjustable",Desk,Desk 23,,,3,Planned,n/a
+TC-MON-047,,Monitor,24in IPS monitor,"1920x1080, USB-C, height adjustable",Desk,Desk 24,,,3,Planned,n/a
+TC-MON-048,,Monitor,24in IPS monitor,"1920x1080, USB-C, height adjustable",Desk,Desk 24,,,3,Planned,n/a
+TC-HS-001,,Headset,Teams-certified USB headset,"Stereo, ANC, USB-A/C",anna.christodoulou,Customer Support desks,,,2,Planned,n/a
+TC-HS-002,,Headset,Teams-certified USB headset,"Stereo, ANC, USB-A/C",yannis.markou,Customer Support desks,,,2,Planned,n/a
+TC-HS-003,,Headset,Teams-certified USB headset,"Stereo, ANC, USB-A/C",Spare,IT store cupboard,,,2,Planned,n/a
+TC-HS-004,,Headset,Teams-certified USB headset,"Stereo, ANC, USB-A/C",Spare,IT store cupboard,,,2,Planned,n/a
+TC-MR-001,,Meeting room kit,Teams Rooms video bar + 55in display,"4K camera, mic array, HDMI/USB-C ingest",Shared,Meeting Room 1,20,DHCP reservation,3,Planned,n/a
+TC-MR-002,,Meeting room kit,Teams Rooms video bar + 55in display,"4K camera, mic array, HDMI/USB-C ingest",Shared,Meeting Room 2,20,DHCP reservation,3,Planned,n/a
