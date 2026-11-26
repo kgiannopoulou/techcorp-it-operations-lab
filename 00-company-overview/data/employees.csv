@@ -1,21 +1,21 @@
 EmployeeID,FirstName,LastName,Username,Department,JobTitle,Manager,WorkModel,DeviceTier,AssetTag
-E001,Andreas,Konstantinou,andreas.konstantinou,Management,Chief Executive Officer,,Hybrid,Standard,TC-LT-001
-E002,Sofia,Dimitriou,sofia.dimitriou,Management,Operations Manager,andreas.konstantinou,Office,Standard,TC-LT-002
-E003,Giorgos,Alexiou,giorgos.alexiou,Finance,Finance Manager,andreas.konstantinou,Office,Standard,TC-LT-003
-E004,Katerina,Vlachou,katerina.vlachou,Finance,Accountant,giorgos.alexiou,Office,Standard,TC-LT-004
-E005,Petros,Nikolaidis,petros.nikolaidis,Finance,Payroll & Accounts Officer,giorgos.alexiou,Office,Standard,TC-LT-005
-E006,Maria,Papadaki,maria.papadaki,Human Resources,HR Manager,sofia.dimitriou,Hybrid,Standard,TC-LT-006
-E007,Ioanna,Stavrou,ioanna.stavrou,Human Resources,HR & Office Coordinator,maria.papadaki,Office,Standard,TC-LT-007
-E008,Dimitris,Antoniou,dimitris.antoniou,Sales & Marketing,Sales & Marketing Manager,andreas.konstantinou,Hybrid,Standard,TC-LT-008
-E009,Christina,Makri,christina.makri,Sales & Marketing,Account Executive,dimitris.antoniou,Hybrid,Standard,TC-LT-009
-E010,Nikos,Georgiou,nikos.georgiou,Sales & Marketing,Account Executive,dimitris.antoniou,Hybrid,Standard,TC-LT-010
-E011,Eleftheria,Zografou,eleftheria.zografou,Sales & Marketing,Marketing Specialist,dimitris.antoniou,Hybrid,Creative,TC-LT-011
-E012,Stavros,Karras,stavros.karras,Sales & Marketing,Business Development Representative,dimitris.antoniou,Hybrid,Standard,TC-LT-012
-E013,Alexandros,Pappas,alexandros.pappas,Software Development,Development Team Lead,andreas.konstantinou,Hybrid,Developer,TC-LT-013
-E014,Vasiliki,Tsoukala,vasiliki.tsoukala,Software Development,Senior Software Developer,alexandros.pappas,Hybrid,Developer,TC-LT-014
-E015,Konstantinos,Raptis,konstantinos.raptis,Software Development,Software Developer,alexandros.pappas,Hybrid,Developer,TC-LT-015
-E016,Despina,Lamprou,despina.lamprou,Software Development,Software Developer,alexandros.pappas,Hybrid,Developer,TC-LT-016
-E017,Thanos,Kyriakou,thanos.kyriakou,Software Development,QA Engineer,alexandros.pappas,Hybrid,Developer,TC-LT-017
-E018,Anna,Christodoulou,anna.christodoulou,Customer Support,Customer Support Lead,sofia.dimitriou,Office,Standard,TC-LT-018
-E019,Yannis,Markou,yannis.markou,Customer Support,Customer Support Specialist,anna.christodoulou,Office,Standard,TC-LT-019
-E020,Eleni,Kosta,eleni.kosta,IT,IT Specialist,sofia.dimitriou,Office,IT,TC-LT-020
+E001,Erwin,Smith,erwin.smith,Management,Chief Executive Officer,,Hybrid,Standard,TC-LT-001
+E002,Hange,Zoe,hange.zoe,Management,Operations Manager,erwin.smith,Office,Standard,TC-LT-002
+E003,Dot,Pixis,dot.pixis,Finance,Finance Manager,erwin.smith,Office,Standard,TC-LT-003
+E004,Nile,Dok,nile.dok,Finance,Accountant,dot.pixis,Office,Standard,TC-LT-004
+E005,Hitch,Dreyse,hitch.dreyse,Finance,Payroll & Accounts Officer,dot.pixis,Office,Standard,TC-LT-005
+E006,Historia,Reiss,historia.reiss,Human Resources,HR Manager,hange.zoe,Hybrid,Standard,TC-LT-006
+E007,Sasha,Blouse,sasha.blouse,Human Resources,HR & Office Coordinator,historia.reiss,Office,Standard,TC-LT-007
+E008,Jean,Kirstein,jean.kirstein,Sales & Marketing,Sales & Marketing Manager,erwin.smith,Hybrid,Standard,TC-LT-008
+E009,Connie,Springer,connie.springer,Sales & Marketing,Account Executive,jean.kirstein,Hybrid,Standard,TC-LT-009
+E010,Reiner,Braun,reiner.braun,Sales & Marketing,Account Executive,jean.kirstein,Hybrid,Standard,TC-LT-010
+E011,Pieck,Finger,pieck.finger,Sales & Marketing,Marketing Specialist,jean.kirstein,Hybrid,Creative,TC-LT-011
+E012,Bertolt,Hoover,bertolt.hoover,Sales & Marketing,Business Development Representative,jean.kirstein,Hybrid,Standard,TC-LT-012
+E013,Levi,Ackerman,levi.ackerman,Software Development,Development Team Lead,erwin.smith,Hybrid,Developer,TC-LT-013
+E014,Armin,Arlert,armin.arlert,Software Development,Senior Software Developer,levi.ackerman,Hybrid,Developer,TC-LT-014
+E015,Mikasa,Ackerman,mikasa.ackerman,Software Development,Software Developer,levi.ackerman,Hybrid,Developer,TC-LT-015
+E016,Annie,Leonhart,annie.leonhart,Software Development,Software Developer,levi.ackerman,Hybrid,Developer,TC-LT-016
+E017,Porco,Galliard,porco.galliard,Software Development,QA Engineer,levi.ackerman,Hybrid,Developer,TC-LT-017
+E018,Petra,Ral,petra.ral,Customer Support,Customer Support Lead,hange.zoe,Office,Standard,TC-LT-018
+E019,Oluo,Bozado,oluo.bozado,Customer Support,Customer Support Specialist,petra.ral,Office,Standard,TC-LT-019
+E020,Eren,Yeager,eren.yeager,IT,IT Specialist,hange.zoe,Office,IT,TC-LT-020

@@ -10,7 +10,7 @@
 ## 1. Role summary
 
 **Job title:** IT Specialist (sole IT staff member)
-**Reports to:** Sofia Dimitriou, Operations Manager
+**Reports to:** Hange Zoe, Operations Manager
 **Hours:** Mon–Fri 08:30–17:30, on-site
 
 > Plan, deploy, secure, support and document all IT systems used by TechCorp's

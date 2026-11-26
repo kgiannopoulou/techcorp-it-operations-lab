@@ -24,10 +24,10 @@ know what the device is, and from a group name you should know what it grants.
 
 | Account type | Format | Example |
 |---|---|---|
-| Standard user (`sAMAccountName`) | `firstname.lastname` (max 20 chars) | `maria.papadaki` |
-| Name collision | `firstname.m.lastname` (middle initial) | `nikos.a.georgiou` |
-| E-mail / UPN | `firstname.lastname@techcorp.example` | `maria.papadaki@techcorp.example` |
-| Privileged admin account | `adm-firstname.lastname` | `adm-eleni.kosta` |
+| Standard user (`sAMAccountName`) | `firstname.lastname` (max 20 chars) | `historia.reiss` |
+| Name collision | `firstname.m.lastname` (middle initial) | `mikasa.k.ackerman` |
+| E-mail / UPN | `firstname.lastname@techcorp.example` | `historia.reiss@techcorp.example` |
+| Privileged admin account | `adm-firstname.lastname` | `adm-eren.yeager` |
 | Service account | `svc-<application>` | `svc-backup` |
 | Break-glass (cloud only) | `bg-admin01@techcorpsolutions.onmicrosoft.com` | – |
 | Shared mailbox | `<function>@techcorp.example` | `support@`, `accounts@`, `info@` |

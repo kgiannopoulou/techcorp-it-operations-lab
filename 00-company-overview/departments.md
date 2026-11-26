@@ -14,14 +14,14 @@ tables below summarise it; if they disagree, the CSV wins (CI checks the counts)
 
 ```mermaid
 flowchart TD
-    CEO["Andreas Konstantinou<br/>CEO"]
-    OPS["Sofia Dimitriou<br/>Operations Manager"]
-    FIN["Finance (3)<br/>Giorgos Alexiou"]
-    SAL["Sales & Marketing (5)<br/>Dimitris Antoniou"]
-    DEV["Software Development (5)<br/>Alexandros Pappas"]
-    HR["Human Resources (2)<br/>Maria Papadaki"]
-    SUP["Customer Support (2)<br/>Anna Christodoulou"]
-    IT["IT (1)<br/>Eleni Kosta – IT Specialist"]
+    CEO["Erwin Smith<br/>CEO"]
+    OPS["Hange Zoe<br/>Operations Manager"]
+    FIN["Finance (3)<br/>Dot Pixis"]
+    SAL["Sales & Marketing (5)<br/>Jean Kirstein"]
+    DEV["Software Development (5)<br/>Levi Ackerman"]
+    HR["Human Resources (2)<br/>Historia Reiss"]
+    SUP["Customer Support (2)<br/>Petra Ral"]
+    IT["IT (1)<br/>Eren Yeager – IT Specialist"]
 
     CEO --> OPS
     CEO --> FIN
@@ -95,25 +95,25 @@ flowchart TD
 
 | ID | Name | Username | Department | Job title | Work model | Device tier | Laptop |
 |---|---|---|---|---|---|---|---|
-| E001 | Andreas Konstantinou | andreas.konstantinou | Management | Chief Executive Officer | Hybrid | Standard | TC-LT-001 |
-| E002 | Sofia Dimitriou | sofia.dimitriou | Management | Operations Manager | Office | Standard | TC-LT-002 |
-| E003 | Giorgos Alexiou | giorgos.alexiou | Finance | Finance Manager | Office | Standard | TC-LT-003 |
-| E004 | Katerina Vlachou | katerina.vlachou | Finance | Accountant | Office | Standard | TC-LT-004 |
-| E005 | Petros Nikolaidis | petros.nikolaidis | Finance | Payroll & Accounts Officer | Office | Standard | TC-LT-005 |
-| E006 | Maria Papadaki | maria.papadaki | Human Resources | HR Manager | Hybrid | Standard | TC-LT-006 |
-| E007 | Ioanna Stavrou | ioanna.stavrou | Human Resources | HR & Office Coordinator | Office | Standard | TC-LT-007 |
-| E008 | Dimitris Antoniou | dimitris.antoniou | Sales & Marketing | Sales & Marketing Manager | Hybrid | Standard | TC-LT-008 |
-| E009 | Christina Makri | christina.makri | Sales & Marketing | Account Executive | Hybrid | Standard | TC-LT-009 |
-| E010 | Nikos Georgiou | nikos.georgiou | Sales & Marketing | Account Executive | Hybrid | Standard | TC-LT-010 |
-| E011 | Eleftheria Zografou | eleftheria.zografou | Sales & Marketing | Marketing Specialist | Hybrid | Creative | TC-LT-011 |
-| E012 | Stavros Karras | stavros.karras | Sales & Marketing | Business Development Representative | Hybrid | Standard | TC-LT-012 |
-| E013 | Alexandros Pappas | alexandros.pappas | Software Development | Development Team Lead | Hybrid | Developer | TC-LT-013 |
-| E014 | Vasiliki Tsoukala | vasiliki.tsoukala | Software Development | Senior Software Developer | Hybrid | Developer | TC-LT-014 |
-| E015 | Konstantinos Raptis | konstantinos.raptis | Software Development | Software Developer | Hybrid | Developer | TC-LT-015 |
-| E016 | Despina Lamprou | despina.lamprou | Software Development | Software Developer | Hybrid | Developer | TC-LT-016 |
-| E017 | Thanos Kyriakou | thanos.kyriakou | Software Development | QA Engineer | Hybrid | Developer | TC-LT-017 |
-| E018 | Anna Christodoulou | anna.christodoulou | Customer Support | Customer Support Lead | Office | Standard | TC-LT-018 |
-| E019 | Yannis Markou | yannis.markou | Customer Support | Customer Support Specialist | Office | Standard | TC-LT-019 |
-| E020 | Eleni Kosta | eleni.kosta | IT | IT Specialist *(the role played in this lab)* | Office | IT | TC-LT-020 |
+| E001 | Erwin Smith | erwin.smith | Management | Chief Executive Officer | Hybrid | Standard | TC-LT-001 |
+| E002 | Hange Zoe | hange.zoe | Management | Operations Manager | Office | Standard | TC-LT-002 |
+| E003 | Dot Pixis | dot.pixis | Finance | Finance Manager | Office | Standard | TC-LT-003 |
+| E004 | Nile Dok | nile.dok | Finance | Accountant | Office | Standard | TC-LT-004 |
+| E005 | Hitch Dreyse | hitch.dreyse | Finance | Payroll & Accounts Officer | Office | Standard | TC-LT-005 |
+| E006 | Historia Reiss | historia.reiss | Human Resources | HR Manager | Hybrid | Standard | TC-LT-006 |
+| E007 | Sasha Blouse | sasha.blouse | Human Resources | HR & Office Coordinator | Office | Standard | TC-LT-007 |
+| E008 | Jean Kirstein | jean.kirstein | Sales & Marketing | Sales & Marketing Manager | Hybrid | Standard | TC-LT-008 |
+| E009 | Connie Springer | connie.springer | Sales & Marketing | Account Executive | Hybrid | Standard | TC-LT-009 |
+| E010 | Reiner Braun | reiner.braun | Sales & Marketing | Account Executive | Hybrid | Standard | TC-LT-010 |
+| E011 | Pieck Finger | pieck.finger | Sales & Marketing | Marketing Specialist | Hybrid | Creative | TC-LT-011 |
+| E012 | Bertolt Hoover | bertolt.hoover | Sales & Marketing | Business Development Representative | Hybrid | Standard | TC-LT-012 |
+| E013 | Levi Ackerman | levi.ackerman | Software Development | Development Team Lead | Hybrid | Developer | TC-LT-013 |
+| E014 | Armin Arlert | armin.arlert | Software Development | Senior Software Developer | Hybrid | Developer | TC-LT-014 |
+| E015 | Mikasa Ackerman | mikasa.ackerman | Software Development | Software Developer | Hybrid | Developer | TC-LT-015 |
+| E016 | Annie Leonhart | annie.leonhart | Software Development | Software Developer | Hybrid | Developer | TC-LT-016 |
+| E017 | Porco Galliard | porco.galliard | Software Development | QA Engineer | Hybrid | Developer | TC-LT-017 |
+| E018 | Petra Ral | petra.ral | Customer Support | Customer Support Lead | Office | Standard | TC-LT-018 |
+| E019 | Oluo Bozado | oluo.bozado | Customer Support | Customer Support Specialist | Office | Standard | TC-LT-019 |
+| E020 | Eren Yeager | eren.yeager | IT | IT Specialist *(the role played in this lab)* | Office | IT | TC-LT-020 |
 
-All names are fictional. E-mail = `<username>@techcorp.example`.
+The cast is borrowed from the characters of the anime *Attack on Titan* (names only, used as a fun fictional cast – no affiliation). E-mail = `<username>@techcorp.example`. Two people share the surname Ackerman, which is why usernames are always `firstname.lastname` and never just the surname.
