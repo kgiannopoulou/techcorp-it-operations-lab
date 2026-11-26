@@ -1,0 +1,21 @@
+EmployeeID,FirstName,LastName,Username,Department,JobTitle,Manager,WorkModel,DeviceTier,AssetTag
+E001,Andreas,Konstantinou,andreas.konstantinou,Management,Chief Executive Officer,,Hybrid,Standard,TC-LT-001
+E002,Sofia,Dimitriou,sofia.dimitriou,Management,Operations Manager,andreas.konstantinou,Office,Standard,TC-LT-002
+E003,Giorgos,Alexiou,giorgos.alexiou,Finance,Finance Manager,andreas.konstantinou,Office,Standard,TC-LT-003
+E004,Katerina,Vlachou,katerina.vlachou,Finance,Accountant,giorgos.alexiou,Office,Standard,TC-LT-004
+E005,Petros,Nikolaidis,petros.nikolaidis,Finance,Payroll & Accounts Officer,giorgos.alexiou,Office,Standard,TC-LT-005
+E006,Maria,Papadaki,maria.papadaki,Human Resources,HR Manager,sofia.dimitriou,Hybrid,Standard,TC-LT-006
+E007,Ioanna,Stavrou,ioanna.stavrou,Human Resources,HR & Office Coordinator,maria.papadaki,Office,Standard,TC-LT-007
+E008,Dimitris,Antoniou,dimitris.antoniou,Sales & Marketing,Sales & Marketing Manager,andreas.konstantinou,Hybrid,Standard,TC-LT-008
+E009,Christina,Makri,christina.makri,Sales & Marketing,Account Executive,dimitris.antoniou,Hybrid,Standard,TC-LT-009
+E010,Nikos,Georgiou,nikos.georgiou,Sales & Marketing,Account Executive,dimitris.antoniou,Hybrid,Standard,TC-LT-010
+E011,Eleftheria,Zografou,eleftheria.zografou,Sales & Marketing,Marketing Specialist,dimitris.antoniou,Hybrid,Creative,TC-LT-011
+E012,Stavros,Karras,stavros.karras,Sales & Marketing,Business Development Representative,dimitris.antoniou,Hybrid,Standard,TC-LT-012
+E013,Alexandros,Pappas,alexandros.pappas,Software Development,Development Team Lead,andreas.konstantinou,Hybrid,Developer,TC-LT-013
+E014,Vasiliki,Tsoukala,vasiliki.tsoukala,Software Development,Senior Software Developer,alexandros.pappas,Hybrid,Developer,TC-LT-014
+E015,Konstantinos,Raptis,konstantinos.raptis,Software Development,Software Developer,alexandros.pappas,Hybrid,Developer,TC-LT-015
+E016,Despina,Lamprou,despina.lamprou,Software Development,Software Developer,alexandros.pappas,Hybrid,Developer,TC-LT-016
+E017,Thanos,Kyriakou,thanos.kyriakou,Software Development,QA Engineer,alexandros.pappas,Hybrid,Developer,TC-LT-017
+E018,Anna,Christodoulou,anna.christodoulou,Customer Support,Customer Support Lead,sofia.dimitriou,Office,Standard,TC-LT-018
+E019,Yannis,Markou,yannis.markou,Customer Support,Customer Support Specialist,anna.christodoulou,Office,Standard,TC-LT-019
+E020,Eleni,Kosta,eleni.kosta,IT,IT Specialist,sofia.dimitriou,Office,IT,TC-LT-020
