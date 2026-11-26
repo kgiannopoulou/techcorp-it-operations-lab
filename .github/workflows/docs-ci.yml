@@ -19,6 +19,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Validate CSV data and internal links
+      - name: Validate CSV data, switch config and internal links
         shell: pwsh
         run: ./.github/scripts/Test-RepoData.ps1
+
+  powershell:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: PSScriptAnalyzer (errors and warnings)
+        shell: pwsh
+        run: |
+          Install-Module PSScriptAnalyzer -Force -Scope CurrentUser
+          $issues = Invoke-ScriptAnalyzer -Path . -Recurse -Severity Error, Warning -ExcludeRule PSAvoidUsingWriteHost
+          $issues | Format-Table -AutoSize
+          if ($issues) { throw "$($issues.Count) PSScriptAnalyzer finding(s)" }
+      - name: Subnet calculator self-test
+        shell: pwsh
+        run: ./07-powershell/network-diagnostics/Get-SubnetInfo.ps1 -SelfTest

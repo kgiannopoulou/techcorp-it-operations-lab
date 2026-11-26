@@ -4,7 +4,7 @@
 |---|---|
 | Document ID | DEP-REF-001 |
 | Owner | IT Specialist |
-| Sponsor | Sofia Dimitriou, Operations Manager |
+| Sponsor | Hange Zoe, Operations Manager |
 | Status | Approved |
 | Last reviewed | 2026-11-26 |
 | Related requirements | BR-01 – BR-33 (all), especially BR-33 |
@@ -44,7 +44,7 @@ gantt
 
     section 2 Build (lab / staging)
     Firewall + switch config in staging     :b1, 2027-01-11, 4d
-    Hyper-V host, DCs, DNS, DHCP            :b2, 2027-01-13, 5d
+    Hyper-V host, DCs, AD DNS               :b2, 2027-01-13, 5d
     AD structure, GPO, file server          :b3, after b2, 4d
     Entra Connect, M365 config, Intune      :b4, after b3, 4d
 

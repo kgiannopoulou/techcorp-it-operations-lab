@@ -1,0 +1,111 @@
+! =====================================================================
+! SW1-LAB - Packet Tracer 2960-24TT stand-in for TC-SW01
+! Paste in: enable -> configure terminal
+! Secrets are examples for the lab only - never reuse them
+! =====================================================================
+hostname SW1-LAB
+no ip domain-lookup
+ip domain-name corp.techcorp.example
+service password-encryption
+enable secret Lab-Only-Change-Me
+username netadmin privilege 15 secret Lab-Only-Change-Me
+!
+vtp mode transparent
+vlan 10
+ name VLAN10-MGMT
+vlan 20
+ name VLAN20-STAFF
+vlan 30
+ name VLAN30-SERVERS
+vlan 40
+ name VLAN40-PRINTERS
+vlan 50
+ name VLAN50-GUEST
+vlan 999
+ name VLAN999-PARKING
+!
+spanning-tree mode rapid-pvst
+spanning-tree vlan 10,20,30,40,50,999 priority 4096
+!
+interface range FastEthernet0/1 - 2
+ description STAFF desk (PC-STAFF1/2)
+ switchport mode access
+ switchport access vlan 20
+ switchport nonegotiate
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface range FastEthernet0/3 - 4
+ description SERVERS (DC01-SIM, FS01-SIM)
+ switchport mode access
+ switchport access vlan 30
+ switchport nonegotiate
+ spanning-tree portfast
+!
+interface FastEthernet0/5
+ description PRINTERS (PRN01-SIM)
+ switchport mode access
+ switchport access vlan 40
+ switchport nonegotiate
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet0/6
+ description GUEST laptop (stand-in for Wi-Fi guest)
+ switchport mode access
+ switchport access vlan 50
+ switchport nonegotiate
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet0/7
+ description MGMT IT admin PC
+ switchport mode access
+ switchport access vlan 10
+ switchport nonegotiate
+ spanning-tree portfast
+!
+interface range FastEthernet0/8 - 24
+ description UNUSED - parked
+ switchport mode access
+ switchport access vlan 999
+ shutdown
+!
+interface GigabitEthernet0/1
+ description UPLINK R1-FW trunk
+ switchport mode trunk
+ switchport trunk native vlan 999
+ switchport trunk allowed vlan 10,20,30,40,50
+ switchport nonegotiate
+!
+interface GigabitEthernet0/2
+ description UNUSED
+ switchport mode access
+ switchport access vlan 999
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan10
+ description Management SVI
+ ip address 10.10.10.2 255.255.255.0
+ no shutdown
+!
+ip default-gateway 10.10.10.1
+!
+access-list 10 permit 10.10.10.0 0.0.0.255
+line vty 0 15
+ access-class 10 in
+ login local
+ transport input ssh
+line con 0
+ login local
+ logging synchronous
+!
+end
+! After pasting, in global config:
+!   crypto key generate rsa general-keys modulus 2048
+!   ip ssh version 2
+! Then: copy running-config startup-config

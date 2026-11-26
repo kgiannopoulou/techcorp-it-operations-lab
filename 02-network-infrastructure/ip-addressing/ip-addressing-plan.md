@@ -4,7 +4,7 @@
 |---|---|
 | Document ID | NET-REF-002 |
 | Owner | IT Specialist |
-| Status | Approved (design) – to be built in Phase 1 |
+| Status | Approved – v1.1 (Milestone 4: DHCP moved to firewall) |
 | Last reviewed | 2026-11-26 |
 | Related requirements | BR-05, BR-09, BR-15, BR-19 |
 
@@ -31,8 +31,8 @@ CI checks that every static IP sits inside its VLAN's subnet and is unique.
 
 | VLAN | Name | Subnet | Gateway | DHCP | Usable hosts | Purpose |
 |---:|---|---|---|---|---:|---|
-| 10 | MGMT | 10.10.10.0/24 | 10.10.10.1 | DCs via relay, `.100–.150` | 254 | Switch, APs, UPS, iDRAC, IT service port |
-| 20 | STAFF | 10.10.20.0/24 | 10.10.20.1 | DCs via relay, `.50–.240` | 254 | Laptops (wired and SSID `TechCorp`), meeting rooms |
+| 10 | MGMT | 10.10.10.0/24 | 10.10.10.1 | Firewall, `.100–.150` | 254 | Switch, APs, UPS, iDRAC, IT service port |
+| 20 | STAFF | 10.10.20.0/24 | 10.10.20.1 | Firewall, `.50–.240` | 254 | Laptops (wired and SSID `TechCorp`), meeting rooms |
 | 30 | SERVERS | 10.10.30.0/24 | 10.10.30.1 | none – static | 254 | TC-HV01, TC-DC01/02, TC-FS01, TC-NAS01 |
 | 40 | PRINTERS | 10.10.40.0/24 | 10.10.40.1 | none – static | 254 | TC-PRN01, TC-PRN02 |
 | 50 | GUEST | 10.10.50.0/24 | 10.10.50.1 | Firewall, `.50–.250` | 254 | SSID `TechCorp-Guest`, internet only, client isolation |
@@ -52,8 +52,8 @@ CI checks that every static IP sits inside its VLAN's subnet and is unique.
 | TC-AP01 / AP02 / AP03 | 10 | 10.10.10.11 / .12 / .13 | Management IP; SSIDs bridged to VLAN 20/50 |
 | TC-HV01 iDRAC/iLO | 10 | 10.10.10.20 | Out-of-band management |
 | TC-HV01 (host OS) | 30 | 10.10.30.10 | Hyper-V host |
-| TC-DC01 | 30 | 10.10.30.11 | AD DS, DNS, DHCP (primary) |
-| TC-DC02 | 30 | 10.10.30.12 | AD DS, DNS, DHCP (failover partner) |
+| TC-DC01 | 30 | 10.10.30.11 | AD DS, DNS (primary) |
+| TC-DC02 | 30 | 10.10.30.12 | AD DS, DNS (secondary) |
 | TC-FS01 | 30 | 10.10.30.20 | File server, DFS namespace |
 | TC-NAS01 | 30 | 10.10.30.30 | Backup target |
 | TC-PRN01 | 40 | 10.10.40.10 | Open-plan MFP |
@@ -65,13 +65,15 @@ CI checks that every static IP sits inside its VLAN's subnet and is unique.
 | Option | VLAN 10 / 20 | VLAN 50 (guest) |
 |---|---|---|
 | 003 Router | 10.10.x.1 | 10.10.50.1 |
-| 006 DNS servers | 10.10.30.11, 10.10.30.12 | 10.10.50.1 (firewall resolver → public DNS) |
+| 006 DNS servers | 10.10.x.1 until Phase 2, then 10.10.30.11, 10.10.30.12 | 10.10.50.1 (firewall resolver → public DNS) |
 | 015 DNS domain | `corp.techcorp.example` | – |
 | Lease time | 8 days (laptops) | 4 hours |
 
-DHCP for VLAN 10 and 20 is provided by the domain controllers with **DHCP
-failover** (load-balance 50/50); the firewall relays requests (`ip helper`
-equivalent). Guests never see internal DNS.
+DHCP for **all** VLANs is served by the firewall (TC-FW01, Kea DHCP). The
+original design had the domain controllers serving VLAN 10/20 through a DHCP
+relay; this was changed in Milestone 4 – see
+[change record NET-CHG-001](../dhcp/dhcp-configuration.md#design-change-net-chg-001).
+Guests never see internal DNS.
 
 ## 5. Inter-VLAN policy (summary)
 

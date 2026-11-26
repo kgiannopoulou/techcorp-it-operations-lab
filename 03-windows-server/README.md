@@ -13,6 +13,6 @@ Installing and operating Windows Server 2025 on TC-HV01: Active Directory, DNS, 
 | `users-and-groups/` | OU design, AGDLP groups, bulk creation from `employees.csv` |
 | `group-policy/` | Baseline GPOs, BitLocker, LAPS, drive and printer mappings |
 | `dns/` | AD-integrated zones, forwarders, scavenging |
-| `dhcp/` | Scopes, reservations, DHCP failover |
+| `dhcp/` | DHCP Server role as an exercise (production DHCP runs on the firewall – see NET-CHG-001) |
 | `file-services/` | Shares, DFS namespace, quotas, shadow copies |
 | `permissions/` | NTFS vs share permissions, effective access |

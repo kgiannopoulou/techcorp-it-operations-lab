@@ -40,3 +40,7 @@ desktop.ini
 
 # --- Tooling ---
 node_modules/
+
+# --- Network device backups (contain password hashes) ---
+config*.xml
+*.pkt.bak

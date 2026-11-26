@@ -23,7 +23,10 @@ in the lab with evidence** in `15-documentation/screenshots/`.
 - [x] Workstation standard and build checklist – [workstation-deployment](workstation-deployment/)
 - [x] Deployment plan, cut-over and risks – [deployment-plan.md](planning/deployment-plan.md)
 
-## 2. Network (Phase 1)
+## 2. Network (Phase 1 / M4)
+
+Procedures for every item: [02-network-infrastructure](../02-network-infrastructure/). Verify with
+`Test-TechCorpNetwork.ps1` from each VLAN.
 
 - [ ] Firewall installed, WAN1 + WAN2 failover tested
 - [ ] VLANs 10/20/30/40/50/999 created; trunk to firewall working
@@ -37,7 +40,7 @@ in the lab with evidence** in `15-documentation/screenshots/`.
 
 - [ ] TC-HV01 installed, RAID healthy, iDRAC on VLAN 10
 - [ ] TC-DC01 and TC-DC02 promoted; replication healthy (`repadmin /replsummary`)
-- [ ] DNS zones and forwarders; DHCP scopes with failover
+- [ ] AD DNS zones, forwarders to TC-FW01, DHCP option 6 switched to the DCs
 - [ ] OU structure, groups (AGDLP), 20 user accounts from `employees.csv`
 - [ ] Baseline GPOs linked and verified with `gpresult`
 - [ ] TC-FS01 shares + NTFS permissions per department; DFS namespace

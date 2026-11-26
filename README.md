@@ -5,7 +5,7 @@
 > the IT operations manual I am building as I set up and run its environment.
 
 [![Docs CI](https://github.com/kgiannopoulou/techcorp-it-operations-lab/actions/workflows/docs-ci.yml/badge.svg)](https://github.com/kgiannopoulou/techcorp-it-operations-lab/actions/workflows/docs-ci.yml)
-![Status](https://img.shields.io/badge/status-Milestone%203%20complete-blue)
+![Status](https://img.shields.io/badge/status-Milestone%204%20docs%20complete-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
 | 20 | 12 | 100+ | 1 |
@@ -32,19 +32,19 @@ Full details: [00-company-overview](00-company-overview/).
 |---|---|---|
 | [00-company-overview](00-company-overview/) | Company profile, departments, employees, requirements, IT responsibilities | ✅ Milestone 2 |
 | [01-office-deployment](01-office-deployment/) | Office plan, equipment inventory, cabling, workstation standard, deployment checklist | ✅ Milestone 3 |
-| [02-network-infrastructure](02-network-infrastructure/) | Technical guides: topology, IP plan, VLANs, switching, routing, DHCP, DNS, firewall | 🟡 Design started |
+| [02-network-infrastructure](02-network-infrastructure/) | Technical guides: topology, IP plan, subnetting, VLANs, switching, routing, firewall, DHCP, DNS, lab | 🟡 Milestone 4 – lab evidence pending |
 | [03-windows-server](03-windows-server/) | Windows Server, Active Directory, GPO, file services, permissions | ⏳ Planned |
 | [04-endpoint-management](04-endpoint-management/) | Windows 11, software, drivers, printers, peripherals | ⏳ Planned |
 | [05-microsoft-365](05-microsoft-365/) | Entra ID, Exchange Online, Teams, SharePoint, OneDrive, Intune | ⏳ Planned |
 | [06-helpdesk](06-helpdesk/) | Ticketing process and user-support procedures | ⏳ Planned |
-| [07-powershell](07-powershell/) | Automation scripts for users, diagnostics and reporting | ⏳ Planned |
+| [07-powershell](07-powershell/) | Automation scripts for users, diagnostics and reporting | 🟡 Network diagnostics |
 | [08-cybersecurity](08-cybersecurity/) | Endpoint protection, access control, phishing, incident response | ⏳ Planned |
 | [09-backup-disaster-recovery](09-backup-disaster-recovery/) | Backup strategy, restore tests, recovery procedures | ⏳ Planned |
 | [10-monitoring-maintenance](10-monitoring-maintenance/) | Network / server monitoring, health checks | ⏳ Planned |
 | [11-it-asset-management](11-it-asset-management/) | Hardware inventory lifecycle, licences, warranties | ⏳ Planned |
 | [12-policies-procedures](12-policies-procedures/) | Onboarding, offboarding, access management, AUP, change management | ⏳ Planned |
 | [13-maintenance-calendar](13-maintenance-calendar/) | Daily / weekly / monthly / quarterly / yearly tasks | ⏳ Planned |
-| [14-scenarios](14-scenarios/) | Practical support challenges, solved and written up | ⏳ Planned |
+| [14-scenarios](14-scenarios/) | Practical support challenges, solved and written up | 🟡 5 designed |
 | [15-documentation](15-documentation/) | Standards, templates, diagrams, screenshots, glossary, lessons learned | ✅ Milestone 1 |
 | [16-reports](16-reports/) | Deployment, incident and maintenance reports | ⏳ Planned |
 
@@ -71,14 +71,17 @@ See [ROADMAP.md](ROADMAP.md) for the full plan and exit criteria.
 | M1 | Repository foundation – structure, README, licence, documentation standards, templates, CI | ✅ Done |
 | M2 | Company simulation – company, departments, employees, requirements, IT responsibilities | ✅ Done |
 | M3 | Office deployment – inventory, equipment, topology, IP plan, workstation standard, deployment plan | ✅ Done |
-| M4+ | Training phases 1–12 (networking lab → Windows Server → … → capstone) | ⏳ Next |
+| M4 | Network infrastructure – IP addressing, VLANs, DHCP, DNS, switching, routing, firewall rules, lab, scripts, scenarios | 🟡 Docs done, lab evidence pending |
+| M5+ | Training phases 2–12 (Windows Server → … → capstone) | ⏳ Next |
 
 ## How the lab is built
 
 TechCorp is simulated, but the work is real. Every piece of production
-equipment in the inventory has a **lab equivalent** (a Hyper-V / VirtualBox VM,
+equipment in the inventory has a **lab equivalent** (a VirtualBox VM,
 pfSense, a Microsoft 365 developer/trial tenant, Packet Tracer for switching),
-so each procedure can be performed and evidenced on a single PC.
+so each procedure can be performed and evidenced on a single Windows 11 Home PC
+(no Hyper-V there, so the lab runs on VirtualBox – see
+[lab-environment.md](02-network-infrastructure/topology/lab-environment.md)).
 Screenshots and outputs are only added once a task has actually been carried
 out in the lab – nothing in `15-documentation/screenshots/` is mocked up.
 
@@ -89,7 +92,7 @@ out in the lab – nothing in `15-documentation/screenshots/` is mocked up.
 - Every document follows
   [15-documentation/standards/documentation-standards.md](15-documentation/standards/documentation-standards.md)
   and starts from a template in [15-documentation/templates](15-documentation/templates/).
-- The domain `techcorp.example` and all people in this repository are fictional
+- The domain `techcorp.example` is fictional, and employees are named after *Attack on Titan* characters (names only, no affiliation)
   (`.example` is reserved by RFC 2606 for documentation).
 - No real credentials, licence keys or personal data are ever committed.
 

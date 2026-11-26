@@ -45,6 +45,23 @@ business requirement (`BR-xx`).
 **Exit criteria:** someone else could order the equipment, cable the office and
 build a workstation using only this repository.
 
+### 🟡 Milestone 4 – Network infrastructure (Training Phase 1) – documentation complete, lab evidence pending
+
+- [x] Subnetting guide, VLSM exercise and subnet calculator script with self-tests in CI
+- [x] VLAN design and configuration (switch + firewall)
+- [x] Switch port plan (CSV, CI-validated) and full generated TC-SW01 configuration with hardening
+- [x] Inter-VLAN routing, default route, dual-WAN failover and NAT
+- [x] Firewall rule base implementing the inter-VLAN policy
+- [x] DHCP scopes and DNS design (resolver now, AD DNS from Phase 2)
+- [x] Lab environment for Windows 11 Home: VirtualBox + pfSense + Packet Tracer configs
+- [x] Network troubleshooting method; `Test-TechCorpNetwork.ps1` policy checker
+- [x] 5 networking scenarios designed; lessons learned; design changes NET-CHG-001/002
+- [ ] Lab executed end-to-end with screenshots / CSV evidence; scenarios moved from *Designed* to *Solved*
+
+**Exit criteria:** every network procedure can be followed step by step, and the
+policy can be verified automatically from any VLAN. *Remaining:* lab execution
+and evidence (needs VirtualBox and Packet Tracer installed on the lab PC).
+
 ## Training phases (Milestone 4 onwards)
 
 Each phase = one milestone = one or more lab sessions, a set of procedures, at
@@ -52,7 +69,7 @@ least five solved scenarios, and evidence.
 
 | Phase | Milestone | Topic | Main folders |
 |---|---|---|---|
-| 1 | M4 | Network lab build: pfSense, VLANs, inter-VLAN routing, DHCP relay, Wi-Fi | `02` |
+| 1 | M4 | Network infrastructure: IP addressing, VLANs, DHCP, DNS, switching, routing (pfSense + Packet Tracer) | `02`, `07`, `14` |
 | 2 | M5 | Windows Server install, AD DS, DNS, DHCP, second DC | `03` |
 | 3 | M6 | Users, groups, OU design, Group Policy, file shares & NTFS permissions | `03` |
 | 4 | M7 | Windows 11 deployment, domain join, software, drivers, printers | `04` |

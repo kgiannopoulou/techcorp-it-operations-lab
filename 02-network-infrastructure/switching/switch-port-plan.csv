@@ -1,0 +1,49 @@
+Port,Interface,Description,Mode,AccessVLAN,NativeVLAN,AllowedVLANs,PoE,Drop,Device,AdminState
+1,Gi1/0/1,D-01 Desk 01 dock,access,20,,,no,D-01,TC-DCK-001,up
+2,Gi1/0/2,D-02 Desk 02 dock,access,20,,,no,D-02,TC-DCK-002,up
+3,Gi1/0/3,D-03 Desk 03 dock,access,20,,,no,D-03,TC-DCK-003,up
+4,Gi1/0/4,D-04 Desk 04 dock,access,20,,,no,D-04,TC-DCK-004,up
+5,Gi1/0/5,D-05 Desk 05 dock,access,20,,,no,D-05,TC-DCK-005,up
+6,Gi1/0/6,D-06 Desk 06 dock,access,20,,,no,D-06,TC-DCK-006,up
+7,Gi1/0/7,D-07 Desk 07 dock,access,20,,,no,D-07,TC-DCK-007,up
+8,Gi1/0/8,D-08 Desk 08 dock,access,20,,,no,D-08,TC-DCK-008,up
+9,Gi1/0/9,D-09 Desk 09 dock,access,20,,,no,D-09,TC-DCK-009,up
+10,Gi1/0/10,D-10 Desk 10 dock,access,20,,,no,D-10,TC-DCK-010,up
+11,Gi1/0/11,D-11 Desk 11 dock,access,20,,,no,D-11,TC-DCK-011,up
+12,Gi1/0/12,D-12 Desk 12 dock,access,20,,,no,D-12,TC-DCK-012,up
+13,Gi1/0/13,D-13 Desk 13 dock,access,20,,,no,D-13,TC-DCK-013,up
+14,Gi1/0/14,D-14 Desk 14 dock,access,20,,,no,D-14,TC-DCK-014,up
+15,Gi1/0/15,D-15 Desk 15 dock,access,20,,,no,D-15,TC-DCK-015,up
+16,Gi1/0/16,D-16 Desk 16 dock,access,20,,,no,D-16,TC-DCK-016,up
+17,Gi1/0/17,D-17 Desk 17 dock,access,20,,,no,D-17,TC-DCK-017,up
+18,Gi1/0/18,D-18 Desk 18 dock,access,20,,,no,D-18,TC-DCK-018,up
+19,Gi1/0/19,D-19 Desk 19 dock,access,20,,,no,D-19,TC-DCK-019,up
+20,Gi1/0/20,D-20 Desk 20 dock,access,20,,,no,D-20,TC-DCK-020,up
+21,Gi1/0/21,D-21 Desk 21 dock,access,20,,,no,D-21,TC-DCK-021,up
+22,Gi1/0/22,D-22 Desk 22 dock,access,20,,,no,D-22,TC-DCK-022,up
+23,Gi1/0/23,D-23 Desk 23 dock,access,20,,,no,D-23,TC-DCK-023,up
+24,Gi1/0/24,D-24 Desk 24 dock,access,20,,,no,D-24,TC-DCK-024,up
+25,Gi1/0/25,D-25 Meeting Room 1 video bar,access,20,,,yes,D-25,TC-MR-001,up
+26,Gi1/0/26,D-26 Meeting Room 1 table port (guest),access,50,,,no,D-26,,up
+27,Gi1/0/27,D-27 Meeting Room 2 video bar,access,20,,,yes,D-27,TC-MR-002,up
+28,Gi1/0/28,D-28 Meeting Room 2 table port (guest),access,50,,,no,D-28,,up
+29,Gi1/0/29,D-29 TC-AP01 ceiling AP,trunk,,10,"10,20,50",yes,D-29,TC-AP01,up
+30,Gi1/0/30,D-30 TC-AP02 ceiling AP,trunk,,10,"10,20,50",yes,D-30,TC-AP02,up
+31,Gi1/0/31,D-31 TC-AP03 ceiling AP,trunk,,10,"10,20,50",yes,D-31,TC-AP03,up
+32,Gi1/0/32,D-32 TC-PRN01 open-plan MFP,access,40,,,no,D-32,TC-PRN01,up
+33,Gi1/0/33,D-33 TC-PRN02 Finance printer,access,40,,,no,D-33,TC-PRN02,up
+34,Gi1/0/34,UNUSED - parked,access,999,,,no,,,down
+35,Gi1/0/35,UNUSED - parked,access,999,,,no,,,down
+36,Gi1/0/36,UNUSED - parked,access,999,,,no,,,down
+37,Gi1/0/37,UNUSED - parked,access,999,,,no,,,down
+38,Gi1/0/38,UNUSED - parked,access,999,,,no,,,down
+39,Gi1/0/39,UNUSED - parked,access,999,,,no,,,down
+40,Gi1/0/40,UNUSED - parked,access,999,,,no,,,down
+41,Gi1/0/41,UPLINK TC-FW01 LAN trunk,trunk,,999,"10,20,30,40,50",no,,TC-FW01,up
+42,Gi1/0/42,TC-HV01 NIC1 SET team,trunk,,999,"10,30",no,,TC-HV01,up
+43,Gi1/0/43,TC-HV01 NIC2 SET team,trunk,,999,"10,30",no,,TC-HV01,up
+44,Gi1/0/44,TC-HV01 iDRAC,access,10,,,no,,TC-HV01,up
+45,Gi1/0/45,TC-NAS01 LAN1 Po1,lacp,30,,,no,,TC-NAS01,up
+46,Gi1/0/46,TC-NAS01 LAN2 Po1,lacp,30,,,no,,TC-NAS01,up
+47,Gi1/0/47,TC-UPS01 network card,access,10,,,no,,TC-UPS01,up
+48,Gi1/0/48,IT service port comms room,access,10,,,no,,,up

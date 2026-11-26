@@ -4,7 +4,7 @@
 |---|---|
 | Document ID | NET-REF-001 |
 | Owner | IT Specialist |
-| Status | Approved (design) – to be built in Phase 1 |
+| Status | Approved – v1.1 (Milestone 4) |
 | Last reviewed | 2026-11-26 |
 | Related requirements | BR-05, BR-09, BR-15, BR-19, BR-25 |
 
@@ -14,7 +14,7 @@
 flowchart TB
     ISP["ISP fibre<br/>203.0.113.10/29"]
     LTE["4G/5G modem<br/>failover"]
-    FW["TC-FW01 firewall<br/>router-on-a-stick, VPN, DHCP for guests<br/>gateways 10.10.x.1"]
+    FW["TC-FW01 firewall<br/>router-on-a-stick, VPN, DHCP for all VLANs<br/>gateways 10.10.x.1"]
     SW["TC-SW01 48-port PoE+ switch<br/>10.10.10.2"]
     VPN(["Remote staff<br/>VPN 10.10.60.0/24"])
 
@@ -31,8 +31,8 @@ flowchart TB
 
     subgraph V30["VLAN 30 – SERVERS 10.10.30.0/24"]
         HV["TC-HV01 Hyper-V host .10"]
-        DC1["TC-DC01 .11<br/>AD DS / DNS / DHCP"]
-        DC2["TC-DC02 .12<br/>AD DS / DNS / DHCP"]
+        DC1["TC-DC01 .11<br/>AD DS / DNS"]
+        DC2["TC-DC02 .12<br/>AD DS / DNS"]
         FS["TC-FS01 .20<br/>File / DFS-N"]
         NAS["TC-NAS01 .30<br/>Backups"]
         HV --- DC1
@@ -99,10 +99,14 @@ flowchart LR
 
 ## 4. Lab equivalent
 
-| Production | Lab (single PC) |
+The lab PC runs **Windows 11 Home**, which has no Hyper-V, so the lab uses
+**Oracle VirtualBox** plus **Cisco Packet Tracer**. The full build is in
+[lab-environment.md](lab-environment.md).
+
+| Production | Lab |
 |---|---|
-| TC-FW01 | pfSense CE VM with one WAN NIC (NAT) and one LAN NIC (internal switch, VLAN-tagged) |
-| TC-SW01 + VLANs | Hyper-V internal switch with VLAN IDs per VM NIC; Cisco Packet Tracer for switch CLI practice |
-| Wi-Fi APs | Documented only (SSID-to-VLAN logic simulated with VLAN-tagged VM NICs) |
-| TC-HV01 | The lab PC itself (Hyper-V) |
-| Laptops | Windows 11 VMs on VLAN 20 / 50 |
+| TC-FW01 | pfSense CE VM: WAN = VirtualBox NAT, one NIC per VLAN on internal networks `tc-vlan10` … `tc-vlan50` |
+| TC-SW01 + VLANs | VirtualBox internal networks act as access-port VLANs; the switch CLI (VLANs, trunks, hardening) is built in Packet Tracer |
+| Wi-Fi APs | Documented only – SSID-to-VLAN mapping simulated by attaching a VM to `tc-vlan20` or `tc-vlan50` |
+| TC-HV01 | The lab PC itself (VirtualBox host) |
+| Laptops / guests | Windows 11 or lightweight Linux VMs on `tc-vlan20` / `tc-vlan50` |

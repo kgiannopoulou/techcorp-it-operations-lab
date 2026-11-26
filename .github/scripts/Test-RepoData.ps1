@@ -7,6 +7,7 @@
       - 00-company-overview/data/employees.csv
       - 01-office-deployment/equipment-inventory/hardware-inventory.csv
       - 02-network-infrastructure/ip-addressing/vlan-subnets.csv
+      - 02-network-infrastructure/switching/switch-port-plan.csv (+ tc-sw01.cfg)
     and that every relative link in every Markdown file points to a file that exists.
 
     Runs on Windows PowerShell 5.1 and PowerShell 7+ (used by GitHub Actions).
@@ -98,6 +99,35 @@ foreach ($a in $static) {
     if (-not (Test-IpInSubnet $a.IPAddress $cidr)) { Add-Failure "inventory: $($a.AssetTag) IP $($a.IPAddress) is outside VLAN $($a.VLAN) subnet $cidr" }
 }
 
+# ---------- Switch port plan vs VLANs, inventory and generated config ----------
+$portPlanPath = Join-Path $Root '02-network-infrastructure/switching/switch-port-plan.csv'
+$switchCfgPath = Join-Path $Root '02-network-infrastructure/switching/tc-sw01.cfg'
+$ports = @(Import-Csv $portPlanPath)
+$validVlans = @($vlans | ForEach-Object { $_.VLAN })
+if ($ports.Count -ne 48) { Add-Failure "switch-port-plan.csv: expected 48 ports, found $($ports.Count)" }
+$ports | Group-Object Port | Where-Object Count -gt 1 | ForEach-Object { Add-Failure "switch-port-plan.csv: duplicate port $($_.Name)" }
+
+$cfgText = Get-Content -Raw -Encoding UTF8 $switchCfgPath
+$cfgBlocks = @{}
+foreach ($m in [regex]::Matches($cfgText, '(?ms)^interface (Gi1/0/\d+)\r?\n(.*?)^!')) { $cfgBlocks[$m.Groups[1].Value] = $m.Groups[2].Value }
+
+foreach ($p in $ports) {
+    if ($p.Mode -notin 'access', 'trunk', 'lacp') { Add-Failure "switch-port-plan.csv: port $($p.Port) has invalid mode '$($p.Mode)'"; continue }
+    $used = @()
+    if ($p.Mode -eq 'trunk') { $used += $p.NativeVLAN; $used += $p.AllowedVLANs.Split(',') } else { $used += $p.AccessVLAN }
+    foreach ($v in $used) { if ($v -notin $validVlans) { Add-Failure "switch-port-plan.csv: port $($p.Port) uses VLAN '$v' not defined in vlan-subnets.csv" } }
+    if ($p.Device -and -not $byTag.ContainsKey($p.Device)) { Add-Failure "switch-port-plan.csv: port $($p.Port) device '$($p.Device)' is not in hardware-inventory.csv" }
+
+    $block = $cfgBlocks[$p.Interface]
+    if (-not $block) { Add-Failure "tc-sw01.cfg: no 'interface $($p.Interface)' block"; continue }
+    if ($p.Mode -eq 'trunk') {
+        if ($block -notmatch "switchport trunk allowed vlan $([regex]::Escape($p.AllowedVLANs))\s") { Add-Failure "tc-sw01.cfg: $($p.Interface) allowed VLANs differ from port plan ($($p.AllowedVLANs))" }
+        if ($block -notmatch "switchport trunk native vlan $($p.NativeVLAN)\s") { Add-Failure "tc-sw01.cfg: $($p.Interface) native VLAN differs from port plan ($($p.NativeVLAN))" }
+    }
+    elseif ($block -notmatch "switchport access vlan $($p.AccessVLAN)\s") { Add-Failure "tc-sw01.cfg: $($p.Interface) access VLAN differs from port plan ($($p.AccessVLAN))" }
+    if (($p.AdminState -eq 'down') -ne ($block -match '(?m)^ shutdown\s*$')) { Add-Failure "tc-sw01.cfg: $($p.Interface) admin state differs from port plan ($($p.AdminState))" }
+}
+
 # ---------- Markdown relative links ----------
 $mdFiles = Get-ChildItem -Path $Root -Recurse -File -Filter '*.md' |
     Where-Object { $_.FullName -notmatch '[\\/](node_modules|\.git)[\\/]' }
@@ -122,8 +152,8 @@ foreach ($file in $mdFiles) {
 }
 
 # ---------- Result ----------
-Write-Host ("Employees: {0} | Assets: {1} | Static IPs: {2} | VLANs: {3} | Markdown files: {4} | Relative links: {5}" -f `
-    $employees.Count, $inventory.Count, $static.Count, $vlans.Count, $mdFiles.Count, $linkCount)
+Write-Host ("Employees: {0} | Assets: {1} | Static IPs: {2} | VLANs: {3} | Switch ports: {4} | Markdown files: {5} | Relative links: {6}" -f `
+    $employees.Count, $inventory.Count, $static.Count, $vlans.Count, $ports.Count, $mdFiles.Count, $linkCount)
 
 if ($script:Failures.Count -gt 0) {
     $script:Failures | ForEach-Object { Write-Host "FAIL: $_" -ForegroundColor Red }

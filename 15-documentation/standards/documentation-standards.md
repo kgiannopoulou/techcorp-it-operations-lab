@@ -96,3 +96,4 @@ followed by a three-digit number. Scenarios use `SC-<AREA>-<NNN>`
 - Status `Draft` until the procedure has been executed successfully in the lab at least once.
 - Update `Last reviewed` whenever content is verified, even if nothing changes.
 - Commit messages follow `<area>: <what changed>`, e.g. `net: add VLAN 40 printer subnet`.
+- A design document is only marked *Approved* once its build procedure has been written (lesson from Milestone 4).

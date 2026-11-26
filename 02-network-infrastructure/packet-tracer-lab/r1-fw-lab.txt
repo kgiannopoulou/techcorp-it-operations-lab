@@ -1,0 +1,95 @@
+! =====================================================================
+! R1-FW - Packet Tracer ISR4331 playing the role of TC-FW01
+! Router-on-a-stick on G0/0/1, DHCP pools, inter-VLAN ACLs
+! NOTE: IOS ACLs are STATELESS (unlike pfSense) - replies must be
+!       permitted explicitly with "established" / echo-reply lines.
+! =====================================================================
+hostname R1-FW
+no ip domain-lookup
+enable secret Lab-Only-Change-Me
+!
+! ---------- DHCP (mirrors dhcp-configuration.md) --------------------
+ip dhcp excluded-address 10.10.10.1 10.10.10.99
+ip dhcp excluded-address 10.10.10.151 10.10.10.254
+ip dhcp excluded-address 10.10.20.1 10.10.20.49
+ip dhcp excluded-address 10.10.20.241 10.10.20.254
+ip dhcp excluded-address 10.10.50.1 10.10.50.49
+ip dhcp excluded-address 10.10.50.251 10.10.50.254
+!
+ip dhcp pool MGMT
+ network 10.10.10.0 255.255.255.0
+ default-router 10.10.10.1
+ dns-server 10.10.30.11
+ip dhcp pool STAFF
+ network 10.10.20.0 255.255.255.0
+ default-router 10.10.20.1
+ dns-server 10.10.30.11
+ip dhcp pool GUEST
+ network 10.10.50.0 255.255.255.0
+ default-router 10.10.50.1
+ dns-server 10.10.50.1
+!
+! ---------- Router-on-a-stick ---------------------------------------
+interface GigabitEthernet0/0/1
+ description TRUNK to SW1-LAB Gi0/1
+ no ip address
+ no shutdown
+!
+interface GigabitEthernet0/0/1.10
+ description VLAN10-MGMT
+ encapsulation dot1Q 10
+ ip address 10.10.10.1 255.255.255.0
+!
+interface GigabitEthernet0/0/1.20
+ description VLAN20-STAFF
+ encapsulation dot1Q 20
+ ip address 10.10.20.1 255.255.255.0
+ ip access-group STAFF-IN in
+!
+interface GigabitEthernet0/0/1.30
+ description VLAN30-SERVERS
+ encapsulation dot1Q 30
+ ip address 10.10.30.1 255.255.255.0
+!
+interface GigabitEthernet0/0/1.40
+ description VLAN40-PRINTERS
+ encapsulation dot1Q 40
+ ip address 10.10.40.1 255.255.255.0
+ ip access-group PRINTERS-IN in
+!
+interface GigabitEthernet0/0/1.50
+ description VLAN50-GUEST
+ encapsulation dot1Q 50
+ ip address 10.10.50.1 255.255.255.0
+ ip access-group GUEST-IN in
+!
+! ---------- ACLs (inbound on the VLAN the traffic comes FROM) -------
+ip access-list extended STAFF-IN
+ remark replies to sessions started from MGMT
+ permit tcp 10.10.20.0 0.0.0.255 10.10.10.0 0.0.0.255 established
+ permit icmp 10.10.20.0 0.0.0.255 10.10.10.0 0.0.0.255 echo-reply
+ remark staff may not start anything towards MGMT or GUEST
+ deny ip 10.10.20.0 0.0.0.255 10.10.10.0 0.0.0.255
+ deny ip 10.10.20.0 0.0.0.255 10.10.50.0 0.0.0.255
+ permit ip any any
+!
+ip access-list extended PRINTERS-IN
+ remark replies to print jobs (RAW 9100, IPP 631, IPPS 443)
+ permit tcp 10.10.40.0 0.0.0.255 eq 9100 10.10.20.0 0.0.0.255 established
+ permit tcp 10.10.40.0 0.0.0.255 eq 631 10.10.20.0 0.0.0.255 established
+ permit tcp 10.10.40.0 0.0.0.255 eq 443 10.10.20.0 0.0.0.255 established
+ permit icmp 10.10.40.0 0.0.0.255 any echo-reply
+ remark scan-to-folder and scan-to-e-mail
+ permit tcp 10.10.40.0 0.0.0.255 host 10.10.30.20 eq 445
+ permit tcp 10.10.40.0 0.0.0.255 any eq 587
+ deny ip any any
+!
+ip access-list extended GUEST-IN
+ permit udp any eq 68 any eq 67
+ deny ip 10.10.50.0 0.0.0.255 10.0.0.0 0.255.255.255
+ deny ip 10.10.50.0 0.0.0.255 172.16.0.0 0.15.255.255
+ deny ip 10.10.50.0 0.0.0.255 192.168.0.0 0.0.255.255
+ permit ip any any
+!
+end
+! Then: copy running-config startup-config

@@ -39,8 +39,8 @@
 | D-19 – D-21 | Finance desks 19–21 | 3 | Dock | ✅ |
 | D-22 – D-23 | HR desks 22–23 | 2 | Dock | ✅ |
 | D-24 | Reception desk 24 | 1 | Dock | ✅ |
-| D-25 – D-26 | Meeting Room 1 (video bar, table port) | 2 | Room kit / guest laptop | ✅ |
-| D-27 – D-28 | Meeting Room 2 (video bar, table port) | 2 | Room kit / guest laptop | ✅ |
+| D-25 – D-26 | Meeting Room 1 (video bar D-25 / table port D-26) | 2 | Room kit (VLAN 20) / visitor laptop (**VLAN 50**) | ✅ |
+| D-27 – D-28 | Meeting Room 2 (video bar D-27 / table port D-28) | 2 | Room kit (VLAN 20) / visitor laptop (**VLAN 50**) | ✅ |
 | D-29 – D-31 | Ceilings: AP01, AP02, AP03 | 3 | PoE+ Wi-Fi | ✅ |
 | D-32 | Print area | 1 | TC-PRN01 | ✅ |
 | D-33 | Finance office | 1 | TC-PRN02 | ✅ |
@@ -89,7 +89,8 @@ through TC-UPS01 except the A/C. Expected load ≈ 450 W → ~20 min runtime.
 | Ports | Connected to | Mode | VLAN(s) | Notes |
 |---|---|---|---|---|
 | 1–24 | PP1-01 – PP1-24 (desks D-01 – D-24) | Access | 20 | PortFast, BPDU guard, storm control |
-| 25–28 | PP2-01 – PP2-04 (meeting rooms) | Access | 20 | |
+| 25, 27 | PP2-01, PP2-03 (meeting-room video bars) | Access | 20 | PoE |
+| 26, 28 | PP2-02, PP2-04 (meeting-room table ports) | Access | **50** | Visitors plug in here – guest VLAN (change NET-CHG-002) |
 | 29–31 | PP2-05 – PP2-07 (AP01–03) | Trunk | Native 10; tagged 20, 50 | PoE+ |
 | 32–33 | PP2-08 – PP2-09 (PRN01, PRN02) | Access | 40 | |
 | 34–40 | – (spare) | Access, **shutdown** | 999 (parking) | Enabled on request |

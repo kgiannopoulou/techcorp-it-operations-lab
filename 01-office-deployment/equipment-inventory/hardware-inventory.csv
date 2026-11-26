@@ -1,37 +1,37 @@
 AssetTag,Hostname,Category,Model,Specification,AssignedTo,Location,VLAN,IPAddress,WarrantyYears,Status,LabEquivalent
 TC-FW01,TC-FW01,Firewall,Netgate 4200 (pfSense Plus),"4x 2.5GbE, IPS-capable, VPN",IT,Comms room rack U10,10,10.10.10.1,3,Planned,pfSense CE VM
-TC-SW01,TC-SW01,Switch,48-port L2+ managed PoE+ switch,"48x 1GbE PoE+ (740 W), 4x 10G SFP+",IT,Comms room rack U8,10,10.10.10.2,5,Planned,Cisco Packet Tracer 2960 / Open vSwitch
+TC-SW01,TC-SW01,Switch,48-port L2+ managed PoE+ switch,"48x 1GbE PoE+ (740 W), 4x 10G SFP+",IT,Comms room rack U8,10,10.10.10.2,5,Planned,Cisco Packet Tracer (CLI) + VirtualBox internal networks
 TC-AP01,TC-AP01,Wireless AP,Wi-Fi 6 ceiling AP (PoE),"2x2 MU-MIMO, WPA3, multi-SSID/VLAN",IT,Open-plan north ceiling,10,10.10.10.11,3,Planned,Virtual – documented only
 TC-AP02,TC-AP02,Wireless AP,Wi-Fi 6 ceiling AP (PoE),"2x2 MU-MIMO, WPA3, multi-SSID/VLAN",IT,Open-plan south ceiling,10,10.10.10.12,3,Planned,Virtual – documented only
 TC-AP03,TC-AP03,Wireless AP,Wi-Fi 6 ceiling AP (PoE),"2x2 MU-MIMO, WPA3, multi-SSID/VLAN",IT,Reception / meeting rooms corridor,10,10.10.10.13,3,Planned,Virtual – documented only
-TC-HV01,TC-HV01,Server,1U rack server,"1x 16-core CPU, 128 GB RAM, 4x 1.92 TB SSD RAID10, 2x PSU, iDRAC/iLO",IT,Comms room rack U5,30,10.10.30.10,3,Planned,Hyper-V on lab PC
-TC-DC01,TC-DC01,Virtual server,Windows Server 2025 Standard VM,"2 vCPU, 4 GB RAM, 80 GB – AD DS, DNS, DHCP",IT,TC-HV01,30,10.10.30.11,,Planned,Hyper-V VM
-TC-DC02,TC-DC02,Virtual server,Windows Server 2025 Standard VM,"2 vCPU, 4 GB RAM, 80 GB – AD DS, DNS, DHCP failover",IT,TC-HV01,30,10.10.30.12,,Planned,Hyper-V VM
-TC-FS01,TC-FS01,Virtual server,Windows Server 2025 Standard VM,"4 vCPU, 8 GB RAM, 80 GB OS + 1 TB data – File server, DFS-N",IT,TC-HV01,30,10.10.30.20,,Planned,Hyper-V VM
-TC-NAS01,TC-NAS01,NAS,4-bay rackmount NAS,"4x 8 TB RAID5 (~24 TB), 2x 1GbE – backup target, cloud sync",IT,Comms room rack U3,30,10.10.30.30,3,Planned,VM with extra VHDX / second disk
+TC-HV01,TC-HV01,Server,1U rack server,"1x 16-core CPU, 128 GB RAM, 4x 1.92 TB SSD RAID10, 2x PSU, iDRAC/iLO",IT,Comms room rack U5,30,10.10.30.10,3,Planned,VirtualBox on lab PC (Windows 11 Home has no Hyper-V)
+TC-DC01,TC-DC01,Virtual server,Windows Server 2025 Standard VM,"2 vCPU, 4 GB RAM, 80 GB – AD DS, DNS",IT,TC-HV01,30,10.10.30.11,,Planned,VirtualBox VM
+TC-DC02,TC-DC02,Virtual server,Windows Server 2025 Standard VM,"2 vCPU, 4 GB RAM, 80 GB – AD DS, DNS (second DC)",IT,TC-HV01,30,10.10.30.12,,Planned,VirtualBox VM
+TC-FS01,TC-FS01,Virtual server,Windows Server 2025 Standard VM,"4 vCPU, 8 GB RAM, 80 GB OS + 1 TB data – File server, DFS-N",IT,TC-HV01,30,10.10.30.20,,Planned,VirtualBox VM
+TC-NAS01,TC-NAS01,NAS,4-bay rackmount NAS,"4x 8 TB RAID5 (~24 TB), 2x 1GbE – backup target, cloud sync",IT,Comms room rack U3,30,10.10.30.30,3,Planned,VirtualBox VM with second virtual disk
 TC-UPS01,TC-UPS01,UPS,2U line-interactive UPS 1500 VA,"Network card, ~20 min at rack load",IT,Comms room rack U1-U2,10,10.10.10.5,2,Planned,n/a – shutdown tested via script
 TC-PRN01,TC-PRN01,Printer,A4 colour laser MFP,"Print/copy/scan-to-e-mail, duplex, card release",Shared,Open-plan print area,40,10.10.40.10,3,Planned,Virtual printer / PDF printer queue
 TC-PRN02,TC-PRN02,Printer,A4 mono laser printer,"Duplex, network",Finance,Finance office,40,10.10.40.11,3,Planned,Virtual printer queue
-TC-LT-001,TC-LT-001,Laptop,Business laptop 14in,"14in, Intel Core Ultra 5, 16 GB RAM, 512 GB NVMe, TPM 2.0, Win 11 Pro",andreas.konstantinou,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
-TC-LT-002,TC-LT-002,Laptop,Business laptop 14in,"14in, Intel Core Ultra 5, 16 GB RAM, 512 GB NVMe, TPM 2.0, Win 11 Pro",sofia.dimitriou,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
-TC-LT-003,TC-LT-003,Laptop,Business laptop 14in,"14in, Intel Core Ultra 5, 16 GB RAM, 512 GB NVMe, TPM 2.0, Win 11 Pro",giorgos.alexiou,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
-TC-LT-004,TC-LT-004,Laptop,Business laptop 14in,"14in, Intel Core Ultra 5, 16 GB RAM, 512 GB NVMe, TPM 2.0, Win 11 Pro",katerina.vlachou,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
-TC-LT-005,TC-LT-005,Laptop,Business laptop 14in,"14in, Intel Core Ultra 5, 16 GB RAM, 512 GB NVMe, TPM 2.0, Win 11 Pro",petros.nikolaidis,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
-TC-LT-006,TC-LT-006,Laptop,Business laptop 14in,"14in, Intel Core Ultra 5, 16 GB RAM, 512 GB NVMe, TPM 2.0, Win 11 Pro",maria.papadaki,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
-TC-LT-007,TC-LT-007,Laptop,Business laptop 14in,"14in, Intel Core Ultra 5, 16 GB RAM, 512 GB NVMe, TPM 2.0, Win 11 Pro",ioanna.stavrou,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
-TC-LT-008,TC-LT-008,Laptop,Business laptop 14in,"14in, Intel Core Ultra 5, 16 GB RAM, 512 GB NVMe, TPM 2.0, Win 11 Pro",dimitris.antoniou,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
-TC-LT-009,TC-LT-009,Laptop,Business laptop 14in,"14in, Intel Core Ultra 5, 16 GB RAM, 512 GB NVMe, TPM 2.0, Win 11 Pro",christina.makri,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
-TC-LT-010,TC-LT-010,Laptop,Business laptop 14in,"14in, Intel Core Ultra 5, 16 GB RAM, 512 GB NVMe, TPM 2.0, Win 11 Pro",nikos.georgiou,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
-TC-LT-011,TC-LT-011,Laptop,Creator laptop 16in,"16in, Intel Core Ultra 7, 32 GB RAM, 1 TB NVMe, dGPU 8 GB, 100% sRGB, Win 11 Pro",eleftheria.zografou,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
-TC-LT-012,TC-LT-012,Laptop,Business laptop 14in,"14in, Intel Core Ultra 5, 16 GB RAM, 512 GB NVMe, TPM 2.0, Win 11 Pro",stavros.karras,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
-TC-LT-013,TC-LT-013,Laptop,Business laptop 14in (performance),"14in, Intel Core Ultra 7, 32 GB RAM, 1 TB NVMe, TPM 2.0, Win 11 Pro",alexandros.pappas,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
-TC-LT-014,TC-LT-014,Laptop,Business laptop 14in (performance),"14in, Intel Core Ultra 7, 32 GB RAM, 1 TB NVMe, TPM 2.0, Win 11 Pro",vasiliki.tsoukala,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
-TC-LT-015,TC-LT-015,Laptop,Business laptop 14in (performance),"14in, Intel Core Ultra 7, 32 GB RAM, 1 TB NVMe, TPM 2.0, Win 11 Pro",konstantinos.raptis,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
-TC-LT-016,TC-LT-016,Laptop,Business laptop 14in (performance),"14in, Intel Core Ultra 7, 32 GB RAM, 1 TB NVMe, TPM 2.0, Win 11 Pro",despina.lamprou,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
-TC-LT-017,TC-LT-017,Laptop,Business laptop 14in (performance),"14in, Intel Core Ultra 7, 32 GB RAM, 1 TB NVMe, TPM 2.0, Win 11 Pro",thanos.kyriakou,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
-TC-LT-018,TC-LT-018,Laptop,Business laptop 14in,"14in, Intel Core Ultra 5, 16 GB RAM, 512 GB NVMe, TPM 2.0, Win 11 Pro",anna.christodoulou,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
-TC-LT-019,TC-LT-019,Laptop,Business laptop 14in,"14in, Intel Core Ultra 5, 16 GB RAM, 512 GB NVMe, TPM 2.0, Win 11 Pro",yannis.markou,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
-TC-LT-020,TC-LT-020,Laptop,Business laptop 14in (performance),"14in, Intel Core Ultra 7, 32 GB RAM, 1 TB NVMe, TPM 2.0, Win 11 Pro",eleni.kosta,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
+TC-LT-001,TC-LT-001,Laptop,Business laptop 14in,"14in, Intel Core Ultra 5, 16 GB RAM, 512 GB NVMe, TPM 2.0, Win 11 Pro",erwin.smith,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
+TC-LT-002,TC-LT-002,Laptop,Business laptop 14in,"14in, Intel Core Ultra 5, 16 GB RAM, 512 GB NVMe, TPM 2.0, Win 11 Pro",hange.zoe,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
+TC-LT-003,TC-LT-003,Laptop,Business laptop 14in,"14in, Intel Core Ultra 5, 16 GB RAM, 512 GB NVMe, TPM 2.0, Win 11 Pro",dot.pixis,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
+TC-LT-004,TC-LT-004,Laptop,Business laptop 14in,"14in, Intel Core Ultra 5, 16 GB RAM, 512 GB NVMe, TPM 2.0, Win 11 Pro",nile.dok,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
+TC-LT-005,TC-LT-005,Laptop,Business laptop 14in,"14in, Intel Core Ultra 5, 16 GB RAM, 512 GB NVMe, TPM 2.0, Win 11 Pro",hitch.dreyse,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
+TC-LT-006,TC-LT-006,Laptop,Business laptop 14in,"14in, Intel Core Ultra 5, 16 GB RAM, 512 GB NVMe, TPM 2.0, Win 11 Pro",historia.reiss,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
+TC-LT-007,TC-LT-007,Laptop,Business laptop 14in,"14in, Intel Core Ultra 5, 16 GB RAM, 512 GB NVMe, TPM 2.0, Win 11 Pro",sasha.blouse,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
+TC-LT-008,TC-LT-008,Laptop,Business laptop 14in,"14in, Intel Core Ultra 5, 16 GB RAM, 512 GB NVMe, TPM 2.0, Win 11 Pro",jean.kirstein,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
+TC-LT-009,TC-LT-009,Laptop,Business laptop 14in,"14in, Intel Core Ultra 5, 16 GB RAM, 512 GB NVMe, TPM 2.0, Win 11 Pro",connie.springer,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
+TC-LT-010,TC-LT-010,Laptop,Business laptop 14in,"14in, Intel Core Ultra 5, 16 GB RAM, 512 GB NVMe, TPM 2.0, Win 11 Pro",reiner.braun,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
+TC-LT-011,TC-LT-011,Laptop,Creator laptop 16in,"16in, Intel Core Ultra 7, 32 GB RAM, 1 TB NVMe, dGPU 8 GB, 100% sRGB, Win 11 Pro",pieck.finger,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
+TC-LT-012,TC-LT-012,Laptop,Business laptop 14in,"14in, Intel Core Ultra 5, 16 GB RAM, 512 GB NVMe, TPM 2.0, Win 11 Pro",bertolt.hoover,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
+TC-LT-013,TC-LT-013,Laptop,Business laptop 14in (performance),"14in, Intel Core Ultra 7, 32 GB RAM, 1 TB NVMe, TPM 2.0, Win 11 Pro",levi.ackerman,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
+TC-LT-014,TC-LT-014,Laptop,Business laptop 14in (performance),"14in, Intel Core Ultra 7, 32 GB RAM, 1 TB NVMe, TPM 2.0, Win 11 Pro",armin.arlert,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
+TC-LT-015,TC-LT-015,Laptop,Business laptop 14in (performance),"14in, Intel Core Ultra 7, 32 GB RAM, 1 TB NVMe, TPM 2.0, Win 11 Pro",mikasa.ackerman,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
+TC-LT-016,TC-LT-016,Laptop,Business laptop 14in (performance),"14in, Intel Core Ultra 7, 32 GB RAM, 1 TB NVMe, TPM 2.0, Win 11 Pro",annie.leonhart,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
+TC-LT-017,TC-LT-017,Laptop,Business laptop 14in (performance),"14in, Intel Core Ultra 7, 32 GB RAM, 1 TB NVMe, TPM 2.0, Win 11 Pro",porco.galliard,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
+TC-LT-018,TC-LT-018,Laptop,Business laptop 14in,"14in, Intel Core Ultra 5, 16 GB RAM, 512 GB NVMe, TPM 2.0, Win 11 Pro",petra.ral,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
+TC-LT-019,TC-LT-019,Laptop,Business laptop 14in,"14in, Intel Core Ultra 5, 16 GB RAM, 512 GB NVMe, TPM 2.0, Win 11 Pro",oluo.bozado,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
+TC-LT-020,TC-LT-020,Laptop,Business laptop 14in (performance),"14in, Intel Core Ultra 7, 32 GB RAM, 1 TB NVMe, TPM 2.0, Win 11 Pro",eren.yeager,Hot desk / mobile,20,DHCP,3,Planned,Windows 11 VM
 TC-LT-021,TC-LT-021,Laptop,Business laptop 14in,"14in, Intel Core Ultra 5, 16 GB RAM, 512 GB NVMe, TPM 2.0, Win 11 Pro",Spare,IT store cupboard,20,DHCP,3,Planned,Windows 11 VM
 TC-LT-022,TC-LT-022,Laptop,Business laptop 14in,"14in, Intel Core Ultra 5, 16 GB RAM, 512 GB NVMe, TPM 2.0, Win 11 Pro",Spare,IT store cupboard,20,DHCP,3,Planned,Windows 11 VM
 TC-DCK-001,,Docking station,USB-C / Thunderbolt dock,"100 W PD, 2x DisplayPort, 1GbE, 4x USB",Desk,Desk 01,,,3,Planned,n/a
@@ -106,8 +106,8 @@ TC-MON-045,,Monitor,24in IPS monitor,"1920x1080, USB-C, height adjustable",Desk,
 TC-MON-046,,Monitor,24in IPS monitor,"1920x1080, USB-C, height adjustable",Desk,Desk 23,,,3,Planned,n/a
 TC-MON-047,,Monitor,24in IPS monitor,"1920x1080, USB-C, height adjustable",Desk,Desk 24,,,3,Planned,n/a
 TC-MON-048,,Monitor,24in IPS monitor,"1920x1080, USB-C, height adjustable",Desk,Desk 24,,,3,Planned,n/a
-TC-HS-001,,Headset,Teams-certified USB headset,"Stereo, ANC, USB-A/C",anna.christodoulou,Customer Support desks,,,2,Planned,n/a
-TC-HS-002,,Headset,Teams-certified USB headset,"Stereo, ANC, USB-A/C",yannis.markou,Customer Support desks,,,2,Planned,n/a
+TC-HS-001,,Headset,Teams-certified USB headset,"Stereo, ANC, USB-A/C",petra.ral,Customer Support desks,,,2,Planned,n/a
+TC-HS-002,,Headset,Teams-certified USB headset,"Stereo, ANC, USB-A/C",oluo.bozado,Customer Support desks,,,2,Planned,n/a
 TC-HS-003,,Headset,Teams-certified USB headset,"Stereo, ANC, USB-A/C",Spare,IT store cupboard,,,2,Planned,n/a
 TC-HS-004,,Headset,Teams-certified USB headset,"Stereo, ANC, USB-A/C",Spare,IT store cupboard,,,2,Planned,n/a
 TC-MR-001,,Meeting room kit,Teams Rooms video bar + 55in display,"4K camera, mic array, HDMI/USB-C ingest",Shared,Meeting Room 1,20,DHCP reservation,3,Planned,n/a
