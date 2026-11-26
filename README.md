@@ -12,16 +12,6 @@
 |:--:|:--:|:--:|:--:|
 | simulated employees | training phases | planned support scenarios | complete IT operations manual |
 
-## Why this repository exists
-
-The repository serves three purposes at the same time:
-
-1. **Learning** – every phase is a hands-on lab: build it, break it, fix it, document it.
-2. **Reference manual** – procedures are written so I can reuse them on the job
-   when I meet the same problem again.
-3. **Portfolio** – a recruiter or IT manager can see organised documentation,
-   practical labs, scripts, diagrams and evidence of what I have learned.
-
 ## The company at a glance
 
 | Item | Value |
