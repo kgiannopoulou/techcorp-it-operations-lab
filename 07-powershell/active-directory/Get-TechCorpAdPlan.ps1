@@ -83,8 +83,9 @@ $ServerOu = 'TechCorp/Computers/Servers'
 $DomainFqdn = (($DomainDn -split ',') | ForEach-Object { $_ -replace '^DC=', '' }) -join '.'
 
 # ---------------------------------------------------------------- load data
+$script:RepoRoot = $Root
 function Import-PlanCsv([string]$RelativePath) {
-    $path = Join-Path $Root $RelativePath
+    $path = Join-Path $script:RepoRoot $RelativePath
     if (-not (Test-Path -LiteralPath $path)) { throw "Missing data file: $RelativePath" }
     return @(Import-Csv -LiteralPath $path -Encoding UTF8)
 }
