@@ -11,7 +11,7 @@ using only these documents.
 | [planning/deployment-plan.md](planning/deployment-plan.md) | DEP-REF-001 | Objective, scope, Gantt timeline, phase gates, cut-over weekend, risks, communications |
 | [planning/office-floor-plan.md](planning/office-floor-plan.md) | DEP-REF-004 | Floor plan, rooms, desk allocation, Wi-Fi AP placement and channels |
 | [equipment-inventory/equipment-list.md](equipment-inventory/equipment-list.md) | DEP-REF-002 | Capex €71,520 / opex €12,374, design decisions, risks |
-| [equipment-inventory/hardware-inventory.csv](equipment-inventory/hardware-inventory.csv) | – | 113 assets with tags, hostnames, VLAN, IP, owner, lab equivalent |
+| [equipment-inventory/hardware-inventory.csv](equipment-inventory/hardware-inventory.csv) | – | 114 assets with tags, hostnames, VLAN, IP, owner, lab equivalent |
 | [equipment-inventory/software-baseline.md](equipment-inventory/software-baseline.md) | DEP-REF-003 | Core image, department software, licence plan |
 | [network-installation/cabling-plan.md](network-installation/cabling-plan.md) | DEP-REF-005 | Cat6 standard, 44-drop schedule, rack elevation, switch port plan |
 | [workstation-deployment/workstation-standard.md](workstation-deployment/workstation-standard.md) | DEP-STD-001 | Hardware tiers, desk standard, configuration baseline, lifecycle |

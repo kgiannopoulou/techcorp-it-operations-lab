@@ -67,14 +67,14 @@ need no outbound UDP/TCP 53 rule.
    *Allow DNS server list to be overridden by DHCP/PPP on WAN*.
 6. Optional hardening (Phase 9): *DNS over TLS* forwarding to upstream, DNSSEC on.
 
-## 4. Public DNS records (prepared for Phase 5)
+## 4. Public DNS records (Microsoft 365)
 
 Values are examples for the fictional domain; real ones come from the M365 admin centre.
 
 | Type | Name | Value | Purpose |
 |---|---|---|---|
 | MX | `@` | `techcorp-example.mail.protection.outlook.com` (pri 0) | Mail to Exchange Online |
-| TXT | `@` | `v=spf1 include:spf.protection.outlook.com -all` | SPF – only M365 may send |
+| TXT | `@` | `v=spf1 ip4:203.0.113.10 include:spf.protection.outlook.com -all` | SPF – only M365 and the office IP (scan-to-e-mail connector, M365-CHG-001) may send |
 | CNAME | `selector1._domainkey` | `selector1-techcorp-example._domainkey.<tenant>.onmicrosoft.com` | DKIM |
 | CNAME | `selector2._domainkey` | `selector2-techcorp-example._domainkey.<tenant>.onmicrosoft.com` | DKIM |
 | TXT | `_dmarc` | `v=DMARC1; p=quarantine; rua=mailto:dmarc@techcorp.example` | DMARC (start `p=none` for 2 weeks) |
@@ -82,6 +82,7 @@ Values are examples for the fictional domain; real ones come from the M365 admin
 | A | `vpn` | `203.0.113.10` | Remote-access VPN endpoint |
 
 TTL: 3600 s normally; lowered to 300 s one week before the e-mail cut-over.
+Publishing order and DKIM/DMARC roll-out: [exchange-online.md §2](../../05-microsoft-365/exchange-online/exchange-online.md#2-domain-and-dns-production).
 
 ## 5. Verification
 

@@ -33,6 +33,11 @@
 .PARAMETER Server
     Domain controller to target (default: PDC emulator).
 
+.PARAMETER TenantId
+    Microsoft Entra tenant ID (GUID). Replaces the {{TenantId}} placeholder in
+    gpo-registry-settings.csv (OneDrive Known Folder Move). Settings that need
+    it are skipped with a warning when it is not given.
+
 .EXAMPLE
     .\Deploy-TechCorpGpo.ps1 -WhatIf
 
@@ -44,7 +49,10 @@
 param(
     [switch]$PrepareLaps,
 
-    [string]$Server
+    [string]$Server,
+
+    [ValidatePattern('^[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}$')]
+    [string]$TenantId
 )
 
 Set-StrictMode -Version 3.0
@@ -115,7 +123,11 @@ foreach ($g in $plan.Gpos) {
     # 4. Settings
     if ($g.Method -ne 'Script') { Write-Step 'Settings' $g.Name 'manual - see gpo-procedures.md'; continue }
     foreach ($s in $plan.GpoSettings | Where-Object Gpo -eq $g.Name) {
-        $value = if ($s.Type -eq 'DWord') { [int]$s.Value } else { [string]$s.Value }
+        if ($s.Value -eq '{{TenantId}}' -and -not $TenantId) {
+            Write-Step 'Setting' $g.Name "WARN $($s.ValueName) skipped - run again with -TenantId"
+            continue
+        }
+        $value = if ($s.Type -eq 'DWord') { [int]$s.Value } else { ([string]$s.Value).Replace('{{TenantId}}', $TenantId) }
         $current = $null
         try { $current = Get-GPRegistryValue -Name $g.Name -Key $s.Key -ValueName $s.ValueName @gp } catch { $current = $null }
         if ($current -and [string]$current.Value -eq [string]$value) { continue }

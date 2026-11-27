@@ -40,3 +40,9 @@ jobs:
       - name: AD plan self-test (naming, AGDLP, GPO targets, effective access)
         shell: pwsh
         run: ./07-powershell/active-directory/Get-TechCorpAdPlan.ps1 -SelfTest
+      - name: Endpoint app catalogue self-test
+        shell: pwsh
+        run: ./07-powershell/endpoint/Install-TechCorpBaseline.ps1 -SelfTest
+      - name: Microsoft 365 plan self-test (admins, mailboxes, teams, sharing)
+        shell: pwsh
+        run: ./07-powershell/microsoft-365/Get-TechCorpM365Plan.ps1 -SelfTest

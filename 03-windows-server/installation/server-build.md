@@ -20,7 +20,8 @@ identity and file services, with the static addresses from the
 |---|---|---|---|---|---|
 | TC-DC01 | AD DS, DNS, all FSMO roles, PDC time source | Standard, **Desktop Experience** | 10.10.30.11 | Hyper-V on TC-HV01 | VirtualBox |
 | TC-DC02 | AD DS, DNS, global catalog | Standard, **Server Core** | 10.10.30.12 | Hyper-V on TC-HV01 | VirtualBox |
-| TC-FS01 | File server, DFS Namespace, FSRM | Standard, **Server Core** | 10.10.30.20 | Hyper-V on TC-HV01 | VirtualBox |
+| TC-FS01 | File server, DFS Namespace, FSRM, print server (M6) | Standard, **Server Core** | 10.10.30.20 | Hyper-V on TC-HV01 | VirtualBox |
+| TC-SYNC01 (M6) | Microsoft Entra Connect Sync – Tier 0 | Standard, Desktop Experience | 10.10.30.13 | Hyper-V on TC-HV01 | **Not built** – installed on TC-DC01 to save RAM |
 
 Why Server Core for DC02 and FS01: smaller attack surface, fewer updates and
 reboots, less RAM. DC01 keeps the desktop so that the lab has GPMC, ADUC and

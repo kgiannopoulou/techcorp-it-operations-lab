@@ -25,6 +25,14 @@ I actually performed it in the lab and attached evidence.
 | [SC-ACC-002](accounts/sc-acc-002-new-group-member-access-denied.md) | Added to Finance – still "Access denied" | ⭐ | 3 – Accounts | Designed |
 | [SC-ACC-003](accounts/sc-acc-003-payroll-inputs-traverse.md) | Payroll officer cannot "find" the payroll inputs | ⭐⭐ | 3 – Permissions | Designed |
 | [SC-ACC-004](accounts/sc-acc-004-deleted-user-recycle-bin.md) | The wrong Ackerman was deleted | ⭐⭐ | 3 – Accounts | Designed |
+| [SC-WIN-004](windows/sc-win-004-not-hybrid-joined.md) | Developers get Microsoft 365 sign-in prompts all day | ⭐⭐⭐ | 4 – Endpoints | Designed |
+| [SC-HW-001](hardware/sc-hw-001-bitlocker-recovery-after-bios-update.md) | Laptop asks for a 48-digit key after an update | ⭐⭐ | 4 – Endpoints | Designed |
+| [SC-HW-002](hardware/sc-hw-002-dock-one-monitor.md) | Only one of the two monitors works at desk 11 | ⭐ | 4 – Endpoints | Designed |
+| [SC-M365-001](microsoft-365/sc-m365-001-licence-usage-location.md) | New starter has no mailbox on day 1 | ⭐⭐ | 5 – Microsoft 365 | Designed |
+| [SC-M365-002](microsoft-365/sc-m365-002-scans-not-arriving.md) | Scans from the printer never arrive | ⭐⭐ | 5 – Microsoft 365 | Designed |
+| [SC-M365-003](microsoft-365/sc-m365-003-leaver-mailbox-deleted.md) | A leaver's mailbox disappeared overnight | ⭐⭐⭐ | 5 – Microsoft 365 | Designed |
+| [SC-M365-004](microsoft-365/sc-m365-004-dynamic-team-membership.md) | New marketing hire is not in the Sales & Marketing team | ⭐⭐ | 5 – Microsoft 365 | Designed |
+| [SC-M365-005](microsoft-365/sc-m365-005-shared-mailbox-not-in-outlook.md) | support@ does not show up in Outlook | ⭐ | 5 – Microsoft 365 | Designed |
 | [SC-INF-001](infrastructure/sc-inf-001-kerberos-clock-skew.md) | "The time difference between the client and server is too large" | ⭐⭐ | 2 – Windows Server | Designed |
 
 ## Counts
@@ -32,9 +40,9 @@ I actually performed it in the lab and attached evidence.
 | Area | Designed | Solved |
 |---|---:|---:|
 | Networking | 5 | 0 |
-| Hardware | 0 | 0 |
-| Windows | 3 | 0 |
+| Hardware | 2 | 0 |
+| Windows | 4 | 0 |
 | Accounts | 4 | 0 |
-| Microsoft 365 | 0 | 0 |
+| Microsoft 365 | 5 | 0 |
 | Security | 0 | 0 |
 | Infrastructure | 1 | 0 |

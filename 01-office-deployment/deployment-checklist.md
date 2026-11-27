@@ -50,6 +50,8 @@ Procedures: [03-windows-server](../03-windows-server/) (build order in its READM
 
 ## 4. Microsoft 365 (Phases 5–6)
 
+Procedures: [05-microsoft-365](../05-microsoft-365/) (build order in its README).
+
 - [ ] `techcorp.example` verified; MX, SPF, DKIM, DMARC published
 - [ ] Entra Connect syncing; UPNs match e-mail
 - [ ] Licences assigned via group; shared mailboxes created
@@ -59,9 +61,11 @@ Procedures: [03-windows-server](../03-windows-server/) (build order in its READM
 
 ## 5. Endpoints & printing (Phase 4)
 
+Procedures: [04-endpoint-management](../04-endpoint-management/).
+
 - [ ] 22 laptops built against the build checklist
 - [ ] 24 desks: dock + 2 monitors + keyboard/mouse tested
-- [ ] TC-PRN01 printing and scan-to-e-mail; TC-PRN02 restricted to Finance
+- [ ] TC-FS01 print server: TC-PRN01 printing and scan-to-e-mail (connector); TC-PRN02 restricted to Finance
 - [ ] Meeting rooms: Teams call test with screen share
 
 ## 6. Data protection (Phase 10)

@@ -1,0 +1,4 @@
+Account,Type,Roles,Licence,Notes
+bg-admin01@techcorpsolutions.onmicrosoft.com,BreakGlass,Global Administrator,None,FIDO2 key 1 in the office safe; password in sealed envelope; excluded from Conditional Access (M7); every sign-in alerts IT and the Operations Manager
+bg-admin02@techcorpsolutions.onmicrosoft.com,BreakGlass,Global Administrator,None,FIDO2 key 2 kept off-site by the CEO; same controls as bg-admin01
+adm-eren.yeager@techcorpsolutions.onmicrosoft.com,Admin,User Administrator;License Administrator;Groups Administrator;Exchange Administrator;Teams Administrator;SharePoint Administrator;Hybrid Identity Administrator;Global Reader,None,Cloud-only daily admin account (the on-prem adm- account is never synced); Intune Administrator added in M7

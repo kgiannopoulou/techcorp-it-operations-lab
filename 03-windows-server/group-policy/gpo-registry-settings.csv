@@ -34,3 +34,8 @@ U-AllUsers-Baseline,HKCU\Software\Policies\Microsoft\Windows\Control Panel\Deskt
 U-AllUsers-Baseline,HKCU\Software\Policies\Microsoft\Windows\Control Panel\Desktop,ScreenSaveTimeOut,String,600,Screen saver timeout = 600 s
 U-AllUsers-Baseline,HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer,NoDriveTypeAutoRun,DWord,255,Turn off AutoPlay / AutoRun on all drives
 U-FinanceHR-RemovableStorage,HKCU\Software\Policies\Microsoft\Windows\RemovableStorageDevices\{53f5630d-b6bf-11d0-94f2-00a0c91efb8b},Deny_Write,DWord,1,Removable Disks: Deny write access
+C-Workstations-OneDrive,HKLM\Software\Policies\Microsoft\OneDrive,SilentAccountConfig,DWord,1,Silently sign in users to the OneDrive sync app with their Windows credentials
+C-Workstations-OneDrive,HKLM\Software\Policies\Microsoft\OneDrive,KFMSilentOptIn,String,{{TenantId}},Silently move Windows known folders to OneDrive (tenant ID substituted at deploy time)
+C-Workstations-OneDrive,HKLM\Software\Policies\Microsoft\OneDrive,KFMSilentOptInWithNotification,DWord,1,Show a notification after the folders are moved
+C-Workstations-OneDrive,HKLM\Software\Policies\Microsoft\OneDrive,KFMBlockOptOut,DWord,1,Prevent users from moving their known folders back to the PC
+C-Workstations-OneDrive,HKLM\Software\Policies\Microsoft\OneDrive,FilesOnDemandEnabled,DWord,1,Use OneDrive Files On-Demand

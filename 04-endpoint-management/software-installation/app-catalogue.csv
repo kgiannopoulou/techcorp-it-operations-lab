@@ -1,0 +1,23 @@
+App,Method,Id,Target,Licence,Notes
+Microsoft 365 Apps for business,odt,m365-apps-configuration.xml,All,M365 Business Premium,Word Excel PowerPoint Outlook OneNote - Monthly Enterprise Channel
+Microsoft Teams,winget,Microsoft.Teams,All,M365 Business Premium,New Teams client (machine-wide)
+Microsoft OneDrive,builtin,,All,M365 Business Premium,Ships with Windows 11; configured by C-Workstations-OneDrive
+Microsoft Edge,builtin,,All,Free,Ships with Windows 11
+Adobe Acrobat Reader,winget,Adobe.Acrobat.Reader.64-bit,All,Free,PDF viewing
+7-Zip,winget,7zip.7zip,All,Free (LGPL),Archives
+Password manager,manual,,All,Business subscription,Vendor chosen in Phase 9 - desktop app + browser extension
+Laptop vendor support utility,manual,,All,Free,Driver and firmware updates for the tier model
+Accounting software client,manual,,Department:Finance,Vendor subscription (3 seats),Installer from the vendor portal
+Adobe Creative Cloud,manual,,Tier:Creative,1 seat,Package from the Adobe Admin Console
+Visual Studio Code,winget,Microsoft.VisualStudioCode,Tier:Developer,Free,
+Git,winget,Git.Git,Tier:Developer,Free (GPL),
+Docker Desktop,winget,Docker.DockerDesktop,Tier:Developer,Docker Business,Needs WSL2; users added to docker-users by the IT laptop elevation process
+Windows Subsystem for Linux,feature,wsl,Tier:Developer,Included,wsl --install --no-distribution
+Client VPN profiles,manual,,Tier:Developer,Client provided,Per client environment (BR-08)
+PowerShell 7,winget,Microsoft.PowerShell,Tier:IT,Free (MIT),
+RSAT - Active Directory,capability,Rsat.ActiveDirectory.DS-LDS.Tools~~~~0.0.1.0,Tier:IT,Included,ADUC and the ActiveDirectory module
+RSAT - Group Policy,capability,Rsat.GroupPolicy.Management.Tools~~~~0.0.1.0,Tier:IT,Included,GPMC and the GroupPolicy module
+RSAT - DNS,capability,Rsat.Dns.Tools~~~~0.0.1.0,Tier:IT,Included,DNS Manager
+Wireshark,winget,WiresharkFoundation.Wireshark,Tier:IT,Free (GPL),
+PuTTY,winget,PuTTY.PuTTY,Tier:IT,Free (MIT),
+Sysinternals Suite,manual,,Tier:IT,Free,Download from Microsoft Learn

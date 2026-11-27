@@ -30,7 +30,10 @@ know what the device is, and from a group name you should know what it grants.
 | Privileged admin account – servers / DCs (Domain Admin) | `adm-firstname.lastname`, UPN `@corp.techcorp.example` | `adm-eren.yeager` |
 | Privileged admin account – workstations / helpdesk (never Domain Admin) | `wadm-firstname.lastname`, UPN `@corp.techcorp.example` | `wadm-eren.yeager` |
 | Service account | `svc-<application>` | `svc-backup` |
-| Break-glass (cloud only) | `bg-admin01@techcorpsolutions.onmicrosoft.com` | – |
+| Break-glass (cloud only, two) | `bg-adminNN@techcorpsolutions.onmicrosoft.com` | `bg-admin01`, `bg-admin02` |
+| Cloud admin (cloud only, never synced) | `adm-firstname.lastname@techcorpsolutions.onmicrosoft.com` | `adm-eren.yeager@…onmicrosoft.com` |
+| Room / resource mailbox | `room-<room>@techcorp.example` | `room-mr1@` |
+| Device sender (no mailbox) | `<device>@techcorp.example` | `scanner@` |
 | Shared mailbox | `<function>@techcorp.example` | `support@`, `accounts@`, `info@` |
 
 Admins **never** use their privileged account for e-mail or browsing, and
@@ -69,7 +72,7 @@ Hostnames are ≤ 15 characters (NetBIOS limit) and upper-case.
 |---|---|---|---|
 | AD global (role) | `GG_<Department>_<Role>` | `GG_Finance_Users` | Who people are |
 | AD domain local (resource) | `DL_<Type>_<Resource>[-<Subfolder>]_<RW\|RO\|List>` | `DL_FS_Finance_RW`, `DL_FS_Finance-Payroll_RW` | What they can access |
-| M365 / Teams group | `grp-<department>` | `grp-sales` | Team + SharePoint site |
+| M365 / Teams group | `grp-<department code, lower case>` (company-wide: `grp-all`) | `grp-sales` | Team + SharePoint site, dynamic membership |
 | Licence group | `LIC_<SKU>` | `LIC_M365_BusinessPremium` | Group-based licensing |
 
 `<Department>` is the short **department code** (WIN-CHG-003) – no spaces or

@@ -10,6 +10,7 @@
     CSV and only the difference is applied.
 
     Steps:
+      0. Alternative UPN suffix techcorp.example (needed for Entra Connect)
       1. OUs (protected from accidental deletion)
       2. Security groups (GG_ global, DL_ domain local)
       3. Staff accounts from employees.csv (initial password, must change at first logon)
@@ -90,6 +91,15 @@ $newAccounts = @($plan.Users + $plan.AdminAccounts | Where-Object {
 })
 if ($newAccounts.Count -gt 0 -and -not $InitialPassword -and -not $WhatIfPreference) {
     $InitialPassword = Read-Host -AsSecureString "Initial password for $($newAccounts.Count) new account(s)"
+}
+
+# 0. UPN suffix --------------------------------------------------------------
+# Staff UPNs use the e-mail domain; registering it as an alternative UPN suffix
+# makes it selectable in ADUC and lets Entra Connect match it to the verified domain.
+$forest = Get-ADForest @adParams
+if ($plan.UpnSuffix -notin $forest.UPNSuffixes -and $PSCmdlet.ShouldProcess($forest.Name, "Add UPN suffix $($plan.UpnSuffix)")) {
+    Set-ADForest -Identity $forest.Name -UPNSuffixes @{ Add = $plan.UpnSuffix } @adParams
+    Write-Step 'Forest' 'UPN suffix' "updated (added $($plan.UpnSuffix))"
 }
 
 # 1. OUs ---------------------------------------------------------------------

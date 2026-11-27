@@ -1,0 +1,9 @@
+Site,Path,Kind,Team,ExternalSharing,Owners,Notes
+TechCorp,/sites/grp-all,TeamSite,grp-all,Disabled,hange.zoe;erwin.smith,Files of the company-wide team
+Management,/sites/grp-management,TeamSite,grp-management,Disabled,erwin.smith;hange.zoe,Board documents (BR-26)
+Finance,/sites/grp-finance,TeamSite,grp-finance,Disabled,dot.pixis;nile.dok,Financial data never shared outside (BR-26)
+HR,/sites/grp-hr,TeamSite,grp-hr,Disabled,historia.reiss;sasha.blouse,Personal data under GDPR (BR-26)
+Sales & Marketing,/sites/grp-sales,TeamSite,grp-sales,ExternalUserSharingOnly,jean.kirstein;connie.springer,Proposals shared with signed-in client guests - no anonymous links
+Development,/sites/grp-development,TeamSite,grp-development,ExistingExternalUserSharingOnly,levi.ackerman;armin.arlert,Client contacts already invited as guests only
+Customer Support,/sites/grp-support,TeamSite,grp-support,ExistingExternalUserSharingOnly,petra.ral;oluo.bozado,
+Intranet,/sites/intranet,Communication,,Disabled,hange.zoe;historia.reiss,Company news and policies - all staff read (replaces the Company share for published documents)

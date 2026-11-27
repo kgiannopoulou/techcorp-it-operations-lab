@@ -21,6 +21,7 @@ bottom, first match wins, and **blocks everything not explicitly passed**
 | `NET_INTERNAL` | Network | 10.10.0.0/16 |
 | `NET_RFC1918` | Network | 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16 |
 | `HOST_DCS` | Host | 10.10.30.11, 10.10.30.12 |
+| `HOST_EXO_MX` | Host (FQDN) | techcorp-example.mail.protection.outlook.com |
 | `HOST_FS` | Host | 10.10.30.20 |
 | `NET_PRINTERS` | Network | 10.10.40.0/24 |
 | `PORTS_AD` | Port | 53, 88, 123, 135, 389, 445, 464, 636, 3268, 3269, 9389, 49152:65535 |
@@ -66,7 +67,7 @@ changes in one place only.
 |---|---|---|---|---|---|
 | 1 | Pass | PRINTERS net | PRINTERS address | 53, 123 | DNS, NTP |
 | 2 | Pass | PRINTERS net | HOST_FS | 445 TCP | Scan-to-folder |
-| 3 | Pass | PRINTERS net | any | 587 TCP | Scan-to-e-mail (Exchange Online SMTP AUTH) |
+| 3 | Pass | PRINTERS net | HOST_EXO_MX | 25 TCP | Scan-to-e-mail via the Exchange Online inbound connector (M365-CHG-001 – was 587 SMTP AUTH to any) |
 | 4 | **Block + log** | PRINTERS net | any | any | Printers start nothing else – firmware is untrusted |
 
 ### GUEST (VLAN 50)

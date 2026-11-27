@@ -129,7 +129,10 @@ Get-ADUser $u | Move-ADObject -TargetPath 'OU=Disabled,OU=TechCorp,DC=corp,DC=te
 
 Then remove the row from `employees.csv` (git history keeps the record) and
 delete the account after 30 days (still restorable from the Recycle Bin).
-Mailbox, OneDrive and licence handling follow in Phase 5.
+**Before** moving the account, do the cloud steps (revoke sessions, mailbox →
+shared, OneDrive access for the manager) in
+[licensing-and-lifecycle.md §4](../../05-microsoft-365/user-management/licensing-and-lifecycle.md#4-leaver-same-day--br-10).
+The Disabled OU is synced (M365-CHG-002), so the cloud account is blocked, not deleted.
 
 ## 5. Service accounts (from Phase 10)
 

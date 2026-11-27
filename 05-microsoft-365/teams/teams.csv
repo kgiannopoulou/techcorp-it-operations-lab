@@ -1,0 +1,8 @@
+Team,MailNickname,Department,Visibility,GuestAccess,Owners,Channels
+TechCorp,grp-all,All,Public,No,hange.zoe;erwin.smith,Announcements;Social;IT Help
+Management,grp-management,Management,Private,No,erwin.smith;hange.zoe,Board;Planning
+Finance,grp-finance,Finance,Private,No,dot.pixis;nile.dok,Month-End;Audit
+HR,grp-hr,HR,Private,No,historia.reiss;sasha.blouse,Recruitment;Policies
+Sales & Marketing,grp-sales,Sales,Private,Yes,jean.kirstein;connie.springer,Proposals;Marketing;Client Demos
+Development,grp-development,Development,Private,No,levi.ackerman;armin.arlert,Releases;Code Review;Client Projects
+Customer Support,grp-support,Support,Private,No,petra.ral;oluo.bozado,Escalations;Knowledge Base

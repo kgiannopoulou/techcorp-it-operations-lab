@@ -25,8 +25,10 @@
 | **DFS-N** | Distributed File System Namespace – a single path (`\corp.techcorp.example\dfs`) in front of one or more file servers |
 | **DHCP failover** | Two DHCP servers sharing a scope so leases continue if one fails |
 | **DHCP relay** | A router/firewall forwarding DHCP broadcasts from a VLAN to a DHCP server in another subnet |
+| **DKIM / SPF / DMARC** | DNS-published e-mail authentication: DKIM signs messages, SPF lists allowed senders, DMARC tells receivers what to do when both fail |
 | **Drop** | A network cable run from the patch panel to a wall/floor outlet |
 | **DSRM** | Directory Services Restore Mode – offline recovery mode of a DC, with its own password set at promotion |
+| **Dynamic group** | Entra ID group whose members are calculated from a rule on user attributes, e.g. `user.department -eq "Finance"` |
 | **EDR** | Endpoint Detection and Response – behaviour-based endpoint security (e.g. Defender for Business) |
 | **Entra Connect** | Tool that synchronises on-prem AD users to Entra ID (hybrid identity) |
 | **Entra ID** | Microsoft's cloud identity service (formerly Azure AD) |
@@ -35,11 +37,14 @@
 | **gMSA** | Group Managed Service Account – a service account whose long password AD rotates automatically |
 | **GPO** | Group Policy Object – a set of settings applied to users/computers in AD |
 | **GPP** | Group Policy Preferences – GPO items such as drive maps and local groups, with item-level targeting |
+| **Group-based licensing** | Assigning Microsoft 365 licences to a group instead of to each user; nested members are not licensed |
 | **Hot-desking** | Any employee can use any free desk |
+| **Hybrid Entra join** | A device joined to on-prem AD and registered in Entra ID, so it gets GPOs and cloud single sign-on |
 | **Hypercare** | Period of extra on-site support right after go-live |
 | **iDRAC / iLO** | Out-of-band management controller in a server (Dell / HPE) |
 | **Intune** | Microsoft's cloud device management (MDM) service |
 | **Kerberos** | Default AD authentication protocol – ticket based, fails if clocks differ by more than 5 minutes |
+| **Known Folder Move (KFM)** | OneDrive feature that redirects Desktop, Documents and Pictures into OneDrive |
 | **LACP** | Link Aggregation Control Protocol – bundles several cables into one logical link |
 | **LAPS** | Local Administrator Password Solution – unique, rotated local admin password per device |
 | **MFA** | Multi-factor authentication |
@@ -47,16 +52,22 @@
 | **MS16-072** | 2016 security update after which user GPOs are read with the computer's credentials – filtered GPOs need Authenticated Users: Read |
 | **NBD** | Next business day (warranty response) |
 | **NTFS permissions** | File-system ACLs on folders and files – the real access control behind every TechCorp share |
+| **ODT** | Office Deployment Tool – installs Microsoft 365 Apps from an XML configuration |
 | **OU** | Organisational Unit – a container in AD used to apply GPOs and delegate admin |
 | **PDC emulator** | FSMO role holder that is the domain's time source and receives every password change and lockout first |
+| **PHS** | Password hash synchronisation – Entra Connect syncs a hash of the AD password hash so users sign in to M365 with the same password |
 | **PoE+** | Power over Ethernet (802.3at, up to 30 W per port) |
 | **Protected Users** | Built-in AD group that disables NTLM, credential caching and delegation for its members |
+| **PRT** | Primary Refresh Token – the Entra ID token on a joined Windows device that gives single sign-on to Microsoft 365 |
 | **PSO** | Password Settings Object – a fine-grained password policy applied to specific groups |
 | **RACI** | Responsible, Accountable, Consulted, Informed |
 | **Recycle Bin (AD)** | Optional AD feature that restores deleted objects with all attributes and group memberships |
 | **Router-on-a-stick** | One router/firewall interface carrying several VLANs as tagged sub-interfaces |
 | **RPO / RTO** | Recovery Point Objective (max data loss) / Recovery Time Objective (max downtime) |
+| **SCP** | Service Connection Point – AD object that tells domain-joined devices which Entra tenant to register with |
+| **Security defaults** | Free baseline in Entra ID that enforces MFA registration and blocks legacy authentication; replaced by Conditional Access |
 | **SET** | Switch Embedded Teaming – Hyper-V NIC teaming |
+| **Shared mailbox** | Mailbox without its own sign-in used by a team (support@); free up to 50 GB |
 | **SLA** | Service Level Agreement – committed response/resolution times |
 | **SRV record** | DNS record that tells clients which host offers a service, e.g. `_ldap._tcp.dc._msdcs` for domain controllers |
 | **SSID** | Wi-Fi network name |
@@ -65,6 +76,8 @@
 | **Trunk** | A switch port carrying multiple VLANs with 802.1Q tags |
 | **UPN** | User Principal Name – sign-in name in the form `user@domain` |
 | **UPS** | Uninterruptible Power Supply |
+| **Usage location** | Country set on a Microsoft 365 user; required before a licence can be assigned |
 | **USN rollback** | Replication failure caused by restoring an old copy (snapshot) of a domain controller |
 | **VLAN** | Virtual LAN – logical separation of a switch into isolated networks |
 | **VLSM** | Variable Length Subnet Masking – subnets of different sizes from one block |
+| **winget** | Windows Package Manager – command-line installer used for the software baseline |

@@ -36,12 +36,12 @@ build the domain from them.
 
 | File | Contents |
 |---|---|
-| [users-and-groups/ou-structure.csv](users-and-groups/ou-structure.csv) | 23 OUs |
+| [users-and-groups/ou-structure.csv](users-and-groups/ou-structure.csv) | 24 OUs + Entra Connect sync scope (M6) |
 | [users-and-groups/department-map.csv](users-and-groups/department-map.csv) | Department → code, OU, role group, folder |
-| [users-and-groups/ad-groups.csv](users-and-groups/ad-groups.csv) | 28 groups and their members |
+| [users-and-groups/ad-groups.csv](users-and-groups/ad-groups.csv) | 29 groups (incl. the M365 licensing group) and their members |
 | [users-and-groups/admin-accounts.csv](users-and-groups/admin-accounts.csv) | Privileged accounts |
-| [group-policy/gpo-plan.csv](group-policy/gpo-plan.csv) | 13 GPOs: link, filtering, method |
-| [group-policy/gpo-registry-settings.csv](group-policy/gpo-registry-settings.csv) | 35 registry-based settings |
+| [group-policy/gpo-plan.csv](group-policy/gpo-plan.csv) | 15 GPOs (2 added in M6): link, filtering, method |
+| [group-policy/gpo-registry-settings.csv](group-policy/gpo-registry-settings.csv) | 40 registry-based settings (`{{TenantId}}` placeholder for OneDrive) |
 | [file-services/folders.csv](file-services/folders.csv) | 12 folders, shares, inheritance |
 | [permissions/file-permissions.csv](permissions/file-permissions.csv) | 14 folder grants (DL groups only) |
 | [permissions/access-tests.csv](permissions/access-tests.csv) | 25 expected-access assertions |
@@ -60,7 +60,7 @@ and computers from [hardware-inventory.csv](../01-office-deployment/equipment-in
 ## Not in this milestone
 
 - Windows DHCP Server role exercise – production DHCP stays on the firewall (NET-CHG-001); optional lab exercise later.
-- Printer deployment GPO (Phase 4), Entra Connect (Phase 5), backups of AD and file data (Phase 10).
+- Backups of AD and file data (Phase 10). Printer GPO and Entra Connect were added in M6.
 
 Scenarios: [14-scenarios/windows](../14-scenarios/windows/),
 [accounts](../14-scenarios/accounts/), [infrastructure](../14-scenarios/infrastructure/).

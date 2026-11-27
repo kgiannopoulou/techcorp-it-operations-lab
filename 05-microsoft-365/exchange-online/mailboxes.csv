@@ -1,0 +1,7 @@
+Alias,DisplayName,Type,Capacity,FullAccess,SendAs,Purpose
+support,TechCorp Support,Shared,,petra.ral;oluo.bozado,petra.ral;oluo.bozado,Client tickets - Customer Support (BR-02)
+info,TechCorp Info,Shared,,hange.zoe;sasha.blouse,hange.zoe;sasha.blouse,General enquiries from the website
+accounts,TechCorp Accounts,Shared,,dot.pixis;nile.dok;hitch.dreyse,dot.pixis;nile.dok;hitch.dreyse,Supplier invoices and client billing
+dmarc,DMARC Reports,Shared,,eren.yeager,,Aggregate DMARC reports (rua) - reviewed weekly
+room-mr1,Meeting Room 1,Room,8,,,Teams Rooms video bar TC-MR-001 - auto-accept
+room-mr2,Meeting Room 2,Room,4,,,Teams Rooms video bar TC-MR-002 - also used for HR interviews

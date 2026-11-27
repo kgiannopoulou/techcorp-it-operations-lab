@@ -9,7 +9,7 @@
 | Related requirements | BR-04, BR-05, BR-06, BR-07, BR-12, BR-19, BR-20, BR-23, BR-30, BR-31 |
 
 Every asset is listed individually in
-[hardware-inventory.csv](hardware-inventory.csv) (113 rows). This document
+[hardware-inventory.csv](hardware-inventory.csv) (114 rows). This document
 explains **what** is bought, **why**, and **what it costs**. Prices are
 realistic 2026–27 EU business list-price estimates excluding VAT – they are
 for planning practice, not quotes.

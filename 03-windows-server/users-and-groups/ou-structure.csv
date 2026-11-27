@@ -1,24 +1,25 @@
-Path,Description,Notes
-TechCorp,Root OU for every object TechCorp manages (built-in containers stay untouched),
-TechCorp/Users,Standard user accounts - one child OU per department,U- GPOs linked here
-TechCorp/Users/Management,CEO and Operations Manager,
-TechCorp/Users/Finance,Finance department,
-TechCorp/Users/HR,Human Resources,
-TechCorp/Users/Sales,Sales & Marketing,
-TechCorp/Users/Development,Software Development,
-TechCorp/Users/Support,Customer Support,
-TechCorp/Users/IT,IT Specialist (standard account only),
-TechCorp/Computers,All TechCorp computer accounts except domain controllers,C-AllComputers GPOs linked here
-TechCorp/Computers/Workstations,Laptops,C-Workstations GPOs linked here
-TechCorp/Computers/Workstations/Standard,Standard and Creative tier laptops and spares,Default for new domain joins (redircmp)
-TechCorp/Computers/Workstations/Developer,Developer tier laptops (Docker/WSL2 - elevation process),
-TechCorp/Computers/Workstations/IT,IT laptop,
-TechCorp/Computers/Servers,Member servers (TC-FS01),C-Servers GPOs linked here
-TechCorp/Groups,Security groups,
-TechCorp/Groups/Role,GG_ global groups - who people are,
-TechCorp/Groups/Resource,DL_ domain local groups - what they can access,
-TechCorp/Admin,Privileged objects - only Domain Admins can change them,No GPOs linked
-TechCorp/Admin/Accounts,adm- and wadm- privileged accounts,
-TechCorp/Admin/Groups,GG_IT_ admin role groups,
-TechCorp/Admin/ServiceAccounts,svc- accounts (first one in Phase 10),
-TechCorp/Disabled,Leavers - disabled and kept 30 days then deleted,Inheritance blocked - no GPOs
+Path,EntraSync,Description,Notes
+TechCorp,No,Root OU for every object TechCorp manages (built-in containers stay untouched),
+TechCorp/Users,Yes,Standard user accounts - one child OU per department,U- GPOs linked here
+TechCorp/Users/Management,Yes,CEO and Operations Manager,
+TechCorp/Users/Finance,Yes,Finance department,
+TechCorp/Users/HR,Yes,Human Resources,
+TechCorp/Users/Sales,Yes,Sales & Marketing,
+TechCorp/Users/Development,Yes,Software Development,
+TechCorp/Users/Support,Yes,Customer Support,
+TechCorp/Users/IT,Yes,IT Specialist (standard account only),
+TechCorp/Computers,No,All TechCorp computer accounts except domain controllers,C-AllComputers GPOs linked here
+TechCorp/Computers/Workstations,Yes,Laptops,C-Workstations GPOs linked here; synced for hybrid Entra join
+TechCorp/Computers/Workstations/Standard,Yes,Standard and Creative tier laptops and spares,Default for new domain joins (redircmp)
+TechCorp/Computers/Workstations/Developer,Yes,Developer tier laptops (Docker/WSL2 - elevation process),
+TechCorp/Computers/Workstations/IT,Yes,IT laptop,
+TechCorp/Computers/Servers,No,Member servers (TC-FS01 and TC-SYNC01),C-Servers GPOs linked here
+TechCorp/Groups,No,Security groups,
+TechCorp/Groups/Role,No,GG_ global groups - who people are,Not synced - cloud access uses dynamic groups
+TechCorp/Groups/Resource,No,DL_ domain local groups - what they can access,On-prem only
+TechCorp/Groups/Licensing,Yes,LIC_ groups for Microsoft 365 group-based licensing,Direct user members only
+TechCorp/Admin,No,Privileged objects - only Domain Admins can change them,No GPOs linked; never synced
+TechCorp/Admin/Accounts,No,adm- and wadm- privileged accounts,Cloud admins are separate cloud-only accounts
+TechCorp/Admin/Groups,No,GG_IT_ admin role groups,
+TechCorp/Admin/ServiceAccounts,No,svc- accounts (first one in Phase 10),
+TechCorp/Disabled,Yes,Leavers - disabled and kept 30 days then deleted,Inheritance blocked - no GPOs; synced so the cloud account is blocked not deleted (M365-CHG-002)

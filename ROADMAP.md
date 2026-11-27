@@ -79,9 +79,28 @@ and evidence (needs VirtualBox and Packet Tracer installed on the lab PC).
 and every expected access decision is tested automatically. *Remaining:* lab
 execution and evidence.
 
+### 🟡 Milestone 6 – Workstations and Microsoft 365 (Training Phases 4–5) – documentation complete, lab evidence pending
+
+- [x] Deployment strategy (clean install + domain join + hybrid Entra join; Autopilot later) and step-by-step laptop build incl. VirtualBox vTPM/Secure Boot lab VM
+- [x] BitLocker with recovery keys escrowed to AD and Entra ID; drivers/firmware with BitLocker suspension
+- [x] App catalogue (22 apps, by department and tier) + Office Deployment Tool config; `Install-TechCorpBaseline.ps1` with CI self-test; `Test-TechCorpEndpoint.ps1`
+- [x] Print server on TC-FS01, GPP printers, Point-and-Print hardening (END-CHG-001); desks, headsets, Teams Rooms
+- [x] Tenant, two break-glass accounts, least-privilege cloud admin, security defaults until M7
+- [x] Entra Connect Sync on TC-SYNC01: PHS, OU filtering from `ou-structure.csv`, hybrid join (M365-CHG-002: Disabled OU synced)
+- [x] Group-based licensing (no nesting, usage location), joiner/mover/leaver cloud steps
+- [x] Exchange Online: 4 shared + 2 room mailboxes, DKIM/DMARC, preset security, scan-to-e-mail connector (M365-CHG-001), Gmail migration
+- [x] 7 Teams on dynamic groups, tenant policies; SharePoint sharing levels per site, intranet, OneDrive KFM GPO + sync restriction
+- [x] Offline M365 plan + self-test in CI; deploy and verify scripts; 8 scenarios designed; lessons learned
+- [ ] Lab tenant and lab laptop built; `Test-TechCorpEndpoint` and `Test-TechCorpM365` all PASS with evidence; scenarios moved to *Solved*
+
+**Exit criteria:** a new starter can be given a working laptop, mailbox,
+teams and files on day 1 from `employees.csv` and the scripts, and the
+tenant's security-relevant settings are tested automatically. *Remaining:*
+lab execution and evidence.
+
 ## Training phases (Milestone 4 onwards)
 
-Each phase = one milestone (except Phases 2–3, combined into M5) = one or more lab sessions, a set of procedures, at
+Each phase = one milestone (except Phases 2–3 → M5 and Phases 4–5 → M6) = one or more lab sessions, a set of procedures, at
 least five solved scenarios, and evidence.
 
 | Phase | Milestone | Topic | Main folders |
@@ -89,12 +108,12 @@ least five solved scenarios, and evidence.
 | 1 | M4 | Network infrastructure: IP addressing, VLANs, DHCP, DNS, switching, routing (pfSense + Packet Tracer) | `02`, `07`, `14` |
 | 2 | M5 | Windows Server install, AD DS, DNS, second DC | `03` |
 | 3 | M5 | Users, groups, OU design, Group Policy, file shares & NTFS permissions | `03`, `07`, `14` |
-| 4 | M6 | Windows 11 deployment, domain join, software, drivers, printers | `04` |
-| 5 | M7 | Microsoft 365: Entra Connect, licences, Exchange Online, Teams, SharePoint, OneDrive | `05` |
-| 6 | M8 | Intune / device compliance, MFA, Conditional Access | `05`, `08` |
-| 7 | M9 | Helpdesk: ticketing process, SLAs, first-line procedures | `06`, `14` |
-| 8 | M10 | PowerShell automation: onboarding, diagnostics, reports | `07` |
-| 9 | M11 | Cybersecurity: Defender, hardening, phishing, incident response, logs | `08` |
-| 10 | M12 | Backup & disaster recovery: 3-2-1, restore tests, DR runbooks | `09` |
-| 11 | M13 | Monitoring, maintenance & asset management | `10`, `11`, `13` |
-| 12 | M14 | Policies, procedures & capstone "first year at TechCorp" scenario week | `12`, `14`, `16` |
+| 4 | M6 | Windows 11 deployment, domain join, software, drivers, printers | `04`, `07`, `14` |
+| 5 | M6 | Microsoft 365: Entra Connect, licences, Exchange Online, Teams, SharePoint, OneDrive | `05` |
+| 6 | M7 | Intune / device compliance, MFA, Conditional Access | `05`, `08` |
+| 7 | M8 | Helpdesk: ticketing process, SLAs, first-line procedures | `06`, `14` |
+| 8 | M9 | PowerShell automation: onboarding, diagnostics, reports | `07` |
+| 9 | M10 | Cybersecurity: Defender, hardening, phishing, incident response, logs | `08` |
+| 10 | M11 | Backup & disaster recovery: 3-2-1, restore tests, DR runbooks | `09` |
+| 11 | M12 | Monitoring, maintenance & asset management | `10`, `11`, `13` |
+| 12 | M13 | Policies, procedures & capstone "first year at TechCorp" scenario week | `12`, `14`, `16` |

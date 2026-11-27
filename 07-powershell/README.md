@@ -1,6 +1,6 @@
 # 07 – PowerShell
 
-**Status:** 🟡 Started – network diagnostics (M4) · Active Directory build and verification (M5) · full automation in Phase 8 (M10)
+**Status:** 🟡 Started – network diagnostics (M4) · Active Directory (M5) · endpoints and Microsoft 365 (M6) · full automation in Phase 8 (M9)
 
 Automation scripts that replace repetitive manual work. Every script has
 comment-based help (`Get-Help <script> -Full`), runs on Windows PowerShell 5.1
@@ -41,6 +41,19 @@ All five scripts read the same plan, built from the CSVs in
 
 Not yet run against a live domain: the deploy and test scripts are checked by
 PSScriptAnalyzer in CI; their first real run is part of the M5 lab.
+
+### Endpoints and Microsoft 365 (Milestone 6)
+
+| Script | Purpose | Runs on | Changes anything? |
+|---|---|---|---|
+| [endpoint/Install-TechCorpBaseline.ps1](endpoint/Install-TechCorpBaseline.ps1) | Installs the apps for the laptop's owner from `app-catalogue.csv` (winget, ODT, RSAT, WSL); `-ListOnly`; `-SelfTest` validates the catalogue (CI) | Laptop | Yes – idempotent, `-WhatIf` |
+| [endpoint/Test-TechCorpEndpoint.ps1](endpoint/Test-TechCorpEndpoint.ps1) | Build check: asset/hostname, edition, domain + hybrid join, PRT, TPM, Secure Boot, BitLocker, Defender, firewall, local admins, LAPS, GPOs, clock, apps | Laptop | No |
+| [microsoft-365/Get-TechCorpM365Plan.ps1](microsoft-365/Get-TechCorpM365Plan.ps1) | M365 plan offline; `-SelfTest` validates admins, mailboxes, teams, sharing (CI); `-Summary` shows team membership | Anywhere | No |
+| [microsoft-365/Deploy-TechCorpM365.ps1](microsoft-365/Deploy-TechCorpM365.ps1) | Usage location, group licensing, shared/room mailboxes, dynamic groups → Teams + channels, SharePoint sharing | Admin PC (Graph, EXO, Teams, SPO modules) | Yes – idempotent, `-WhatIf` |
+| [microsoft-365/Test-TechCorpM365.ps1](microsoft-365/Test-TechCorpM365.ps1) | Compares the tenant with the plan; PASS/FAIL/SKIP + CSV | Admin PC | No |
+
+Every M365 script takes `-LabTenant -TenantDomain <tenant>.onmicrosoft.com`
+for the lab (the fictional domain cannot be verified).
 
 ## Planned contents
 

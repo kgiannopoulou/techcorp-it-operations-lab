@@ -55,6 +55,8 @@ flowchart LR
 | U-AllUsers-DriveMappings | Users | Authenticated Users | Manual | Drive maps (below) | 3 |
 | U-AllUsers-Baseline | Users | Authenticated Users | Script | Locked screen saver 10 min, AutoRun off | 14 |
 | U-FinanceHR-RemovableStorage | Users | `GG_Finance_Users`, `GG_HR_Users` (+ AU Read) | Script | Removable disks: deny write | 26 |
+| C-Workstations-OneDrive (M6) | Workstations | Authenticated Users | Script | Silent sign-in, Known Folder Move (tenant ID via `-TenantId`), Files On-Demand | 3, 20 |
+| U-AllUsers-Printers (M6) | Users | Authenticated Users | Manual | GPP shared printers from TC-FS01 ([printing.md](../../04-endpoint-management/printers/printing.md)) | 6 |
 
 The exact registry values (key, value, type, data, and the GPMC setting name
 they correspond to) are in [gpo-registry-settings.csv](gpo-registry-settings.csv).
@@ -104,4 +106,3 @@ lets them open the path below it (SC-ACC-003).
 | Windows Update rings | Windows Update for Business / Intune | 4, 6 |
 | Defender settings | Defender for Business / Intune | 9 |
 | OneDrive Known Folder Move | Intune / GPO once M365 exists | 5 |
-| Printer deployment | GPO `U-Finance-PrinterMapping` | 4 |

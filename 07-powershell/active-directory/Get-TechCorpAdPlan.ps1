@@ -130,6 +130,7 @@ $ous = @(foreach ($o in $ouRows) {
         ParentPath        = $parent
         DistinguishedName = ConvertTo-OuDn $o.Path
         ParentDn          = $(if ($parent) { ConvertTo-OuDn $parent } else { $DomainDn })
+        EntraSync         = ($o.EntraSync -eq 'Yes')
         Description       = $o.Description
     }
 })
@@ -181,6 +182,9 @@ $groups = @(foreach ($g in $groupRows) {
         if ($dept.Count -eq 1) {
             $members = @($employees | Where-Object { $_.Department -eq $dept[0].Department } | ForEach-Object { $_.Username })
         }
+    }
+    elseif ($g.Members -eq '@employees') {
+        $members = @($employees | ForEach-Object { $_.Username })
     }
     elseif ($g.Members) {
         $members = @($g.Members -split ';' | Where-Object { $_ })
@@ -379,8 +383,29 @@ $daCount = @($adminAccounts | Where-Object { 'Domain Admins' -in $_.BuiltInGroup
 Assert-Plan ($daCount -ge 1 -and $daCount -le 2) "admin-accounts.csv: expected 1-2 Domain Admin accounts, found $daCount"
 
 # Groups: naming, scope, AGDLP
-# GG_<Department>_<Role>  |  DL_<ResourceType>_<Resource>[-<Subfolder>]_<RW|RO|List>
-$groupNamePattern = '^(GG_[A-Za-z]+_[A-Za-z]+|DL_[A-Z]+_[A-Za-z]+(-[A-Za-z]+)?_(RW|RO|List))$'
+# GG_<Department>_<Role>  |  DL_<ResourceType>_<Resource>[-<Subfolder>]_<RW|RO|List>  |  LIC_<SKU>
+$groupNamePattern = '^(GG_[A-Za-z]+_[A-Za-z]+|DL_[A-Z]+_[A-Za-z]+(-[A-Za-z]+)?_(RW|RO|List)|LIC_[A-Za-z0-9]+_[A-Za-z0-9]+)$'
+
+# Entra Connect OU filtering: what reaches Microsoft 365
+foreach ($o in $ous) {
+    if ($o.Path -like 'TechCorp/Admin*') { Assert-Plan (-not $o.EntraSync) "ou-structure.csv: '$($o.Path)' must never sync to Entra ID (on-prem privileged objects)" }
+    if ($o.Path -like 'TechCorp/Users*' -or $o.Path -like 'TechCorp/Computers/Workstations*' -or $o.Path -eq 'TechCorp/Disabled' -or $o.Path -eq 'TechCorp/Groups/Licensing') {
+        Assert-Plan $o.EntraSync "ou-structure.csv: '$($o.Path)' must sync to Entra ID"
+    }
+    Assert-Plan ($o.Path -ne 'TechCorp/Computers/Servers' -or -not $o.EntraSync) 'ou-structure.csv: servers are not hybrid joined - do not sync TechCorp/Computers/Servers'
+}
+foreach ($g in $groups) {
+    $ouRow = @($ous | Where-Object Path -eq $g.OuPath)
+    if ($g.Name -like 'LIC_*') {
+        Assert-Plan ($g.Scope -eq 'Global' -and $g.OuPath -eq 'TechCorp/Groups/Licensing') "ad-groups.csv: '$($g.Name)' must be Global in TechCorp/Groups/Licensing"
+        # Entra group-based licensing does not apply to members of nested groups
+        foreach ($m in $g.Members) { Assert-Plan ($principals[$m] -eq 'User') "licensing: '$($g.Name)' contains '$m' - only direct staff accounts receive a licence" }
+    }
+    elseif ($ouRow.Count -eq 1) { Assert-Plan (-not $ouRow[0].EntraSync) "ad-groups.csv: '$($g.Name)' is in a synced OU but is not a LIC_ group" }
+}
+foreach ($e in $employees) {
+    Assert-Plan ((Get-TransitiveGroup $e.Username).ContainsKey('LIC_M365_BusinessPremium')) "licensing: $($e.Username) has no Microsoft 365 licence group"
+}
 $groupRows | Group-Object Name | Where-Object Count -gt 1 | ForEach-Object { $script:Failures.Add("ad-groups.csv: duplicate group '$($_.Name)'") }
 foreach ($g in $groups) {
     Assert-Plan ($g.Name -match $groupNamePattern) "ad-groups.csv: '$($g.Name)' does not follow GG_/DL_ naming"
@@ -497,6 +522,7 @@ foreach ($s in $gpoSettings) {
     Assert-Plan ($s.Key.StartsWith($hive)) "gpo-registry-settings.csv: '$($s.Gpo)' $($s.ValueName) must be under $hive"
     Assert-Plan ($s.Type -in 'DWord', 'String') "gpo-registry-settings.csv: '$($s.Gpo)' $($s.ValueName) type must be DWord or String"
     if ($s.Type -eq 'DWord') { Assert-Plan ($s.Value -match '^\d+$') "gpo-registry-settings.csv: '$($s.Gpo)' $($s.ValueName) DWord value '$($s.Value)' is not a number" }
+    if ($s.Value -like '*{{*') { Assert-Plan ($s.Value -ceq '{{TenantId}}') "gpo-registry-settings.csv: '$($s.Gpo)' $($s.ValueName) - the only placeholder allowed is {{TenantId}}" }
 }
 foreach ($g in $gpos | Where-Object Method -eq 'Script') {
     Assert-Plan (@($gpoSettings | Where-Object Gpo -eq $g.Name).Count -gt 0) "gpo-plan.csv: '$($g.Name)' is Script but has no registry settings"

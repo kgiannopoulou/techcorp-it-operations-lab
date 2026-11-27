@@ -74,6 +74,12 @@ employee whose department maps to this group in
 | `GG_All_Managers` | Everyone with direct reports in `employees.csv` (7) – CI checks this | Managers share |
 | `GG_Finance_Payroll` | `dot.pixis`, `hitch.dreyse` | Payroll folder, HR payroll inputs |
 
+### Licensing group (Global, `TechCorp/Groups/Licensing`, synced)
+
+| Group | Members | Used for |
+|---|---|---|
+| `LIC_M365_BusinessPremium` | Every employee **directly** (`@employees`) – Entra group-based licensing ignores nested members | Microsoft 365 Business Premium ([licensing-and-lifecycle.md](../../05-microsoft-365/user-management/licensing-and-lifecycle.md)) |
+
 ### Admin groups (Global, `TechCorp/Admin/Groups`)
 
 | Group | Members | Grants |

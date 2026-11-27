@@ -27,3 +27,4 @@ DL_FS_Development_RW,DomainLocal,TechCorp/Groups/Resource,GG_Development_Users,M
 DL_FS_Support_RW,DomainLocal,TechCorp/Groups/Resource,GG_Support_Users,Modify Departments\Support
 DL_FS_Managers_RW,DomainLocal,TechCorp/Groups/Resource,GG_All_Managers,Modify the Managers share
 DL_FS_IT_RW,DomainLocal,TechCorp/Groups/Resource,GG_IT_Users,Modify the IT$ share
+LIC_M365_BusinessPremium,Global,TechCorp/Groups/Licensing,@employees,Microsoft 365 Business Premium - group-based licensing (Entra does not license nested members)

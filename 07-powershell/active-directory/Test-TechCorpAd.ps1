@@ -33,6 +33,10 @@
 .PARAMETER OutputPath
     Optional CSV path for the results.
 
+.PARAMETER TenantId
+    Entra tenant ID - needed to check settings that use the {{TenantId}}
+    placeholder (OneDrive); those are SKIPPED without it.
+
 .EXAMPLE
     .\Test-TechCorpAd.ps1
 
@@ -48,7 +52,9 @@ param(
 
     [string]$Server,
 
-    [string]$OutputPath
+    [string]$OutputPath,
+
+    [string]$TenantId
 )
 
 Set-StrictMode -Version 3.0
@@ -164,9 +170,14 @@ if (Get-Module -ListAvailable -Name GroupPolicy) {
         $links = @((Get-GPInheritance -Target $target @gp).GpoLinks | ForEach-Object { $_.DisplayName })
         Test-Check 'GPO' "$($g.Name) linked" ($g.Name -in $links) $g.LinkTarget
         foreach ($s in $plan.GpoSettings | Where-Object Gpo -eq $g.Name) {
+            $expectedValue = [string]$s.Value
+            if ($expectedValue -eq '{{TenantId}}') {
+                if (-not $TenantId) { Add-Result 'GPO' "$($g.Name): $($s.ValueName)" 'SKIP' 'needs -TenantId'; continue }
+                $expectedValue = $TenantId
+            }
             $v = $null
             try { $v = Get-GPRegistryValue -Name $g.Name -Key $s.Key -ValueName $s.ValueName @gp } catch { $v = $null }
-            Test-Check 'GPO' "$($g.Name): $($s.ValueName)" ($v -and [string]$v.Value -eq $s.Value) $(if ($v) { "value $($v.Value)" } else { 'not set' })
+            Test-Check 'GPO' "$($g.Name): $($s.ValueName)" ($v -and [string]$v.Value -eq $expectedValue) $(if ($v) { "value $($v.Value)" } else { 'not set' })
         }
         foreach ($f in $g.SecurityFiltering | Where-Object { $_ -ne 'Authenticated Users' }) {
             $p = Get-GPPermission -Name $g.Name -TargetName $f -TargetType Group @gp -ErrorAction SilentlyContinue

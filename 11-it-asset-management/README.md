@@ -1,6 +1,6 @@
 # 11 – IT Asset Management
 
-**Status:** ⏳ Planned – Phase 11 (M13)
+**Status:** ⏳ Planned – Phase 11 (M12)
 
 Lifecycle management of the assets planned in [hardware-inventory.csv](../01-office-deployment/equipment-inventory/hardware-inventory.csv).
 

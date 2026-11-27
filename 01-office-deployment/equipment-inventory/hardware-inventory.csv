@@ -112,3 +112,4 @@ TC-HS-003,,Headset,Teams-certified USB headset,"Stereo, ANC, USB-A/C",Spare,IT s
 TC-HS-004,,Headset,Teams-certified USB headset,"Stereo, ANC, USB-A/C",Spare,IT store cupboard,,,2,Planned,n/a
 TC-MR-001,,Meeting room kit,Teams Rooms video bar + 55in display,"4K camera, mic array, HDMI/USB-C ingest",Shared,Meeting Room 1,20,DHCP reservation,3,Planned,n/a
 TC-MR-002,,Meeting room kit,Teams Rooms video bar + 55in display,"4K camera, mic array, HDMI/USB-C ingest",Shared,Meeting Room 2,20,DHCP reservation,3,Planned,n/a
+TC-SYNC01,TC-SYNC01,Virtual server,Windows Server 2025 Standard VM,"2 vCPU, 6 GB RAM, 100 GB - Microsoft Entra Connect Sync (Tier 0)",IT,TC-HV01,30,10.10.30.13,,Planned,Lab: installed on TC-DC01 to save RAM

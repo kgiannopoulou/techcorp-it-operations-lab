@@ -33,7 +33,7 @@ corp.techcorp.example
     │   │   ├── Standard  (16) ........... Standard + Creative tier and spares; new joins land here
     │   │   ├── Developer  (5) ........... Developer tier (Docker/WSL2)
     │   │   └── IT         (1)
-    │   └── Servers (1) .................. TC-FS01 – server LAPS and local admins
+    │   └── Servers (2) .................. TC-FS01, TC-SYNC01 – server LAPS and local admins
     ├── Groups
     │   ├── Role ......................... GG_ global groups ("who you are")
     │   └── Resource ..................... DL_ domain local groups ("what you can open")
@@ -41,8 +41,14 @@ corp.techcorp.example
     │   ├── Accounts ..................... adm-eren.yeager, wadm-eren.yeager
     │   ├── Groups ....................... GG_IT_* admin role groups
     │   └── ServiceAccounts .............. svc- / gMSA (from Phase 10)
-    └── Disabled ......................... leavers, 30 days – inheritance BLOCKED
+    ├── Groups/Licensing ................. LIC_ groups (synced to Entra ID)
+    └── Disabled ......................... leavers, 30 days – inheritance BLOCKED, synced
 ```
+
+`TechCorp/Groups/Licensing` (added in M6) holds `LIC_M365_BusinessPremium`. The
+`EntraSync` column of [ou-structure.csv](ou-structure.csv) defines what Entra
+Connect synchronises: Users, Workstations, Licensing and Disabled – never
+Admin or Servers ([entra-connect-sync.md](../../05-microsoft-365/entra-connect/entra-connect-sync.md#sync-scope-ou-filtering)).
 
 Counts come from `Get-TechCorpAdPlan.ps1` (computers are placed by the
 `DeviceTier` of the laptop's owner in [employees.csv](../../00-company-overview/data/employees.csv)).

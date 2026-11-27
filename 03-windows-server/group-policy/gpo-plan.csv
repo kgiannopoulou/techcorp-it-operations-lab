@@ -12,3 +12,5 @@ C-Workstations-BitLocker,C,TechCorp/Computers/Workstations,Authenticated Users,S
 U-AllUsers-DriveMappings,U,TechCorp/Users,Authenticated Users,Manual,GPP drive maps with item-level targeting: S: Company; T: own department; M: Managers; P: Payroll-Inputs; I: IT,BR-03
 U-AllUsers-Baseline,U,TechCorp/Users,Authenticated Users,Script,Password-protected screen saver after 10 min; AutoRun off for all drives,BR-14
 U-FinanceHR-RemovableStorage,U,TechCorp/Users,GG_Finance_Users;GG_HR_Users,Script,Deny write access to removable disks (USB sticks) - Authenticated Users keep Read so the computer can read the GPO (MS16-072),BR-26
+C-Workstations-OneDrive,C,TechCorp/Computers/Workstations,Authenticated Users,Script,OneDrive: silent sign-in with the Windows account; Known Folder Move (Desktop/Documents/Pictures) silently with notification; block opt-out; Files On-Demand,BR-03;BR-20
+U-AllUsers-Printers,U,TechCorp/Users,Authenticated Users,Manual,GPP shared printers from the TC-FS01 print server: TC-PRN01 for GG_All_Staff (default); TC-PRN02 for GG_Finance_Users only,BR-06
