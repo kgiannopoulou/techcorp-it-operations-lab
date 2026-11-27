@@ -1,0 +1,26 @@
+User,Folder,Expected,Why
+nile.dok,Departments\Finance,RW,Accountant works in Finance
+nile.dok,Departments\Finance\Payroll,None,Payroll is restricted to payroll staff (inheritance broken)
+hitch.dreyse,Departments\Finance\Payroll,RW,Payroll officer
+dot.pixis,Departments\Finance\Payroll,RW,Finance Manager runs payroll
+erwin.smith,Departments\Finance,RO,Management oversight of Finance
+erwin.smith,Departments\Finance\Payroll,None,Payroll detail stays in Finance
+hitch.dreyse,Departments\HR,None,HR personal data is HR-only (GDPR)
+hitch.dreyse,Departments\HR\Payroll-Inputs,RO,Reads the monthly inputs prepared by HR
+sasha.blouse,Departments\HR\Payroll-Inputs,RW,HR prepares the inputs (inherited from HR)
+historia.reiss,Departments\HR,RW,HR Manager
+jean.kirstein,Departments\HR,None,Other managers do not see HR data
+connie.springer,Departments\Sales,RW,Sales staff
+connie.springer,Departments\Finance,None,No cross-department access
+levi.ackerman,Departments\Development,RW,Development lead
+annie.leonhart,Managers,None,Not a manager
+levi.ackerman,Managers,RW,Department manager
+petra.ral,Managers,RW,Department manager
+oluo.bozado,Company,RO,All staff read Company
+historia.reiss,Company,RW,HR publishes policies
+hange.zoe,Company,RW,Management publishes announcements
+oluo.bozado,Departments,List,Everyone can open the Departments root
+oluo.bozado,Departments\Support,RW,Support staff
+eren.yeager,IT,RW,IT Specialist standard account
+mikasa.ackerman,IT,None,IT share is IT-only
+eren.yeager,Departments\HR,None,IT has no standing access to HR data - admin access is separate and audited

@@ -5,7 +5,7 @@
 > the IT operations manual I am building as I set up and run its environment.
 
 [![Docs CI](https://github.com/kgiannopoulou/techcorp-it-operations-lab/actions/workflows/docs-ci.yml/badge.svg)](https://github.com/kgiannopoulou/techcorp-it-operations-lab/actions/workflows/docs-ci.yml)
-![Status](https://img.shields.io/badge/status-Milestone%204%20docs%20complete-blue)
+![Status](https://img.shields.io/badge/status-Milestone%205%20docs%20complete-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
 | 20 | 12 | 100+ | 1 |
@@ -33,18 +33,18 @@ Full details: [00-company-overview](00-company-overview/).
 | [00-company-overview](00-company-overview/) | Company profile, departments, employees, requirements, IT responsibilities | ✅ Milestone 2 |
 | [01-office-deployment](01-office-deployment/) | Office plan, equipment inventory, cabling, workstation standard, deployment checklist | ✅ Milestone 3 |
 | [02-network-infrastructure](02-network-infrastructure/) | Technical guides: topology, IP plan, subnetting, VLANs, switching, routing, firewall, DHCP, DNS, lab | 🟡 Milestone 4 – lab evidence pending |
-| [03-windows-server](03-windows-server/) | Windows Server, Active Directory, GPO, file services, permissions | ⏳ Planned |
+| [03-windows-server](03-windows-server/) | Server builds, AD DS, DNS, OUs, AGDLP groups, users, GPOs, file server, NTFS permissions (CSV-driven, CI-tested) | 🟡 Milestone 5 – lab evidence pending |
 | [04-endpoint-management](04-endpoint-management/) | Windows 11, software, drivers, printers, peripherals | ⏳ Planned |
 | [05-microsoft-365](05-microsoft-365/) | Entra ID, Exchange Online, Teams, SharePoint, OneDrive, Intune | ⏳ Planned |
 | [06-helpdesk](06-helpdesk/) | Ticketing process and user-support procedures | ⏳ Planned |
-| [07-powershell](07-powershell/) | Automation scripts for users, diagnostics and reporting | 🟡 Network diagnostics |
+| [07-powershell](07-powershell/) | Automation scripts for users, diagnostics and reporting | 🟡 Network diagnostics, AD build/verify |
 | [08-cybersecurity](08-cybersecurity/) | Endpoint protection, access control, phishing, incident response | ⏳ Planned |
 | [09-backup-disaster-recovery](09-backup-disaster-recovery/) | Backup strategy, restore tests, recovery procedures | ⏳ Planned |
 | [10-monitoring-maintenance](10-monitoring-maintenance/) | Network / server monitoring, health checks | ⏳ Planned |
 | [11-it-asset-management](11-it-asset-management/) | Hardware inventory lifecycle, licences, warranties | ⏳ Planned |
 | [12-policies-procedures](12-policies-procedures/) | Onboarding, offboarding, access management, AUP, change management | ⏳ Planned |
 | [13-maintenance-calendar](13-maintenance-calendar/) | Daily / weekly / monthly / quarterly / yearly tasks | ⏳ Planned |
-| [14-scenarios](14-scenarios/) | Practical support challenges, solved and written up | 🟡 5 designed |
+| [14-scenarios](14-scenarios/) | Practical support challenges, solved and written up | 🟡 13 designed |
 | [15-documentation](15-documentation/) | Standards, templates, diagrams, screenshots, glossary, lessons learned | ✅ Milestone 1 |
 | [16-reports](16-reports/) | Deployment, incident and maintenance reports | ⏳ Planned |
 
@@ -63,7 +63,8 @@ has exactly one home:
 ## Roadmap
 
 The project is built in milestones. The foundation (Milestones 1–3) comes first;
-after that each of the 12 training phases is delivered as its own milestone.
+after that each of the 12 training phases is delivered as its own milestone
+(Phases 2 and 3 – Windows Server and Active Directory – together as M5).
 See [ROADMAP.md](ROADMAP.md) for the full plan and exit criteria.
 
 | Milestone | Scope | Status |
@@ -72,7 +73,8 @@ See [ROADMAP.md](ROADMAP.md) for the full plan and exit criteria.
 | M2 | Company simulation – company, departments, employees, requirements, IT responsibilities | ✅ Done |
 | M3 | Office deployment – inventory, equipment, topology, IP plan, workstation standard, deployment plan | ✅ Done |
 | M4 | Network infrastructure – IP addressing, VLANs, DHCP, DNS, switching, routing, firewall rules, lab, scripts, scenarios | 🟡 Docs done, lab evidence pending |
-| M5+ | Training phases 2–12 (Windows Server → … → capstone) | ⏳ Next |
+| M5 | Windows Server & Active Directory – domain, users, groups, OUs, Group Policy, file permissions, scripts, scenarios | 🟡 Docs done, lab evidence pending |
+| M6+ | Training phases 4–12 (Endpoints → … → capstone) | ⏳ Next |
 
 ## How the lab is built
 

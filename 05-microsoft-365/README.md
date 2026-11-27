@@ -1,6 +1,6 @@
 # 05 – Microsoft 365
 
-**Status:** ⏳ Planned – Phases 5–6 (M8–M9)
+**Status:** ⏳ Planned – Phases 5–6 (M7–M8)
 
 Tenant configuration for Microsoft 365 Business Premium: identity, mail, collaboration and device management.
 

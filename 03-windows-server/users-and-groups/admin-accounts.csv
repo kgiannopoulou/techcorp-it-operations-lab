@@ -1,0 +1,3 @@
+Username,Owner,OU,MemberOf,Purpose
+adm-eren.yeager,eren.yeager,TechCorp/Admin/Accounts,Domain Admins;Protected Users,Tier 0/1 - domain controllers and servers only; denied logon on workstations
+wadm-eren.yeager,eren.yeager,TechCorp/Admin/Accounts,,Workstation administration and helpdesk - never a Domain Admin

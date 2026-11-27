@@ -1,6 +1,6 @@
 # 08 – Cybersecurity
 
-**Status:** ⏳ Planned – Phase 9 (M12)
+**Status:** ⏳ Planned – Phase 9 (M11)
 
 Protecting TechCorp: endpoint protection, access control, phishing defence, incident response and log review.
 

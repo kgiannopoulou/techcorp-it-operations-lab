@@ -1,0 +1,8 @@
+Department,Code,UserOU,RoleGroup,DepartmentFolder
+Management,Management,TechCorp/Users/Management,GG_Management_Users,Departments\Management
+Finance,Finance,TechCorp/Users/Finance,GG_Finance_Users,Departments\Finance
+Human Resources,HR,TechCorp/Users/HR,GG_HR_Users,Departments\HR
+Sales & Marketing,Sales,TechCorp/Users/Sales,GG_Sales_Users,Departments\Sales
+Software Development,Development,TechCorp/Users/Development,GG_Development_Users,Departments\Development
+Customer Support,Support,TechCorp/Users/Support,GG_Support_Users,Departments\Support
+IT,IT,TechCorp/Users/IT,GG_IT_Users,IT

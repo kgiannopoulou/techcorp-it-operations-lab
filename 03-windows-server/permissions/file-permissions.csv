@@ -1,0 +1,15 @@
+Folder,Group,Access
+Company,DL_FS_Company_RO,RO
+Company,DL_FS_Company_RW,RW
+Departments,DL_FS_Departments_List,List
+Departments\Management,DL_FS_Management_RW,RW
+Departments\Finance,DL_FS_Finance_RW,RW
+Departments\Finance,DL_FS_Finance_RO,RO
+Departments\Finance\Payroll,DL_FS_Finance-Payroll_RW,RW
+Departments\HR,DL_FS_HR_RW,RW
+Departments\HR\Payroll-Inputs,DL_FS_HR-PayrollInputs_RO,RO
+Departments\Sales,DL_FS_Sales_RW,RW
+Departments\Development,DL_FS_Development_RW,RW
+Departments\Support,DL_FS_Support_RW,RW
+Managers,DL_FS_Managers_RW,RW
+IT,DL_FS_IT_RW,RW

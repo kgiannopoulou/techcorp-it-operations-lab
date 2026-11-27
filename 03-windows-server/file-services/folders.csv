@@ -1,0 +1,13 @@
+Folder,Share,BreakInheritance,Description
+Company,Company,No,Company-wide documents - policies and templates
+Departments,Departments,No,Root of the department folders - ABE on
+Departments\Management,,No,Management
+Departments\Finance,,No,Finance
+Departments\Finance\Payroll,,Yes,Payroll runs and bank files - payroll staff only
+Departments\HR,,No,Human Resources - GDPR personal data
+Departments\HR\Payroll-Inputs,,No,Monthly payroll inputs prepared by HR and read by payroll staff
+Departments\Sales,,No,Sales & Marketing
+Departments\Development,,No,Software Development
+Departments\Support,,No,Customer Support
+Managers,Managers,No,Managers only - salary reviews and planning
+IT,IT$,No,IT documentation and installers (no secrets)

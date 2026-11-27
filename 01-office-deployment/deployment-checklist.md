@@ -38,6 +38,8 @@ Procedures for every item: [02-network-infrastructure](../02-network-infrastruct
 
 ## 3. Servers & identity (Phases 2–3)
 
+Procedures: [03-windows-server](../03-windows-server/) (build order in its README).
+
 - [ ] TC-HV01 installed, RAID healthy, iDRAC on VLAN 10
 - [ ] TC-DC01 and TC-DC02 promoted; replication healthy (`repadmin /replsummary`)
 - [ ] AD DNS zones, forwarders to TC-FW01, DHCP option 6 switched to the DCs

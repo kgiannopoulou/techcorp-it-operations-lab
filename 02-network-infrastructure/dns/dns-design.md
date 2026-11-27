@@ -36,7 +36,7 @@ flowchart LR
 | Phase | Clients use | Firewall resolver | DCs |
 |---|---|---|---|
 | **Milestone 4 (now)** | Firewall `10.10.x.1` | Recursive resolver; host overrides for infrastructure names | not yet built |
-| **Phase 2 onward** | DCs `10.10.30.11`, `.12` (DHCP option 6 changed) | Serves guests + is the forwarder for the DCs | AD-integrated zones, forwarder → `10.10.30.1` |
+| **Phase 2 onward** ([WIN-PRC-003](../../03-windows-server/dns/ad-integrated-dns.md)) | DCs `10.10.30.11`, `.12` (DHCP option 6 changed) | Serves guests + is the forwarder for the DCs | AD-integrated zones, forwarder → `10.10.30.1` |
 
 Why the DCs forward to the firewall rather than straight to the internet:
 one egress point for DNS, one place to add filtering (Phase 9), and the DCs

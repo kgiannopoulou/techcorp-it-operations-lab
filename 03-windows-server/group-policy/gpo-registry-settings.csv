@@ -1,0 +1,36 @@
+GPO,Key,ValueName,Type,Value,Setting
+C-AllComputers-SecurityBaseline,HKLM\Software\Policies\Microsoft\Windows NT\DNSClient,EnableMulticast,DWord,0,Turn off multicast name resolution (LLMNR)
+C-AllComputers-SecurityBaseline,HKLM\System\CurrentControlSet\Control\Lsa,LmCompatibilityLevel,DWord,5,Network security: LAN Manager authentication level = Send NTLMv2 response only. Refuse LM & NTLM
+C-AllComputers-SecurityBaseline,HKLM\System\CurrentControlSet\Services\LanmanWorkstation\Parameters,RequireSecuritySignature,DWord,1,Microsoft network client: Digitally sign communications (always)
+C-AllComputers-SecurityBaseline,HKLM\System\CurrentControlSet\Services\LanmanServer\Parameters,RequireSecuritySignature,DWord,1,Microsoft network server: Digitally sign communications (always)
+C-AllComputers-SecurityBaseline,HKLM\Software\Policies\Microsoft\WindowsFirewall\DomainProfile,EnableFirewall,DWord,1,Defender Firewall: Domain profile on
+C-AllComputers-SecurityBaseline,HKLM\Software\Policies\Microsoft\WindowsFirewall\PrivateProfile,EnableFirewall,DWord,1,Defender Firewall: Private profile on
+C-AllComputers-SecurityBaseline,HKLM\Software\Policies\Microsoft\WindowsFirewall\PublicProfile,EnableFirewall,DWord,1,Defender Firewall: Public profile on
+C-AllComputers-SecurityBaseline,HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\System,InactivityTimeoutSecs,DWord,600,Interactive logon: Machine inactivity limit = 600 s
+C-AllComputers-SecurityBaseline,HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\System,LegalNoticeCaption,String,TechCorp Solutions - authorised use only,Interactive logon: Message title
+C-AllComputers-SecurityBaseline,HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\System,LegalNoticeText,String,This computer is for authorised TechCorp business use only. Activity may be monitored and logged.,Interactive logon: Message text
+C-Workstations-LAPS,HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\LAPS,BackupDirectory,DWord,2,Configure password backup directory = Active Directory
+C-Workstations-LAPS,HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\LAPS,PasswordComplexity,DWord,4,Password complexity = large + small letters + numbers + specials
+C-Workstations-LAPS,HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\LAPS,PasswordLength,DWord,16,Password length = 16
+C-Workstations-LAPS,HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\LAPS,PasswordAgeDays,DWord,30,Password age = 30 days
+C-Workstations-LAPS,HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\LAPS,ADPasswordEncryptionEnabled,DWord,1,Enable password encryption
+C-Workstations-LAPS,HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\LAPS,ADPasswordEncryptionPrincipal,String,TECHCORP\GG_IT_WorkstationAdmins,Configure authorized password decryptors
+C-Workstations-LAPS,HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\LAPS,PostAuthenticationActions,DWord,3,Post-authentication actions = reset password and log off
+C-Workstations-LAPS,HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\LAPS,PostAuthenticationResetDelay,DWord,8,Post-authentication grace period = 8 hours
+C-Servers-LAPS,HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\LAPS,BackupDirectory,DWord,2,Configure password backup directory = Active Directory
+C-Servers-LAPS,HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\LAPS,PasswordComplexity,DWord,4,Password complexity = large + small letters + numbers + specials
+C-Servers-LAPS,HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\LAPS,PasswordLength,DWord,20,Password length = 20
+C-Servers-LAPS,HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\LAPS,PasswordAgeDays,DWord,30,Password age = 30 days
+C-Servers-LAPS,HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\LAPS,ADPasswordEncryptionEnabled,DWord,1,Enable password encryption (decryptors default to Domain Admins)
+C-Workstations-BitLocker,HKLM\Software\Policies\Microsoft\FVE,EncryptionMethodWithXtsOs,DWord,7,Encryption method for OS drives = XTS-AES 256-bit
+C-Workstations-BitLocker,HKLM\Software\Policies\Microsoft\FVE,OSRecovery,DWord,1,Choose how BitLocker-protected OS drives can be recovered = Enabled
+C-Workstations-BitLocker,HKLM\Software\Policies\Microsoft\FVE,OSRecoveryPassword,DWord,1,Require 48-digit recovery password
+C-Workstations-BitLocker,HKLM\Software\Policies\Microsoft\FVE,OSManageDRA,DWord,0,No data recovery agent
+C-Workstations-BitLocker,HKLM\Software\Policies\Microsoft\FVE,OSActiveDirectoryBackup,DWord,1,Save recovery information to AD DS
+C-Workstations-BitLocker,HKLM\Software\Policies\Microsoft\FVE,OSActiveDirectoryInfoToStore,DWord,1,Store recovery passwords and key packages
+C-Workstations-BitLocker,HKLM\Software\Policies\Microsoft\FVE,OSRequireActiveDirectoryBackup,DWord,1,Do not enable BitLocker until recovery information is stored in AD DS
+U-AllUsers-Baseline,HKCU\Software\Policies\Microsoft\Windows\Control Panel\Desktop,ScreenSaveActive,String,1,Enable screen saver
+U-AllUsers-Baseline,HKCU\Software\Policies\Microsoft\Windows\Control Panel\Desktop,ScreenSaverIsSecure,String,1,Password protect the screen saver
+U-AllUsers-Baseline,HKCU\Software\Policies\Microsoft\Windows\Control Panel\Desktop,ScreenSaveTimeOut,String,600,Screen saver timeout = 600 s
+U-AllUsers-Baseline,HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer,NoDriveTypeAutoRun,DWord,255,Turn off AutoPlay / AutoRun on all drives
+U-FinanceHR-RemovableStorage,HKCU\Software\Policies\Microsoft\Windows\RemovableStorageDevices\{53f5630d-b6bf-11d0-94f2-00a0c91efb8b},Deny_Write,DWord,1,Removable Disks: Deny write access

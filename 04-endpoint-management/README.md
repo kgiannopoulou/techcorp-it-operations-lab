@@ -1,6 +1,6 @@
 # 04 – Endpoint Management
 
-**Status:** ⏳ Planned – Phase 4 (M7)
+**Status:** ⏳ Planned – Phase 4 (M6)
 
 Building and supporting Windows 11 laptops to the [workstation standard](../01-office-deployment/workstation-deployment/workstation-standard.md).
 

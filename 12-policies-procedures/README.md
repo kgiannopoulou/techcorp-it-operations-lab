@@ -1,6 +1,6 @@
 # 12 – Policies & Procedures
 
-**Status:** ⏳ Planned – Phase 12 (M15)
+**Status:** ⏳ Planned – Phase 12 (M14)
 
 The rules everyone works by – written so that a non-technical manager can approve them.
 

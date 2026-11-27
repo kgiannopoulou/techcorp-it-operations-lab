@@ -1,0 +1,14 @@
+Name,Type,LinkTarget,SecurityFiltering,Method,Settings,Requirements
+Default Domain Policy,C,(domain),Authenticated Users,Manual,Password and account lockout policy only: min length 14; complexity on; history 24; max age 0 (never); lockout 10 attempts / 15 min,BR-14
+Default Domain Controllers Policy,C,Domain Controllers,Authenticated Users,Manual,Left at defaults (user rights for DCs),-
+C-DomainControllers-Audit,C,Domain Controllers,Authenticated Users,Manual,Advanced audit policy (logon; account management; DS changes; Kerberos); Security log 1 GB,BR-18
+C-AllComputers-SecurityBaseline,C,TechCorp/Computers,Authenticated Users,Script,LLMNR off; NTLMv2 only; SMB signing required; Defender Firewall on for all profiles; 10 min inactivity lock; logon banner,BR-14;BR-15
+C-Workstations-LAPS,C,TechCorp/Computers/Workstations,Authenticated Users,Script,Windows LAPS to AD; 16 chars; 30 days; encrypted; decryptable by GG_IT_WorkstationAdmins; reset after use,BR-14
+C-Servers-LAPS,C,TechCorp/Computers/Servers,Authenticated Users,Script,Windows LAPS to AD; 20 chars; 30 days; encrypted; decryptable by Domain Admins only,BR-14
+C-Workstations-LocalAdmins,C,TechCorp/Computers/Workstations,Authenticated Users,Manual,GPP Local Users and Groups: Administrators = built-in Administrator (LAPS) + GG_IT_WorkstationAdmins; all other members removed,BR-14
+C-Servers-LocalAdmins,C,TechCorp/Computers/Servers,Authenticated Users,Manual,GPP Local Users and Groups: Administrators = built-in Administrator (LAPS) + Domain Admins + GG_IT_ServerAdmins,BR-14
+C-Workstations-UserRights,C,TechCorp/Computers/Workstations,Authenticated Users,Manual,Deny log on locally / through RDP / as batch / as service: Domain Admins; Enterprise Admins; Schema Admins,BR-14
+C-Workstations-BitLocker,C,TechCorp/Computers/Workstations,Authenticated Users,Script,XTS-AES 256 for OS drive; recovery password required and backed up to AD DS before encryption starts,BR-12
+U-AllUsers-DriveMappings,U,TechCorp/Users,Authenticated Users,Manual,GPP drive maps with item-level targeting: S: Company; T: own department; M: Managers; P: Payroll-Inputs; I: IT,BR-03
+U-AllUsers-Baseline,U,TechCorp/Users,Authenticated Users,Script,Password-protected screen saver after 10 min; AutoRun off for all drives,BR-14
+U-FinanceHR-RemovableStorage,U,TechCorp/Users,GG_Finance_Users;GG_HR_Users,Script,Deny write access to removable disks (USB sticks) - Authenticated Users keep Read so the computer can read the GPO (MS16-072),BR-26

@@ -62,22 +62,39 @@ build a workstation using only this repository.
 policy can be verified automatically from any VLAN. *Remaining:* lab execution
 and evidence (needs VirtualBox and Packet Tracer installed on the lab PC).
 
+### 🟡 Milestone 5 – Windows Server and Active Directory (Training Phases 2–3) – documentation complete, lab evidence pending
+
+- [x] Server builds for TC-DC01 / TC-DC02 / TC-FS01 in VirtualBox (Server Core where possible)
+- [x] Forest `corp.techcorp.example`, second DC, site and subnets, PDC time source, Recycle Bin, FSMO plan
+- [x] AD-integrated DNS, forwarder to the firewall, scavenging, client switch-over (DHCP option 6)
+- [x] OU design (23 OUs) and delegation (helpdesk reset/unlock, workstation join)
+- [x] 28 AGDLP groups, 20 users from `employees.csv`, tiered admin accounts (`adm-` / `wadm-`), password policy + PSO
+- [x] 13 GPOs designed; registry-based settings as data; manual settings click-by-click; drive maps with item-level targeting
+- [x] File server: folders, NTFS (no Deny, protected department roots), shares with ABE, DFS namespace, quotas, file screen, shadow copies
+- [x] Offline AD plan + self-test in CI (naming, AGDLP, GPO targets, 65 effective-access tests); deploy and verify scripts
+- [x] 8 scenarios designed (Windows, accounts, infrastructure); lessons learned; design changes WIN-CHG-001/002/003
+- [ ] Lab executed end-to-end (`Test-TechCorpAd.ps1` all PASS) with screenshots / CSV evidence; scenarios moved to *Solved*
+
+**Exit criteria:** the whole domain can be rebuilt from the CSVs and scripts,
+and every expected access decision is tested automatically. *Remaining:* lab
+execution and evidence.
+
 ## Training phases (Milestone 4 onwards)
 
-Each phase = one milestone = one or more lab sessions, a set of procedures, at
+Each phase = one milestone (except Phases 2–3, combined into M5) = one or more lab sessions, a set of procedures, at
 least five solved scenarios, and evidence.
 
 | Phase | Milestone | Topic | Main folders |
 |---|---|---|---|
 | 1 | M4 | Network infrastructure: IP addressing, VLANs, DHCP, DNS, switching, routing (pfSense + Packet Tracer) | `02`, `07`, `14` |
-| 2 | M5 | Windows Server install, AD DS, DNS, DHCP, second DC | `03` |
-| 3 | M6 | Users, groups, OU design, Group Policy, file shares & NTFS permissions | `03` |
-| 4 | M7 | Windows 11 deployment, domain join, software, drivers, printers | `04` |
-| 5 | M8 | Microsoft 365: Entra Connect, licences, Exchange Online, Teams, SharePoint, OneDrive | `05` |
-| 6 | M9 | Intune / device compliance, MFA, Conditional Access | `05`, `08` |
-| 7 | M10 | Helpdesk: ticketing process, SLAs, first-line procedures | `06`, `14` |
-| 8 | M11 | PowerShell automation: onboarding, diagnostics, reports | `07` |
-| 9 | M12 | Cybersecurity: Defender, hardening, phishing, incident response, logs | `08` |
-| 10 | M13 | Backup & disaster recovery: 3-2-1, restore tests, DR runbooks | `09` |
-| 11 | M14 | Monitoring, maintenance & asset management | `10`, `11`, `13` |
-| 12 | M15 | Policies, procedures & capstone "first year at TechCorp" scenario week | `12`, `14`, `16` |
+| 2 | M5 | Windows Server install, AD DS, DNS, second DC | `03` |
+| 3 | M5 | Users, groups, OU design, Group Policy, file shares & NTFS permissions | `03`, `07`, `14` |
+| 4 | M6 | Windows 11 deployment, domain join, software, drivers, printers | `04` |
+| 5 | M7 | Microsoft 365: Entra Connect, licences, Exchange Online, Teams, SharePoint, OneDrive | `05` |
+| 6 | M8 | Intune / device compliance, MFA, Conditional Access | `05`, `08` |
+| 7 | M9 | Helpdesk: ticketing process, SLAs, first-line procedures | `06`, `14` |
+| 8 | M10 | PowerShell automation: onboarding, diagnostics, reports | `07` |
+| 9 | M11 | Cybersecurity: Defender, hardening, phishing, incident response, logs | `08` |
+| 10 | M12 | Backup & disaster recovery: 3-2-1, restore tests, DR runbooks | `09` |
+| 11 | M13 | Monitoring, maintenance & asset management | `10`, `11`, `13` |
+| 12 | M14 | Policies, procedures & capstone "first year at TechCorp" scenario week | `12`, `14`, `16` |

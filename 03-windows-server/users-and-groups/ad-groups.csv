@@ -1,0 +1,29 @@
+Name,Scope,OU,Members,Description
+GG_Management_Users,Global,TechCorp/Groups/Role,@department,All Management staff
+GG_Finance_Users,Global,TechCorp/Groups/Role,@department,All Finance staff
+GG_HR_Users,Global,TechCorp/Groups/Role,@department,All Human Resources staff
+GG_Sales_Users,Global,TechCorp/Groups/Role,@department,All Sales & Marketing staff
+GG_Development_Users,Global,TechCorp/Groups/Role,@department,All Software Development staff
+GG_Support_Users,Global,TechCorp/Groups/Role,@department,All Customer Support staff
+GG_IT_Users,Global,TechCorp/Groups/Role,@department,IT staff (standard accounts)
+GG_All_Staff,Global,TechCorp/Groups/Role,GG_Management_Users;GG_Finance_Users;GG_HR_Users;GG_Sales_Users;GG_Development_Users;GG_Support_Users;GG_IT_Users,Every employee - nests the department groups
+GG_All_Managers,Global,TechCorp/Groups/Role,erwin.smith;hange.zoe;dot.pixis;historia.reiss;jean.kirstein;levi.ackerman;petra.ral,CEO and department managers
+GG_Finance_Payroll,Global,TechCorp/Groups/Role,dot.pixis;hitch.dreyse,People who run payroll
+GG_IT_AdminAccounts,Global,TechCorp/Admin/Groups,adm-eren.yeager;wadm-eren.yeager,Every privileged account - target of PSO-AdminAccounts
+GG_IT_ServerAdmins,Global,TechCorp/Admin/Groups,adm-eren.yeager,Local Administrators on member servers (C-Servers-LocalAdmins)
+GG_IT_WorkstationAdmins,Global,TechCorp/Admin/Groups,wadm-eren.yeager,Local Administrators on workstations and LAPS password readers
+GG_IT_HelpdeskOperators,Global,TechCorp/Admin/Groups,wadm-eren.yeager,Delegated password reset and unlock on TechCorp/Users
+DL_FS_Company_RO,DomainLocal,TechCorp/Groups/Resource,GG_All_Staff,Read the Company share
+DL_FS_Company_RW,DomainLocal,TechCorp/Groups/Resource,GG_Management_Users;GG_HR_Users,Publish to the Company share (policies and announcements)
+DL_FS_Departments_List,DomainLocal,TechCorp/Groups/Resource,GG_All_Staff,List the Departments root (this folder only - ABE hides the rest)
+DL_FS_Management_RW,DomainLocal,TechCorp/Groups/Resource,GG_Management_Users,Modify Departments\Management
+DL_FS_Finance_RW,DomainLocal,TechCorp/Groups/Resource,GG_Finance_Users,Modify Departments\Finance
+DL_FS_Finance_RO,DomainLocal,TechCorp/Groups/Resource,GG_Management_Users,Read Departments\Finance (management oversight - not Payroll)
+DL_FS_Finance-Payroll_RW,DomainLocal,TechCorp/Groups/Resource,GG_Finance_Payroll,Modify Departments\Finance\Payroll (inheritance broken)
+DL_FS_HR_RW,DomainLocal,TechCorp/Groups/Resource,GG_HR_Users,Modify Departments\HR
+DL_FS_HR-PayrollInputs_RO,DomainLocal,TechCorp/Groups/Resource,GG_Finance_Payroll,Read Departments\HR\Payroll-Inputs (monthly inputs from HR)
+DL_FS_Sales_RW,DomainLocal,TechCorp/Groups/Resource,GG_Sales_Users,Modify Departments\Sales
+DL_FS_Development_RW,DomainLocal,TechCorp/Groups/Resource,GG_Development_Users,Modify Departments\Development
+DL_FS_Support_RW,DomainLocal,TechCorp/Groups/Resource,GG_Support_Users,Modify Departments\Support
+DL_FS_Managers_RW,DomainLocal,TechCorp/Groups/Resource,GG_All_Managers,Modify the Managers share
+DL_FS_IT_RW,DomainLocal,TechCorp/Groups/Resource,GG_IT_Users,Modify the IT$ share

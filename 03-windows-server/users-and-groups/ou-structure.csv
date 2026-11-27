@@ -1,0 +1,24 @@
+Path,Description,Notes
+TechCorp,Root OU for every object TechCorp manages (built-in containers stay untouched),
+TechCorp/Users,Standard user accounts - one child OU per department,U- GPOs linked here
+TechCorp/Users/Management,CEO and Operations Manager,
+TechCorp/Users/Finance,Finance department,
+TechCorp/Users/HR,Human Resources,
+TechCorp/Users/Sales,Sales & Marketing,
+TechCorp/Users/Development,Software Development,
+TechCorp/Users/Support,Customer Support,
+TechCorp/Users/IT,IT Specialist (standard account only),
+TechCorp/Computers,All TechCorp computer accounts except domain controllers,C-AllComputers GPOs linked here
+TechCorp/Computers/Workstations,Laptops,C-Workstations GPOs linked here
+TechCorp/Computers/Workstations/Standard,Standard and Creative tier laptops and spares,Default for new domain joins (redircmp)
+TechCorp/Computers/Workstations/Developer,Developer tier laptops (Docker/WSL2 - elevation process),
+TechCorp/Computers/Workstations/IT,IT laptop,
+TechCorp/Computers/Servers,Member servers (TC-FS01),C-Servers GPOs linked here
+TechCorp/Groups,Security groups,
+TechCorp/Groups/Role,GG_ global groups - who people are,
+TechCorp/Groups/Resource,DL_ domain local groups - what they can access,
+TechCorp/Admin,Privileged objects - only Domain Admins can change them,No GPOs linked
+TechCorp/Admin/Accounts,adm- and wadm- privileged accounts,
+TechCorp/Admin/Groups,GG_IT_ admin role groups,
+TechCorp/Admin/ServiceAccounts,svc- accounts (first one in Phase 10),
+TechCorp/Disabled,Leavers - disabled and kept 30 days then deleted,Inheritance blocked - no GPOs
