@@ -98,6 +98,26 @@ teams and files on day 1 from `employees.csv` and the scripts, and the
 tenant's security-relevant settings are tested automatically. *Remaining:*
 lab execution and evidence.
 
+### ⏳ Milestone 7 – Intune, MFA and Conditional Access (Training Phase 6) – not started
+
+Done out of order: M8 was requested first. M7 is next.
+
+### 🟡 Milestone 8 – PowerShell administration (Training Phase 7) – scripts and tests complete, lab runs pending
+
+- [x] Shared module `TechCorp.Admin` (21 functions, pure where possible, `-Now` injectable) used by every new script
+- [x] Joiner script: validation, unique logon names, employee ID, spare laptop, OU/groups from the CSVs, disabled-until-start account, one-time password shown once (PS-CHG-001)
+- [x] Leaver script: safety checks, rollback record, cloud steps, disable/reset/strip groups/move, in the order that keeps the mailbox
+- [x] Reports: stale accounts (users + computers), password expiry reminders for `adm-`/`wadm-` (PS-CHG-002), hardware inventory with warranty and live CIM collection
+- [x] Maintenance: server health (uptime, disks, reboot, role services, event log, clock), retention clean-up with safety rails, service-port test from `data/server-roles.csv`, daily check → one HTML page and exit code
+- [x] 248 Pester tests (unit + script tests with AD/Graph/EXO mocks + script standards), run in CI on Linux (PS 7) and Windows (PS 5.1 + 7)
+- [x] 5 scenarios designed (SC-PS-001 … 005); lessons learned; design changes PS-CHG-001/002
+- [ ] Scripts run against the lab domain and tenant, evidence in `16-reports/`; scenarios moved to *Solved*
+
+**Exit criteria:** joiners, leavers and the recurring reviews are one command
+each, every rule they apply is covered by an automated test, and nothing
+changes without `-WhatIf` support and a record. *Remaining:* lab runs against
+a live domain (needs the M5 lab).
+
 ## Training phases (Milestone 4 onwards)
 
 Each phase = one milestone (except Phases 2–3 → M5 and Phases 4–5 → M6) = one or more lab sessions, a set of procedures, at
@@ -111,8 +131,8 @@ least five solved scenarios, and evidence.
 | 4 | M6 | Windows 11 deployment, domain join, software, drivers, printers | `04`, `07`, `14` |
 | 5 | M6 | Microsoft 365: Entra Connect, licences, Exchange Online, Teams, SharePoint, OneDrive | `05` |
 | 6 | M7 | Intune / device compliance, MFA, Conditional Access | `05`, `08` |
-| 7 | M8 | Helpdesk: ticketing process, SLAs, first-line procedures | `06`, `14` |
-| 8 | M9 | PowerShell automation: onboarding, diagnostics, reports | `07` |
+| 7 | M8 | PowerShell administration: onboarding/offboarding, reports, health checks, Pester tests | `07`, `14` |
+| 8 | M9 | Helpdesk: ticketing process, SLAs, first-line procedures | `06`, `14` |
 | 9 | M10 | Cybersecurity: Defender, hardening, phishing, incident response, logs | `08` |
 | 10 | M11 | Backup & disaster recovery: 3-2-1, restore tests, DR runbooks | `09` |
 | 11 | M12 | Monitoring, maintenance & asset management | `10`, `11`, `13` |

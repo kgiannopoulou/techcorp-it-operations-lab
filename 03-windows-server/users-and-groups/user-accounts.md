@@ -100,14 +100,17 @@ Created by `Deploy-TechCorpAd.ps1`, applied to `GG_IT_AdminAccounts`, precedence
 
 Check what applies to an account: `Get-ADUserResultantPasswordPolicy adm-eren.yeager`.
 
-## 4. Account lifecycle (manual now, automated in Phase 8)
+## 4. Account lifecycle (automated in M8)
 
 ### Joiner
 
-1. HR request with start date, department, title, manager (BR-10).
-2. Add the row to `employees.csv` (and laptop to `hardware-inventory.csv`), push – CI validates.
-3. `Deploy-TechCorpAd.ps1 -InitialPassword (Read-Host -AsSecureString)` – creates the account in the right OU and groups.
-4. Day 1: give the one-time password in person; user sets their own at first sign-in.
+1. HR request with start date, department, title, manager (BR-10) – a helpdesk ticket.
+2. `New-TechCorpUser.ps1 -Path <request>.csv -PlanOnly` – validates the request, picks the logon name, employee ID and spare laptop.
+3. `New-TechCorpUser.ps1 -Path <request>.csv` – creates the account in the right OU and groups, **disabled until the start date** (PS-CHG-001), and shows the one-time password once.
+4. Add the printed row to `employees.csv` and set `AssignedTo` in `hardware-inventory.csv`, push – CI validates; from now on `Deploy-TechCorpAd.ps1` keeps the account in line with the CSV.
+5. Day 1: `Enable-ADAccount <user>`, give the one-time password in person; the user sets their own at first sign-in.
+
+Bulk creation for the initial 20 accounts stays `Deploy-TechCorpAd.ps1 -InitialPassword (Read-Host -AsSecureString)`.
 
 ### Mover (department change)
 
@@ -116,6 +119,11 @@ Check what applies to an account: `Get-ADUserResultantPasswordPolicy adm-eren.ye
 3. The old department group membership is reported as `WARN unexpected member` – after the handover period agreed with both managers, run with `-RemoveUnexpectedMembers`.
 
 ### Leaver (same day – BR-10)
+
+`Disable-TechCorpUser.ps1 -Identity connie.springer -Ticket HD-2027-0042 -IncludeCloud`
+does all of the steps below and the cloud steps, in the right order, and appends
+the groups to a leaver record first (the rollback information). The manual
+equivalent, for when the script cannot be used:
 
 ```powershell
 $u = 'connie.springer'

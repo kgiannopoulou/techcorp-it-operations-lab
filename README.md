@@ -37,14 +37,14 @@ Full details: [00-company-overview](00-company-overview/).
 | [04-endpoint-management](04-endpoint-management/) | Laptop build, hybrid join, BitLocker, app catalogue, drivers, print server, desks and meeting rooms | 🟡 Milestone 6 – lab evidence pending |
 | [05-microsoft-365](05-microsoft-365/) | Tenant, Entra Connect, licensing, Exchange Online, Teams, SharePoint, OneDrive (Intune/CA in M7) | 🟡 Milestone 6 – lab tenant pending |
 | [06-helpdesk](06-helpdesk/) | Ticketing process and user-support procedures | ⏳ Planned |
-| [07-powershell](07-powershell/) | Automation scripts for users, diagnostics and reporting | 🟡 Network diagnostics, AD, endpoint and M365 build/verify |
+| [07-powershell](07-powershell/) | Admin scripts (joiner/leaver, reports, health checks), shared module, Pester tests | 🟡 Milestone 8 – lab runs pending |
 | [08-cybersecurity](08-cybersecurity/) | Endpoint protection, access control, phishing, incident response | ⏳ Planned |
 | [09-backup-disaster-recovery](09-backup-disaster-recovery/) | Backup strategy, restore tests, recovery procedures | ⏳ Planned |
 | [10-monitoring-maintenance](10-monitoring-maintenance/) | Network / server monitoring, health checks | ⏳ Planned |
 | [11-it-asset-management](11-it-asset-management/) | Hardware inventory lifecycle, licences, warranties | ⏳ Planned |
 | [12-policies-procedures](12-policies-procedures/) | Onboarding, offboarding, access management, AUP, change management | ⏳ Planned |
 | [13-maintenance-calendar](13-maintenance-calendar/) | Daily / weekly / monthly / quarterly / yearly tasks | ⏳ Planned |
-| [14-scenarios](14-scenarios/) | Practical support challenges, solved and written up | 🟡 21 designed |
+| [14-scenarios](14-scenarios/) | Practical support challenges, solved and written up | 🟡 26 designed |
 | [15-documentation](15-documentation/) | Standards, templates, diagrams, screenshots, glossary, lessons learned | ✅ Milestone 1 |
 | [16-reports](16-reports/) | Deployment, incident and maintenance reports | ⏳ Planned |
 
@@ -76,7 +76,9 @@ See [ROADMAP.md](ROADMAP.md) for the full plan and exit criteria.
 | M4 | Network infrastructure – IP addressing, VLANs, DHCP, DNS, switching, routing, firewall rules, lab, scripts, scenarios | 🟡 Docs done, lab evidence pending |
 | M5 | Windows Server & Active Directory – domain, users, groups, OUs, Group Policy, file permissions, scripts, scenarios | 🟡 Docs done, lab evidence pending |
 | M6 | Workstations & Microsoft 365 – laptop build, software, printers, Entra Connect, licensing, Exchange, Teams, SharePoint/OneDrive | 🟡 Docs done, lab evidence pending |
-| M7+ | Training phases 6–12 (Intune & Conditional Access → … → capstone) | ⏳ Next |
+| M7 | Intune, MFA & Conditional Access | ⏳ Next |
+| M8 | PowerShell administration – joiner/leaver, stale accounts, password expiry, inventory, server health, clean-up, daily check, Pester tests in CI | 🟡 Scripts + tests done, lab runs pending |
+| M9+ | Training phases 8–12 (helpdesk → … → capstone) | ⏳ Planned |
 
 ## How the lab is built
 

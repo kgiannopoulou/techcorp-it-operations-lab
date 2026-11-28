@@ -34,7 +34,7 @@ the department attribute (SC-M365-004), and owners are still set by hand
 (two per team, CI-checked).
 
 IT has no department team (one person); IT requests use the *IT Help* channel
-in the company-wide team and the ticket process (Phase 7).
+in the company-wide team and the ticket process (Phase 8).
 
 ## 2. Creating them
 

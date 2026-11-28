@@ -33,7 +33,7 @@ A new hire beyond 20 needs a purchased seat first: the group then shows
 ## 2. Joiner
 
 Cloud steps, after the AD steps in
-[user-accounts.md §4](../../03-windows-server/users-and-groups/user-accounts.md#4-account-lifecycle-manual-now-automated-in-phase-8).
+[user-accounts.md §4](../../03-windows-server/users-and-groups/user-accounts.md#4-account-lifecycle-automated-in-m8).
 
 | # | What happens | Who / how | Time |
 |---|---|---|---|

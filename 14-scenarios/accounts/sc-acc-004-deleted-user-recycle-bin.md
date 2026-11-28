@@ -65,4 +65,4 @@ The Recycle Bin restores **all** attributes, including group memberships
 
 ## 10. Related
 
-- [user-accounts.md §4](../../03-windows-server/users-and-groups/user-accounts.md#4-account-lifecycle-manual-now-automated-in-phase-8)
+- [user-accounts.md §4](../../03-windows-server/users-and-groups/user-accounts.md#4-account-lifecycle-automated-in-m8)

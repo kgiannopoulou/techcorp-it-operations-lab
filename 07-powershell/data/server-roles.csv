@@ -1,0 +1,9 @@
+Hostname,Role,Services,TcpPorts,Notes
+TC-DC01,Domain controller (PDC emulator),NTDS;DNS;Netlogon;Kdc;W32Time;ADWS;DFSR,53;88;135;389;445;464;3268;5985;9389,9389 = AD Web Services - the ActiveDirectory PowerShell module needs it
+TC-DC02,Domain controller,NTDS;DNS;Netlogon;Kdc;W32Time;ADWS;DFSR,53;88;135;389;445;464;3268;5985;9389,Second DC - same services as TC-DC01
+TC-FS01,File and print server,LanmanServer;Dfs;Spooler;SrmSvc,135;445;5985,SrmSvc = FSRM quotas and file screens; Spooler = print server (END-CHG-001)
+TC-SYNC01,Entra Connect Sync,ADSync,135;5985,Outbound HTTPS to Microsoft only - no inbound service port
+TC-FW01,Firewall (pfSense),,53;443,GUI 443 reachable only from the MGMT VLAN (firewall rule MGMT 1)
+TC-NAS01,Backup target,,443;445,Backup repository (Phase 10)
+TC-PRN01,Printer,,443;631;9100,Open-plan MFP
+TC-PRN02,Printer,,443;631;9100,Finance printer

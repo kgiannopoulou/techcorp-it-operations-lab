@@ -1,6 +1,6 @@
 # 06 – Helpdesk
 
-**Status:** ⏳ Planned – Phase 7 (M8)
+**Status:** ⏳ Planned – Phase 8 (M9)
 
 Procedures for supporting users – the *how to help a user* side of the manual. Uses the [ticket template](../15-documentation/templates/ticket-template.md) and the SLAs in [it-responsibilities.md](../00-company-overview/it-responsibilities.md).
 

@@ -55,7 +55,7 @@ created within minutes.
 ## 8. Prevention
 
 The joiner checklist ([licensing-and-lifecycle.md §2](../../05-microsoft-365/user-management/licensing-and-lifecycle.md#2-joiner))
-runs the M365 deploy step; the Phase 8 onboarding script will do both in one go.
+runs the M365 deploy step; the M8 onboarding script (`New-TechCorpUser.ps1`) adds the licence group at creation.
 
 ## 9. Skills practised
 

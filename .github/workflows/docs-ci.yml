@@ -2,8 +2,8 @@ name: Docs CI
 
 on:
   push:
-    branches: [main]
   pull_request:
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -31,7 +31,14 @@ jobs:
         shell: pwsh
         run: |
           Install-Module PSScriptAnalyzer -Force -Scope CurrentUser
-          $issues = Invoke-ScriptAnalyzer -Path . -Recurse -Severity Error, Warning -ExcludeRule PSAvoidUsingWriteHost
+          $issues = @(Invoke-ScriptAnalyzer -Path . -Recurse -Severity Error, Warning -ExcludeRule PSAvoidUsingWriteHost |
+              Where-Object { $_.ScriptPath -notmatch '[\\/]07-powershell[\\/]tests[\\/]' })
+          # Pester files: variables set in BeforeAll and used in It look unused to the analyzer;
+          # the AD/Exchange stubs copy the real cmdlets' signatures (AccountPassword, NewPassword,
+          # no ShouldProcess, unused parameters); tests target loopback / .invalid names on purpose.
+          $issues += @(Invoke-ScriptAnalyzer -Path ./07-powershell/tests -Recurse -Severity Error, Warning -ExcludeRule PSAvoidUsingWriteHost,
+              PSUseDeclaredVarsMoreThanAssignments, PSReviewUnusedParameter, PSUseShouldProcessForStateChangingFunctions, PSShouldProcess,
+              PSAvoidUsingUsernameAndPasswordParams, PSAvoidUsingPlainTextForPassword, PSAvoidUsingComputerNameHardcoded)
           $issues | Format-Table -AutoSize
           if ($issues) { throw "$($issues.Count) PSScriptAnalyzer finding(s)" }
       - name: Subnet calculator self-test
@@ -46,3 +53,33 @@ jobs:
       - name: Microsoft 365 plan self-test (admins, mailboxes, teams, sharing)
         shell: pwsh
         run: ./07-powershell/microsoft-365/Get-TechCorpM365Plan.ps1 -SelfTest
+      - name: Pester tests (PowerShell 7, Linux)
+        shell: pwsh
+        run: ./07-powershell/tests/Invoke-TechCorpTests.ps1 -Output Detailed -ResultPath ./output/pester-linux.xml
+      - name: Keep test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pester-linux
+          path: output/pester-linux.xml
+
+  powershell-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Pester tests (Windows PowerShell 5.1 - incl. server health on a real Windows host)
+        shell: powershell
+        run: |
+          Install-Module Pester -MinimumVersion 5.5.0 -Force -Scope CurrentUser -SkipPublisherCheck
+          ./07-powershell/tests/Invoke-TechCorpTests.ps1 -Output Detailed -ResultPath ./output/pester-windows-ps51.xml
+      - name: Pester tests (PowerShell 7, Windows)
+        shell: pwsh
+        run: |
+          if (-not (Get-Module -ListAvailable Pester | Where-Object Version -ge '5.5.0')) { Install-Module Pester -MinimumVersion 5.5.0 -Force -Scope CurrentUser -SkipPublisherCheck }
+          ./07-powershell/tests/Invoke-TechCorpTests.ps1 -Output Normal -ResultPath ./output/pester-windows-ps7.xml
+      - name: Keep test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pester-windows
+          path: output/pester-windows-*.xml

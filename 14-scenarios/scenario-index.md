@@ -5,7 +5,7 @@
 | Document ID | SC-REF-001 |
 | Owner | IT Specialist |
 | Status | Living document |
-| Last reviewed | 2026-11-27 |
+| Last reviewed | 2026-11-28 |
 
 Every practical problem in the lab, by area. **Status** is honest: *Designed*
 means the scenario and its expected investigation are written; *Solved* means
@@ -34,6 +34,11 @@ I actually performed it in the lab and attached evidence.
 | [SC-M365-004](microsoft-365/sc-m365-004-dynamic-team-membership.md) | New marketing hire is not in the Sales & Marketing team | ⭐⭐ | 5 – Microsoft 365 | Designed |
 | [SC-M365-005](microsoft-365/sc-m365-005-shared-mailbox-not-in-outlook.md) | support@ does not show up in Outlook | ⭐ | 5 – Microsoft 365 | Designed |
 | [SC-INF-001](infrastructure/sc-inf-001-kerberos-clock-skew.md) | "The time difference between the client and server is too large" | ⭐⭐ | 2 – Windows Server | Designed |
+| [SC-PS-001](automation/sc-ps-001-scheduled-task-0x1.md) | The daily-check e-mail stopped arriving after the scripts were updated | ⭐⭐ | 7 – PowerShell (M8) | Designed |
+| [SC-PS-002](automation/sc-ps-002-new-starter-gets-number-2.md) | The new developer's e-mail address is "connie.springer2" | ⭐ | 7 – PowerShell (M8) | Designed |
+| [SC-PS-003](automation/sc-ps-003-leaver-script-stopped.md) | The leaver script stopped half way – is she offboarded or not? | ⭐⭐ | 7 – PowerShell (M8) | Designed |
+| [SC-PS-004](automation/sc-ps-004-stale-report-lists-active-staff.md) | The stale-account report says half the office hasn't logged on for seven weeks | ⭐⭐⭐ | 7 – PowerShell (M8) | Designed |
+| [SC-PS-005](automation/sc-ps-005-cleanup-task-fails.md) | The weekly clean-up job "fails" every Sunday | ⭐⭐ | 7 – PowerShell (M8) | Designed |
 
 ## Counts
 
@@ -46,3 +51,4 @@ I actually performed it in the lab and attached evidence.
 | Microsoft 365 | 5 | 0 |
 | Security | 0 | 0 |
 | Infrastructure | 1 | 0 |
+| Automation | 5 | 0 |
